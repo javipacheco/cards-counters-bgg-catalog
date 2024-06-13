@@ -155,7 +155,7 @@ Cada carta tiene la siguiente estructura:
 
 #### e. Metadatos
 
-Información adicional específica del juego.
+Información adicional específica del juego. Puedes añadir la información que veas necesaria para luego usar en las condiciones de los "Puntos Extras" por ejemplo
 
 **Ejemplo en JSON:**
 ```json
@@ -168,14 +168,6 @@ Información adicional específica del juego.
     }
 }
 ```
-
-- **cardType**: Tipo de carta para propósitos de juego. En el ejemplo, `"purple_prosperity"`.
-- **twigs**: Recurso de ramitas requerido. En el ejemplo, `3`.
-- **resin**: Recurso de resina requerido. En el ejemplo, `3`.
-- **pebbles**: Recurso de guijarros requerido. En el ejemplo, `3`.
-- **berries**: Recurso de bayas requerido.
-- **combined**: Cartas combinadas para efectos especiales.
-- **give_resources_to_oponent**: Indica si se deben dar recursos al oponente.
 
 ### 5. Puntos Extras
 
