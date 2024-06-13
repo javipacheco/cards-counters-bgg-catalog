@@ -1,0 +1,892 @@
+{
+    "game": "Everdell",
+    "maxCards": null,
+    "translations": {
+        "others": {
+            "arquitecto_msg": {
+                "es": "por cada resina y guijarro, máximo 6",
+                "en": "for each resin and pebble, maximum 6"
+            },
+            "rey_msg_1": {
+                "es": "por cada Evento Básico",
+                "en": "for each Basic Event"
+            },
+            "rey_msg_2": {
+                "es": "por cada Evento Especial",
+                "en": "for each Special Event"
+            }
+        },
+        "cards": {
+            "arbol_eterno": {
+                "es": "Árbol Eterno",
+                "en": "Ever Tree"
+            },
+            "esposa": {
+                "es": "Esposa",
+                "en": "Wife"
+            },
+            "esposo": {
+                "es": "Esposo",
+                "en": "Husband"
+            },
+            "granja": {
+                "es": "Granja",
+                "en": "Farm"
+            },
+            "monje": {
+                "es": "Monje",
+                "en": "Monk"
+            },
+            "monasterio": {
+                "es": "Monasterio",
+                "en": "Monastery"
+            },
+            "arquitecto": {
+                "es": "Arquitecto",
+                "en": "Architect"
+            },
+            "grua": {
+                "es": "Grúa",
+                "en": "Crane"
+            },
+            "mina": {
+                "es": "Mina",
+                "en": "Mine"
+            },
+            "topo_minero": {
+                "es": "Topo Minero",
+                "en": "Miner Mole"
+            },
+            "tendera": {
+                "es": "Tendera",
+                "en": "Shopkeeper"
+            },
+            "tienda": {
+                "es": "Tienda",
+                "en": "General Store"
+            },
+            "palacio": {
+                "es": "Palacio",
+                "en": "Palace"
+            },
+            "reina": {
+                "es": "Reina",
+                "en": "Queen"
+            },
+            "rey": {
+                "es": "Rey",
+                "en": "King"
+            },
+            "castillo": {
+                "es": "Castillo",
+                "en": "Castle"
+            },
+            "posadero": {
+                "es": "Posadero",
+                "en": "Innkeeper"
+            },
+            "posada": {
+                "es": "Posada",
+                "en": "Inn"
+            },
+            "almacen": {
+                "es": "Almacén",
+                "en": "Warehouse"
+            },
+            "tallista": {
+                "es": "Tallista",
+                "en": "Woodcarver"
+            },
+            "profersor": {
+                "es": "Profersor",
+                "en": "Teacher"
+            },
+            "escuela": {
+                "es": "Escuela",
+                "en": "School"
+            },
+            "sapo_barquero": {
+                "es": "Sapo Barquero",
+                "en": "Barge Toad"
+            },
+            "barcaza": {
+                "es": "Barcaza",
+                "en": "Twig Barge"
+            },
+            "torre_vigia": {
+                "es": "Torre Vigía",
+                "en": "Lookout"
+            },
+            "trotamundos": {
+                "es": "Trotamundos",
+                "en": "Wanderer"
+            },
+            "pastor": {
+                "es": "Pastor",
+                "en": "Shepherd"
+            },
+            "capilla": {
+                "es": "Capilla",
+                "en": "Chapel"
+            },
+            "universidad": {
+                "es": "Universidad",
+                "en": "University"
+            },
+            "doctor": {
+                "es": "Doctor",
+                "en": "Doctor"
+            },
+            "roedor_barredor": {
+                "es": "Roedor Barredor",
+                "en": "Chip Sweep"
+            },
+            "refineria_resina": {
+                "es": "Refinería de Resina",
+                "en": "Resin Refinery"
+            },
+            "juzgados": {
+                "es": "Juzgados",
+                "en": "Courthouse"
+            },
+            "juez": {
+                "es": "Juez",
+                "en": "Judge"
+            },
+            "bardo": {
+                "es": "Bardo",
+                "en": "Bard"
+            },
+            "teatro": {
+                "es": "Teatro",
+                "en": "Theater"
+            },
+            "bufon": {
+                "es": "Bufón",
+                "en": "Fool"
+            },
+            "feria": {
+                "es": "Feria",
+                "en": "Fairbrounds"
+            },
+            "cementerio": {
+                "es": "Cementerio",
+                "en": "Cemetery"
+            },
+            "enterrador": {
+                "es": "Enterrador",
+                "en": "Undertaker"
+            },
+            "paloma_postal": {
+                "es": "Paloma Postal",
+                "en": "Postal Pigeon"
+            },
+            "oficina_postal": {
+                "es": "Oficina Postal",
+                "en": "Post Office"
+            },
+            "torre_del_reloj": {
+                "es": "Torre del Reloj",
+                "en": "Clock Tower"
+            },
+            "historiador": {
+                "es": "Historiador",
+                "en": "Historian"
+            },
+            "buhonero": {
+                "es": "Buhonero",
+                "en": "Peddler"
+            },
+            "ruinas": {
+                "es": "Ruinas",
+                "en": "Ruins"
+            },
+            "mazmorra": {
+                "es": "Mazmorra",
+                "en": "Dungeon"
+            },
+            "guardabosques": {
+                "es": "Guardabosques",
+                "en": "Ranger"
+            }
+        }
+    },
+    "boxes": [
+        {
+            "name": "base",
+            "cards": [
+                {
+                    "id": "arbol_eterno",
+                    "points": 5,
+                    "extraPoints": {
+                        "countCards": {
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "cardType",
+                                    "value": "purple_prosperity"
+                                }
+                            ],
+                            "multiply": 1
+                        }
+                    },
+                    "type": "construction",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "purple_prosperity",
+                        "twigs": 3,
+                        "resin": 3,
+                        "pebbles": 3
+                    }
+                },
+                {
+                    "id": "esposa",
+                    "points": 2,
+                    "extraPoints": {
+                        "inCollection": {
+                            "id": "esposo",
+                            "points": 3
+                        }
+                    },
+                    "type": "critter",
+                    "unique": false,
+                    "metadata": {
+                        "cardType": "purple_prosperity",
+                        "combined": "granja",
+                        "berries": 2
+                    }
+                },
+                {
+                    "id": "esposo",
+                    "points": 2,
+                    "type": "critter",
+                    "unique": false,
+                    "metadata": {
+                        "cardType": "green_production",
+                        "combined": "granja",
+                        "berries": 3
+                    }
+                },
+                {
+                    "id": "granja",
+                    "points": 1,
+                    "type": "construction",
+                    "unique": false,
+                    "metadata": {
+                        "cardType": "red_destination",
+                        "combined": "esposo/esposa",
+                        "twigs": 2,
+                        "resin": 1
+                    }
+                },
+                {
+                    "id": "monje",
+                    "points": 0,
+                    "type": "critter",
+                    "metadata": {
+                        "cardType": "green_production",
+                        "unique": false,
+                        "combined": "monasterio",
+                        "berries": 1
+                    }
+                },
+                {
+                    "id": "monasterio",
+                    "points": 1,
+                    "type": "construction",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "red_destination",
+                        "combined": "monje",
+                        "twigs": 1,
+                        "resin": 1,
+                        "pebbles": 1
+                    }
+                },
+                {
+                    "id": "arquitecto",
+                    "points": 2,
+                    "extraPoints": {
+                        "countOtherItems": [
+                            {
+                                "translation": "arquitecto_msg",
+                                "max": 6,
+                                "multiply": 1
+                            }
+                        ]
+                    },
+                    "type": "critter",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "purple_prosperity",
+                        "combined": "grua",
+                        "berries": 4
+                    }
+                },
+                {
+                    "id": "grua",
+                    "points": 1,
+                    "type": "construction",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "blue_governance",
+                        "combined": "arquitecto",
+                        "pebbles": 1
+                    }
+                },
+                {
+                    "id": "mina",
+                    "points": 2,
+                    "type": "construction",
+                    "unique": false,
+                    "metadata": {
+                        "cardType": "green_production",
+                        "combined": "topo_minero",
+                        "twigs": 1,
+                        "resin": 1,
+                        "pebbles": 1
+                    }
+                },
+                {
+                    "id": "topo_minero",
+                    "points": 2,
+                    "type": "critter",
+                    "unique": false,
+                    "metadata": {
+                        "cardType": "green_production",
+                        "combined": "mina",
+                        "berries": 3
+                    }
+                },
+                {
+                    "id": "tendera",
+                    "points": 1,
+                    "type": "critter",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "blue_governance",
+                        "combined": "tienda",
+                        "berries": 2
+                    }
+                },
+                {
+                    "id": "tienda",
+                    "points": 1,
+                    "type": "construction",
+                    "unique": false,
+                    "metadata": {
+                        "cardType": "green_production",
+                        "combined": "tendera",
+                        "pebbles": 1,
+                        "resin": 1
+                    }
+                },
+                {
+                    "id": "palacio",
+                    "points": 4,
+                    "extraPoints": {
+                        "countCards": {
+                            "operator": "and",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "construction"
+                                },
+                                {
+                                    "condition": "equal",
+                                    "field": "unique",
+                                    "value": true
+                                }
+                            ],
+                            "multiply": 1
+                        }
+                    },
+                    "type": "construction",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "purple_prosperity",
+                        "combined": "reina",
+                        "pebbles": 3,
+                        "resin": 3,
+                        "twigs": 2
+                    }
+                },
+                {
+                    "id": "reina",
+                    "points": 4,
+                    "type": "critter",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "red_destination",
+                        "combined": "palacio",
+                        "berries": 5
+                    }
+                },
+                {
+                    "id": "rey",
+                    "points": 4,
+                    "extraPoints": {
+                        "countOtherItems": [
+                            {
+                                "translation": "rey_msg_1",
+                                "multiply": 1
+                            },
+                            {
+                                "translation": "rey_msg_2",
+                                "multiply": 1
+                            }
+                        ]
+                    },
+                    "type": "critter",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "purple_prosperity",
+                        "combined": "castillo",
+                        "berries": 6
+                    }
+                },
+                {
+                    "id": "castillo",
+                    "points": 4,
+                    "extraPoints": {
+                        "countCards": {
+                            "operator": "and",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "construction"
+                                },
+                                {
+                                    "condition": "equal",
+                                    "field": "unique",
+                                    "value": false
+                                }
+                            ],
+                            "multiply": 1
+                        }
+                    },
+                    "type": "construction",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "purple_prosperity",
+                        "combined": "rey",
+                        "pebbles": 3,
+                        "resin": 3,
+                        "twigs": 2
+                    }
+                },
+                {
+                    "id": "posadero",
+                    "points": 1,
+                    "type": "critter",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "blue_governance",
+                        "combined": "posada",
+                        "berries": 1
+                    }
+                },
+                {
+                    "id": "posada",
+                    "points": 2,
+                    "type": "construction",
+                    "unique": false,
+                    "metadata": {
+                        "cardType": "red_destination",
+                        "combined": "posadero",
+                        "twigs": 2,
+                        "resin": 1
+                    }
+                },
+                {
+                    "id": "almacen",
+                    "points": 2,
+                    "type": "construction",
+                    "unique": false,
+                    "metadata": {
+                        "cardType": "green_production",
+                        "combined": "tallista",
+                        "twigs": 1,
+                        "resin": 1,
+                        "pebbles": 1
+                    }
+                },
+                {
+                    "id": "tallista",
+                    "points": 2,
+                    "type": "critter",
+                    "unique": false,
+                    "metadata": {
+                        "cardType": "green_production",
+                        "combined": "almacen",
+                        "berries": 2
+                    }
+                },
+                {
+                    "id": "profersor",
+                    "points": 2,
+                    "type": "critter",
+                    "unique": false,
+                    "metadata": {
+                        "cardType": "green_production",
+                        "combined": "escuela",
+                        "berries": 2
+                    }
+                },
+                {
+                    "id": "escuela",
+                    "points": 2,
+                    "extraPoints": {
+                        "countCards": {
+                            "operator": "and",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "critter"
+                                },
+                                {
+                                    "condition": "equal",
+                                    "field": "unique",
+                                    "value": false
+                                }
+                            ],
+                            "multiply": 1
+                        }
+                    },
+                    "type": "construction",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "purple_prosperity",
+                        "combined": "profersor",
+                        "twigs": 2,
+                        "resin": 2
+                    }
+                },
+                {
+                    "id": "sapo_barquero",
+                    "points": 1,
+                    "type": "critter",
+                    "unique": false,
+                    "metadata": {
+                        "cardType": "green_production",
+                        "combined": "barcaza",
+                        "berries": 2
+                    }
+                },
+                {
+                    "id": "barcaza",
+                    "points": 1,
+                    "type": "construction",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "green_production",
+                        "combined": "sapo_barquero",
+                        "pebbles": 1,
+                        "twigs": 1
+                    }
+                },
+                {
+                    "id": "torre_vigia",
+                    "points": 2,
+                    "type": "construction",
+                    "metadata": {
+                        "cardType": "red_destination",
+                        "unique": true,
+                        "combined": "trotamundos",
+                        "pebbles": 1,
+                        "twigs": 1,
+                        "resin": 1
+                    }
+                },
+                {
+                    "id": "trotamundos",
+                    "points": 1,
+                    "type": "critter",
+                    "unique": false,
+                    "metadata": {
+                        "cardType": "tan_traveler",
+                        "combined": "torre_vigia",
+                        "berries": 2
+                    }
+                },
+                {
+                    "id": "pastor",
+                    "points": 1,
+                    "type": "critter",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "tan_traveler",
+                        "combined": "capilla",
+                        "berries": 3,
+                        "give_resources_to_oponent": true
+                    }
+                },
+                {
+                    "id": "capilla",
+                    "points": 2,
+                    "type": "construction",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "red_destination",
+                        "combined": "pastor",
+                        "twigs": 2,
+                        "resin": 1,
+                        "pebbles": 1
+                    }
+                },
+                {
+                    "id": "universidad",
+                    "points": 3,
+                    "type": "construction",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "red_destination",
+                        "combined": "doctor",
+                        "resin": 1,
+                        "pebbles": 2
+                    }
+                },
+                {
+                    "id": "doctor",
+                    "points": 4,
+                    "type": "critter",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "green_production",
+                        "combined": "universidad",
+                        "berries": 4
+                    }
+                },
+                {
+                    "id": "roedor_barredor",
+                    "points": 2,
+                    "type": "critter",
+                    "unique": false,
+                    "metadata": {
+                        "cardType": "green_production",
+                        "combined": "refineria_resina",
+                        "berries": 3
+                    }
+                },
+                {
+                    "id": "refineria_resina",
+                    "points": 1,
+                    "type": "construction",
+                    "unique": false,
+                    "metadata": {
+                        "cardType": "green_production",
+                        "combined": "roedor_barredor",
+                        "resin": 1,
+                        "pebbles": 1
+                    }
+                },
+                {
+                    "id": "juzgados",
+                    "points": 2,
+                    "type": "construction",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "blue_governance",
+                        "combined": "juez",
+                        "resin": 1,
+                        "pebbles": 2,
+                        "twigs": 1
+                    }
+                },
+                {
+                    "id": "juez",
+                    "points": 2,
+                    "type": "critter",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "blue_governance",
+                        "combined": "juzgados",
+                        "berries": 3
+                    }
+                },
+                {
+                    "id": "bardo",
+                    "points": 0,
+                    "type": "critter",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "tan_traveler",
+                        "combined": "teatro",
+                        "berries": 3
+                    }
+                },
+                {
+                    "id": "teatro",
+                    "points": 3,
+                    "extraPoints": {
+                        "countCards": {
+                            "operator": "and",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "critter"
+                                },
+                                {
+                                    "condition": "equal",
+                                    "field": "unique",
+                                    "value": true
+                                }
+                            ],
+                            "multiply": 1
+                        }
+                    },
+                    "type": "construction",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "purple_prosperity",
+                        "combined": "bardo",
+                        "twigs": 3,
+                        "resin": 1,
+                        "pebbles": 1
+                    }
+                },
+                {
+                    "id": "bufon",
+                    "points": -2,
+                    "type": "critter",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "tan_traveler",
+                        "combined": "feria",
+                        "berries": 3
+                    }
+                },
+                {
+                    "id": "feria",
+                    "points": 3,
+                    "type": "construction",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "green_production",
+                        "combined": "bufon",
+                        "twigs": 1,
+                        "resin": 2,
+                        "pebbles": 1
+                    }
+                },
+                {
+                    "id": "cementerio",
+                    "points": 0,
+                    "type": "construction",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "red_destination",
+                        "combined": "enterrador",
+                        "pebbles": 2
+                    }
+                },
+                {
+                    "id": "enterrador",
+                    "points": 1,
+                    "type": "critter",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "tan_traveler",
+                        "combined": "cementerio",
+                        "berries": 2
+                    }
+                },
+                {
+                    "id": "paloma_postal",
+                    "points": 0,
+                    "type": "critter",
+                    "unique": false,
+                    "metadata": {
+                        "cardType": "tan_traveler",
+                        "combined": "oficina_postal",
+                        "berries": 2
+                    }
+                },
+                {
+                    "id": "oficina_postal",
+                    "points": 2,
+                    "type": "construction",
+                    "unique": false,
+                    "metadata": {
+                        "cardType": "red_destination",
+                        "combined": "paloma_postal",
+                        "twigs": 1,
+                        "resin": 2,
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "torre_del_reloj",
+                    "points": 0,
+                    "type": "construction",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "blue_governance",
+                        "combined": "historiador",
+                        "twigs": 3,
+                        "pebbles": 1
+                    }
+                },
+                {
+                    "id": "historiador",
+                    "points": 1,
+                    "type": "critter",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "blue_governance",
+                        "combined": "torre_del_reloj",
+                        "berries": 2
+                    }
+                },
+                {
+                    "id": "buhonero",
+                    "points": 1,
+                    "type": "critter",
+                    "unique": false,
+                    "metadata": {
+                        "cardType": "green_production",
+                        "combined": "ruinas",
+                        "berries": 2
+                    }
+                },
+                {
+                    "id": "ruinas",
+                    "points": 0,
+                    "type": "construction",
+                    "unique": false,
+                    "metadata": {
+                        "cardType": "tan_traveler",
+                        "combined": "buhonero"
+                    }
+                },
+                {
+                    "id": "mazmorra",
+                    "points": 0,
+                    "type": "construction",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "blue_governance",
+                        "combined": "guardabosques",
+                        "resin": 1,
+                        "pebbles": 2
+                    }
+                },
+                {
+                    "id": "guardabosques",
+                    "points": 1,
+                    "type": "critter",
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "tan_traveler",
+                        "combined": "mazmorra",
+                        "berries": 2
+                    }
+                }
+            ]
+        }
+    ]
+}
