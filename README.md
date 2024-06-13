@@ -30,7 +30,7 @@ The Spanish documentation can be found in the `doc_es.md` file.
 
 An example JSON file for the game "Everdell" is also included to demonstrate the structure and format needed for the scoring system.
 
-[View Everdell Example](./everdel.json)
+[View Everdell Example](./everdell.json)
 
 # License
 
