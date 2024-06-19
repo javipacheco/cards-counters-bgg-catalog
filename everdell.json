@@ -1,6 +1,79 @@
 {
     "game": "Everdell",
     "maxCards": null,
+    "layouts": {
+        "colors": [
+            {
+                "type": "border",
+                "selectedCards": true,
+                "dialogCards": true,
+                "darkTheme": true,
+                "ligthTheme": true,
+                "options": [
+                    {
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "cardType",
+                                "value": "purple_prosperity"
+                            }
+                        ],
+                        "color": "ff5f39a5",
+                        "borderWidth": 10,
+                        "borderSide": "left"
+                    },
+                    {
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "cardType",
+                                "value": "green_production"
+                            }
+                        ],
+                        "color": "ff557a39",
+                        "borderWidth": 10,
+                        "borderSide": "left"
+                    },
+                    {
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "cardType",
+                                "value": "blue_governance"
+                            }
+                        ],
+                        "color": "ff095068",
+                        "borderWidth": 10,
+                        "borderSide": "left"
+                    },
+                    {
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "cardType",
+                                "value": "red_destination"
+                            }
+                        ],
+                        "color": "ff763033",
+                        "borderWidth": 10,
+                        "borderSide": "left"
+                    },
+                    {
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "cardType",
+                                "value": "tan_traveler"
+                            }
+                        ],
+                        "color": "ff786850",
+                        "borderWidth": 10,
+                        "borderSide": "left"
+                    }
+                ]
+            }
+        ]
+    },
     "translations": {
         "others": {
             "arquitecto_msg": {
