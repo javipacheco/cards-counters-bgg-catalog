@@ -255,3 +255,91 @@ Extra points are calculated based on specific conditions.
 ## Conclusion
 
 This manual provides a comprehensive guide on how to generate a scoring system for board games using a JSON file. By following this structure, similar programs can be created for other board games, adapting the JSON structure according to the specific needs of the game.
+
+
+### 6. Layouts
+
+The "layouts" section in the JSON file contains information on how to modify the appearance of the selected cards list and the dialog where a card is selected. Below is the structure and fields of this section.
+
+**Example in JSON:**
+```json
+{
+    "layouts": {
+        "colors": [
+            {
+                "type": "border",
+                "selectedCards": true,
+                "dialogCards": true,
+                "darkTheme": true,
+                "lightTheme": true,
+                "options": [
+                    {
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "cardType",
+                                "value": "purple_prosperity"
+                            }
+                        ],
+                        "color": "ff5f39a5",
+                        "borderWidth": 10,
+                        "borderSide": "left"
+                    }
+                ]
+            }
+        ]
+    }
+}
+```
+
+#### Fields in the "Layouts" Section
+
+##### a. Colors
+
+**Example in JSON:**
+```json
+{
+    "type": "border",
+    "selectedCards": true,
+    "dialogCards": true,
+    "darkTheme": true,
+    "lightTheme": true
+}
+```
+
+- **type**: Defines the type of design. It can be `"border"` or `"background"`. In the example, `"border"` indicates it is a border.
+- **selectedCards**: Indicates if the configuration applies to selected cards. In the example, `true`.
+- **dialogCards**: Indicates if the configuration applies to the card selection dialog. In the example, `true`.
+- **darkTheme**: Indicates if the configuration applies in dark theme. In the example, `true`.
+- **lightTheme**: Indicates if the configuration applies in light theme. In the example, `true`.
+- **options**: List of design options based on conditions.
+
+##### b. Options
+
+Each option within "options" has the following structure:
+
+**Example in JSON:**
+```json
+{
+    "operator": "and",
+    "conditions": [
+        {
+            "condition": "equal",
+            "field": "cardType",
+            "value": "purple_prosperity"
+        }
+    ],
+    "color": "ff5f39a5",
+    "borderWidth": 10,
+    "borderSide": "left"
+}
+```
+
+- **operator**: Operator that determines how conditions are evaluated. It can be `"and"` or `"or"`. Default is `"and"`. In the example, `"and"`.
+- **conditions**: List of conditions that must be met to apply this option.
+  - **condition**: Type of condition. It can be `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Example: `"equal"`.
+  - **field**: Field to which the condition applies. It can be any common card field like "id" or "points", or any game-specific fields added in the "metadata" section. Example: `"cardType"`.
+  - **value**: Value the field must have. Example: `"purple_prosperity"`.
+- **color**: Color in ARGB format. The first two hexadecimal digits represent the alpha value. Example: `"ff5f39a5"`.
+- **borderWidth**: Border width in pixels. Only applies if `type` is `"border"`. In the example, `10`.
+- **borderSide**: Side of the border where the color is applied. Only applies if `type` is `"border"`. Possible values are `"left"`, `"right"`, `"top"`, and `"bottom"`. In the example, `"left"`.
