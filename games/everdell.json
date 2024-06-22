@@ -291,7 +291,7 @@
                 {
                     "id": "arbol_eterno",
                     "points": 5,
-                    "extraPoints": {
+                    "bonus": {
                         "countCards": {
                             "conditions": [
                                 {
@@ -315,9 +315,15 @@
                 {
                     "id": "esposa",
                     "points": 2,
-                    "extraPoints": {
+                    "bonus": {
                         "inCollection": {
-                            "id": "esposo",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "id",
+                                    "value": "esposo"
+                                }
+                            ],
                             "points": 3
                         }
                     },
@@ -379,7 +385,7 @@
                 {
                     "id": "arquitecto",
                     "points": 2,
-                    "extraPoints": {
+                    "bonus": {
                         "countOtherItems": [
                             {
                                 "translation": "arquitecto_msg",
@@ -457,7 +463,7 @@
                 {
                     "id": "palacio",
                     "points": 4,
-                    "extraPoints": {
+                    "bonus": {
                         "countCards": {
                             "operator": "and",
                             "conditions": [
@@ -499,7 +505,7 @@
                 {
                     "id": "rey",
                     "points": 4,
-                    "extraPoints": {
+                    "bonus": {
                         "countOtherItems": [
                             {
                                 "translation": "rey_msg_1",
@@ -522,7 +528,7 @@
                 {
                     "id": "castillo",
                     "points": 4,
-                    "extraPoints": {
+                    "bonus": {
                         "countCards": {
                             "operator": "and",
                             "conditions": [
@@ -611,7 +617,7 @@
                 {
                     "id": "escuela",
                     "points": 2,
-                    "extraPoints": {
+                    "bonus": {
                         "countCards": {
                             "operator": "and",
                             "conditions": [
@@ -794,7 +800,7 @@
                 {
                     "id": "teatro",
                     "points": 3,
-                    "extraPoints": {
+                    "bonus": {
                         "countCards": {
                             "operator": "and",
                             "conditions": [

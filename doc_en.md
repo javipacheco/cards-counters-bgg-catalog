@@ -155,7 +155,7 @@ Each card has the following structure:
 
 #### e. Metadata
 
-Additional game-specific information. You can add the information you see necessary to be used in the conditions of the "Extra Points", for example
+Additional game-specific information. You can add the information you see necessary to be used in the conditions of the "Bonus", for example
 
 **Example in JSON:**
 ```json
@@ -169,16 +169,16 @@ Additional game-specific information. You can add the information you see necess
 }
 ```
 
-### 5. Extra Points
+### 5. Bonus
 
-Extra points are calculated based on specific conditions.
+Bonus are calculated based on specific conditions.
 
 #### a. Count Cards
 
 **Example in JSON:**
 ```json
 {
-    "extraPoints": {
+    "bonus": {
         "countCards": {
             "conditions": [
                 {
@@ -193,7 +193,7 @@ Extra points are calculated based on specific conditions.
 }
 ```
 
-- **countCards**: Counts cards based on the conditions and adds extra points.
+- **countCards**: Counts cards based on the conditions and adds bonus.
   - **conditions**: List of conditions that must be met.
     - **condition**: Type of condition. Can be `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Example: `"equal"`
     - **field**: Field to which the condition applies. It can be any common card field like "id" or "points", or any of the game-specific fields added in the "metadata" section. Example: `"cardType"`
@@ -205,7 +205,7 @@ Extra points are calculated based on specific conditions.
 **Example in JSON:**
 ```json
 {
-    "extraPoints": {
+    "bonus": {
         "inCollection": {
             "id": "esposo",
             "points": 3
@@ -223,7 +223,7 @@ Extra points are calculated based on specific conditions.
 **Example in JSON:**
 ```json
 {
-    "extraPoints": {
+    "bonus": {
         "countOtherItems": [
             {
                 "translation": "arquitecto_msg",
@@ -239,23 +239,6 @@ Extra points are calculated based on specific conditions.
   - **translation**: Translation message obtained from `translations.others`. In the example, `"arquitecto_msg"`
   - **max**: Maximum number of items to count. In the example, `6`
   - **multiply**: Multiplication factor for the points. In the example, `1`
-
-## Application Functionality
-
-1. **Reading the JSON**: The application loads the JSON file containing the game information.
-2. **Data Interpretation**: The application interprets the sections of the JSON:
-    - Game information.
-    - Translations for multilingual support.
-    - Details of each expansion and their cards.
-3. **Scoring Calculation**: The application calculates the points for each card based on:
-    - Base points.
-    - Extra points based on the specified conditions.
-4. **Results**: The total score of each player is displayed, detailing the points obtained from each card and the extra points.
-
-## Conclusion
-
-This manual provides a comprehensive guide on how to generate a scoring system for board games using a JSON file. By following this structure, similar programs can be created for other board games, adapting the JSON structure according to the specific needs of the game.
-
 
 ### 6. Layouts
 

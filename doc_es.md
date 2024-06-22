@@ -155,7 +155,7 @@ Cada carta tiene la siguiente estructura:
 
 #### e. Metadatos
 
-Información adicional específica del juego. Puedes añadir la información que veas necesaria para luego usar en las condiciones de los "Puntos Extras" por ejemplo
+Información adicional específica del juego. Puedes añadir la información que veas necesaria para luego usar en las condiciones de los "Bonus" por ejemplo
 
 **Ejemplo en JSON:**
 ```json
@@ -169,16 +169,16 @@ Información adicional específica del juego. Puedes añadir la información que
 }
 ```
 
-### 5. Puntos Extras
+### 5. Bonus
 
-Los puntos extras se calculan en función de ciertas condiciones especificadas.
+Los bonus se calculan en función de ciertas condiciones especificadas.
 
 #### a. Contar Cartas
 
 **Ejemplo en JSON:**
 ```json
 {
-    "extraPoints": {
+    "bonus": {
         "countCards": {
             "conditions": [
                 {
@@ -193,7 +193,7 @@ Los puntos extras se calculan en función de ciertas condiciones especificadas.
 }
 ```
 
-- **countCards**: Cuenta las cartas según las condiciones y añade esos puntos extras.
+- **countCards**: Cuenta las cartas según las condiciones y añade esos bonus.
   - **conditions**: Lista de condiciones que deben cumplirse.
     - **condition**: Tipo de condición. Puede ser `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Ejemplo: `"equal"`
     - **field**: Campo sobre el cual se aplica la condición. Puede ser cualquier campo común de la carta como "id" o "points", o cualquiera de los campos específicos del juego añadidos en el apartado de "metadata". Ejemplo: `"cardType"`
@@ -205,7 +205,7 @@ Los puntos extras se calculan en función de ciertas condiciones especificadas.
 **Ejemplo en JSON:**
 ```json
 {
-    "extraPoints": {
+    "bonus": {
         "inCollection": {
             "id": "esposo",
             "points": 3
@@ -223,7 +223,7 @@ Los puntos extras se calculan en función de ciertas condiciones especificadas.
 **Ejemplo en JSON:**
 ```json
 {
-    "extraPoints": {
+    "bonus": {
         "countOtherItems": [
             {
                 "translation": "arquitecto_msg",
