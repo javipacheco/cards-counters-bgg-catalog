@@ -194,6 +194,7 @@ Los bonus se calculan en función de ciertas condiciones especificadas.
 ```
 
 - **countCards**: Cuenta las cartas según las condiciones y añade esos bonus.
+  - **operator**: Operador que determina cómo se evalúan las condiciones. Puede ser `"and"` o `"or"`. Por defecto es `"and"`. En el ejemplo, `"and"`.
   - **conditions**: Lista de condiciones que deben cumplirse.
     - **condition**: Tipo de condición. Puede ser `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Ejemplo: `"equal"`
     - **field**: Campo sobre el cual se aplica la condición. Puede ser cualquier campo común de la carta como "id" o "points", o cualquiera de los campos específicos del juego añadidos en el apartado de "metadata". Ejemplo: `"cardType"`
@@ -207,16 +208,26 @@ Los bonus se calculan en función de ciertas condiciones especificadas.
 {
     "bonus": {
         "inCollection": {
-            "id": "esposo",
+            "conditions": [
+                {
+                    "condition": "equal",
+                    "field": "id",
+                    "value": "esposo"
+                }
+            ],
             "points": 3
         }
     }
 }
 ```
 
-- **inCollection**: Comprueba si el "id" está en tu lista de cartas.
-  - **id**: Identificador de la otra carta. En el ejemplo, `"esposo"`
-  - **points**: Puntos adicionales. En el ejemplo, `3`
+- **inCollection**: Comprueba si se cumplen ciertas condiciones para las cartas en tu colección.
+  - **operator**: Operador que determina cómo se evalúan las condiciones. Puede ser `"and"` o `"or"`. Por defecto es `"and"`. En el ejemplo, `"and"`.
+  - **conditions**: Lista de condiciones que deben cumplirse.
+    - **condition**: Tipo de condición. Puede ser `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Ejemplo: `"equal"`.
+    - **field**: Campo sobre el cual se aplica la condición. Puede ser cualquier campo común de la carta como "id" o "points", o cualquiera de los campos específicos del juego añadidos en el apartado de "metadata". Ejemplo: `"id"`.
+    - **value**: Valor que debe tener el campo. Ejemplo: `"esposo"`.
+  - **points**: Puntos adicionales otorgados si se cumplen las condiciones especificadas. En el ejemplo, `3`.
 
 #### c. Contar Otros Ítems
 

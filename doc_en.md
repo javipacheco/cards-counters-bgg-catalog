@@ -207,16 +207,27 @@ Bonus are calculated based on specific conditions.
 {
     "bonus": {
         "inCollection": {
-            "id": "esposo",
+            "operator": "and",
+            "conditions": [
+                {
+                    "condition": "equal",
+                    "field": "id",
+                    "value": "esposo"
+                }
+            ],
             "points": 3
         }
     }
 }
 ```
 
-- **inCollection**: Checks if the "id" is in your list of cards.
-  - **id**: Identifier of the other card. In the example, `"esposo"`
-  - **points**: Additional points. In the example, `3`
+- **inCollection**: Checks if certain conditions are met for the cards in your collection.
+  - **operator**: Operator that determines how the conditions are evaluated. It can be `"and"` or `"or"`. The default is `"and"`. In the example, `"and"`.
+  - **conditions**: List of conditions that must be met.
+    - **condition**: Type of condition. It can be `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Example: `"equal"`.
+    - **field**: Field to which the condition applies. It can be any common card field like "id" or "points", or any game-specific fields added in the "metadata" section. Example: `"id"`.
+    - **value**: Value the field must have. Example: `"esposo"`.
+  - **points**: Additional points awarded if the specified conditions are met. In the example, `3`.
 
 #### c. Count Other Items
 
