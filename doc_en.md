@@ -169,11 +169,11 @@ Additional game-specific information. You can add the information you see necess
 }
 ```
 
-# 5. Bonus
+### 5. Bonus
 
 Bonus are calculated based on specific conditions.
 
-### a. Count Cards
+#### a. Count Cards
 
 **Example in JSON:**
 ```json
@@ -255,7 +255,107 @@ Each entry in the **countCards** list represents a different set of conditions a
   - **max**: Maximum number of items to count. In the example, `6`
   - **multiply**: Multiplication factor for the points. In the example, `1`
 
-### 6. Layouts
+### 7. Blanks
+
+The "blanks" section contains information on how to nullify the properties of other cards. A card with blanks will apply these conditions to the cards you have played, causing them to have no base points, bonuses, or penalties. Below is the structure and fields of this section.
+
+**Example in JSON:**
+```json
+{
+    "blanks": [
+        {
+            "conditions": [
+                {
+                    "condition": "equal",
+                    "field": "type",
+                    "value": "army"
+                }
+            ]
+        },
+        {
+            "conditions": [
+                {
+                    "condition": "equal",
+                    "field": "type",
+                    "value": "leader"
+                }
+            ]
+        },
+        {
+            "operator": "and",
+            "conditions": [
+                {
+                    "condition": "equal",
+                    "field": "type",
+                    "value": "beast"
+                },
+                {
+                    "condition": "notEqual",
+                    "field": "id",
+                    "value": "basilisk"
+                }
+            ]
+        }
+    ]
+}
+```
+
+#### a. Blanks
+
+Each entry in "blanks" has the following structure:
+
+**Example in JSON:**
+```json
+{
+    "conditions": [
+        {
+            "condition": "equal",
+            "field": "type",
+            "value": "army"
+        }
+    ]
+}
+```
+
+- **conditions**: List of conditions that must be met for a card to be blanked.
+  - **condition**: Type of condition. It can be "equal", "notEqual", "greater", "less", "greaterOrEqual", "lessOrEqual". Example: "equal".
+  - **field**: Field to which the condition applies. It can be any common card field like "id" or "type", or any game-specific fields added in the "metadata" section. Example: "type".
+  - **value**: Value the field must have. Example: "army".
+
+#### b. Combined Conditions
+
+Conditions can be combined using a logical operator.
+
+**Example in JSON:**
+```json
+{
+    "operator": "and",
+    "conditions": [
+        {
+            "condition": "equal",
+            "field": "type",
+            "value": "beast"
+        },
+        {
+            "condition": "notEqual",
+            "field": "id",
+            "value": "basilisk"
+        }
+    ]
+}
+```
+
+- **operator**: Operator that determines how conditions are evaluated. It can be "and" or "or". The default is "and". In the example, "and".
+- **conditions**: List of conditions that must be met for a card to be blanked.
+  - **condition**: Type of condition. It can be "equal", "notEqual", "greater", "less", "greaterOrEqual", "lessOrEqual". Example: "equal".
+  - **field**: Field to which the condition applies. It can be any common card field like "id" or "type", or any game-specific fields added in the "metadata" section. Example: "type".
+  - **value**: Value the field must have. Example: "beast".
+  - **condition**: Type of condition. Example: "notEqual".
+  - **field**: Field to which the condition applies. Example: "id".
+  - **value**: Value the field must have. Example: "basilisk".
+
+
+### 7. Layouts
 
 The "layouts" section in the JSON file contains information on how to modify the appearance of the selected cards list and the dialog where a card is selected. Below is the structure and fields of this section.
 
