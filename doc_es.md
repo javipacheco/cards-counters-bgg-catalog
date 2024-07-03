@@ -255,7 +255,110 @@ Cada entrada en la lista **countCards** representa un conjunto diferente de cond
   - **multiply**: Factor de multiplicación para los puntos. En el ejemplo, `1`
 
 
-### 6. Diseños (Layouts)
+
+### 6. Anular
+
+El apartado "anular" contiene información sobre cómo anular las propiedades de otras cartas. Una carta que tiene anulaciones aplicará estas condiciones a las cartas que has bajado, haciendo que no tengan ni puntos base, ni bonus, ni penalizaciones. A continuación se detalla la estructura y los campos de este apartado.
+
+**Ejemplo en JSON:**
+```json
+{
+    "blanks": [
+        {
+            "conditions": [
+                {
+                    "condition": "equal",
+                    "field": "type",
+                    "value": "army"
+                }
+            ]
+        },
+        {
+            "conditions": [
+                {
+                    "condition": "equal",
+                    "field": "type",
+                    "value": "leader"
+                }
+            ]
+        },
+        {
+            "operator": "and",
+            "conditions": [
+                {
+                    "condition": "equal",
+                    "field": "type",
+                    "value": "beast"
+                },
+                {
+                    "condition": "notEqual",
+                    "field": "id",
+                    "value": "basilisco"
+                }
+            ]
+        }
+    ]
+}
+```
+
+#### Campos del Apartado "Anular"
+
+##### a. Anulaciones
+
+Cada entrada dentro de "anular" tiene la siguiente estructura:
+
+**Ejemplo en JSON:**
+```json
+{
+    "conditions": [
+        {
+            "condition": "equal",
+            "field": "type",
+            "value": "army"
+        }
+    ]
+}
+```
+
+- **conditions**: Lista de condiciones que deben cumplirse para que una carta sea anulada.
+  - **condition**: Tipo de condición. Puede ser `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Ejemplo: `"equal"`.
+  - **field**: Campo sobre el cual se aplica la condición. Puede ser cualquier campo común de la carta como "id" o "type", o cualquiera de los campos específicos del juego añadidos en el apartado de "metadata". Ejemplo: `"type"`.
+  - **value**: Valor que debe tener el campo. Ejemplo: `"army"`.
+
+##### b. Condiciones Combinadas
+
+Las condiciones pueden combinarse utilizando un operador lógico.
+
+**Ejemplo en JSON:**
+```json
+{
+    "operator": "and",
+    "conditions": [
+        {
+            "condition": "equal",
+            "field": "type",
+            "value": "beast"
+        },
+        {
+            "condition": "notEqual",
+            "field": "id",
+            "value": "basilisco"
+        }
+    ]
+}
+```
+
+- **operator**: Operador que determina cómo se evalúan las condiciones. Puede ser `"and"` o `"or"`. Por defecto es `"and"`. En el ejemplo, `"and"`.
+- **conditions**: Lista de condiciones que deben cumplirse para que una carta sea anulada.
+  - **condition**: Tipo de condición. Puede ser `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Ejemplo: `"equal"`.
+  - **field**: Campo sobre el cual se aplica la condición. Puede ser cualquier campo común de la carta como "id" o "type", o cualquiera de los campos específicos del juego añadidos en el apartado de "metadata". Ejemplo: `"type"`.
+  - **value**: Valor que debe tener el campo. Ejemplo: `"beast"`.
+  - **condition**: Tipo de condición. Ejemplo: `"notEqual"`.
+  - **field**: Campo sobre el cual se aplica la condición. Ejemplo: `"id"`.
+  - **value**: Valor que debe tener el campo. Ejemplo: `"basilisco"`.
+
+
+### 7. Diseños (Layouts)
 
 El apartado "layouts" en el archivo JSON contiene información sobre cómo modificar el aspecto del listado de cartas seleccionadas y el diálogo donde se selecciona una carta. A continuación se detalla la estructura y los campos de este apartado.
 
