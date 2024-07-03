@@ -169,11 +169,11 @@ Información adicional específica del juego. Puedes añadir la información que
 }
 ```
 
-# 5. Bonux
+### 5. Bonus
 
 Los bonus se calculan en función de ciertas condiciones especificadas.
 
-### a. Contar Cartas
+#### a. Contar Cartas
 
 **Ejemplo en JSON:**
 ```json
