@@ -255,7 +255,7 @@ Each entry in the **countCards** list represents a different set of conditions a
   - **max**: Maximum number of items to count. In the example, `6`
   - **multiply**: Multiplication factor for the points. In the example, `1`
 
-### 7. Blanks
+### 6. Blanks
 
 The "blanks" section contains information on how to nullify the properties of other cards. A card with blanks will apply these conditions to the cards you have played, causing them to have no base points, bonuses, or penalties. Below is the structure and fields of this section.
 
