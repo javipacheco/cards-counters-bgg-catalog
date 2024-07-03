@@ -169,36 +169,40 @@ Additional game-specific information. You can add the information you see necess
 }
 ```
 
-### 5. Bonus
+# 5. Extra Points
 
 Bonus are calculated based on specific conditions.
 
-#### a. Count Cards
+### a. Count Cards
 
 **Example in JSON:**
 ```json
 {
     "bonus": {
-        "countCards": {
-            "conditions": [
-                {
-                    "condition": "equal",
-                    "field": "cardType",
-                    "value": "purple_prosperity"
-                }
-            ],
-            "multiply": 1
-        }
+        "countCards": [
+            {
+                "conditions": [
+                    {
+                        "condition": "equal",
+                        "field": "cardType",
+                        "value": "purple_prosperity"
+                    }
+                ],
+                "multiply": 1
+            }
+        ]
     }
 }
 ```
 
-- **countCards**: Counts cards based on the conditions and adds bonus.
-  - **conditions**: List of conditions that must be met.
-    - **condition**: Type of condition. Can be `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Example: `"equal"`
-    - **field**: Field to which the condition applies. It can be any common card field like "id" or "points", or any of the game-specific fields added in the "metadata" section. Example: `"cardType"`
-    - **value**: Value that the field must have. Example: `"purple_prosperity"`
-  - **multiply**: Multiplication factor for the points. Example: `1`
+- **countCards**: Counts cards based on specified conditions and adds extra points according to the multiplier.
+  - **conditions**: List of conditions that must be met for the cards to be counted.
+    - **condition**: Type of condition. It can be `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Example: `"equal"`.
+    - **field**: Field to which the condition applies. It can be any common card field like "id" or "points", or any game-specific fields added in the "metadata" section. Example: `"cardType"`.
+    - **value**: Value the field must have. Example: `"purple_prosperity"`.
+  - **multiply**: Multiplier for the points. In the example, `1`.
+
+Each entry in the **countCards** list represents a different set of conditions and a corresponding multiplier for the points.
 
 #### b. In Collection
 
