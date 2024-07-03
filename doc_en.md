@@ -169,7 +169,7 @@ Additional game-specific information. You can add the information you see necess
 }
 ```
 
-# 5. Extra Points
+# 5. Bonus
 
 Bonus are calculated based on specific conditions.
 
