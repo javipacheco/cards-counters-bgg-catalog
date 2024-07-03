@@ -169,37 +169,40 @@ Información adicional específica del juego. Puedes añadir la información que
 }
 ```
 
-### 5. Bonus
+# 5. Bonux
 
 Los bonus se calculan en función de ciertas condiciones especificadas.
 
-#### a. Contar Cartas
+### a. Contar Cartas
 
 **Ejemplo en JSON:**
 ```json
 {
     "bonus": {
-        "countCards": {
-            "conditions": [
-                {
-                    "condition": "equal",
-                    "field": "cardType",
-                    "value": "purple_prosperity"
-                }
-            ],
-            "multiply": 1
-        }
+        "countCards": [
+            {
+                "conditions": [
+                    {
+                        "condition": "equal",
+                        "field": "cardType",
+                        "value": "purple_prosperity"
+                    }
+                ],
+                "multiply": 1
+            }
+        ]
     }
 }
 ```
 
-- **countCards**: Cuenta las cartas según las condiciones y añade esos bonus.
-  - **operator**: Operador que determina cómo se evalúan las condiciones. Puede ser `"and"` o `"or"`. Por defecto es `"and"`. En el ejemplo, `"and"`.
-  - **conditions**: Lista de condiciones que deben cumplirse.
-    - **condition**: Tipo de condición. Puede ser `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Ejemplo: `"equal"`
-    - **field**: Campo sobre el cual se aplica la condición. Puede ser cualquier campo común de la carta como "id" o "points", o cualquiera de los campos específicos del juego añadidos en el apartado de "metadata". Ejemplo: `"cardType"`
-    - **value**: Valor que debe tener el campo. Ejemplo: `"purple_prosperity"`
-  - **multiply**: Factor de multiplicación para los puntos. Ejemplo: `1`
+- **countCards**: Cuenta las cartas según las condiciones especificadas y añade puntos extra según el multiplicador.
+  - **conditions**: Lista de condiciones que deben cumplirse para que las cartas sean contadas.
+    - **condition**: Tipo de condición. Puede ser `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Ejemplo: `"equal"`.
+    - **field**: Campo sobre el cual se aplica la condición. Puede ser cualquier campo común de la carta como "id" o "points", o cualquiera de los campos específicos del juego añadidos en el apartado de "metadata". Ejemplo: `"cardType"`.
+    - **value**: Valor que debe tener el campo. Ejemplo: `"purple_prosperity"`.
+  - **multiply**: Multiplicador para los puntos. En el ejemplo, `1`.
+
+Cada entrada en la lista **countCards** representa un conjunto diferente de condiciones y un multiplicador correspondiente para los puntos.
 
 #### b. En Colección
 
