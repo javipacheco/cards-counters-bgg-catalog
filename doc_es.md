@@ -241,7 +241,58 @@ Cada entrada en la lista **countCards** representa un conjunto diferente de cond
     - **value**: Valor que debe tener el campo. Ejemplo: `"humo"`.
   - **points**: Puntos adicionales otorgados si se cumplen las condiciones especificadas. En el ejemplo, `50`.
 
-#### c. Contar Otros Ítems
+#### c. En Colección con Opciones
+
+**Ejemplo en JSON:**
+```json
+{
+    "bonus": {
+        "inCollectionWithOptions": {
+            "type": "best",
+            "options": [
+                {
+                    "conditions": [
+                        {
+                            "condition": "equal",
+                            "field": "type",
+                            "value": "leader"
+                        }
+                    ],
+                    "points": 15
+                },
+                {
+                    "operator": "or",
+                    "strategy": "eachConditionIsFulfilledByACard",
+                    "conditions": [
+                        {
+                            "condition": "equal",
+                            "field": "type",
+                            "value": "leader"
+                        },
+                        {
+                            "condition": "equal",
+                            "field": "id",
+                            "value": "espada_keth"
+                        }
+                    ],
+                    "points": 40
+                }
+            ]
+        }
+    }
+}
+```
+
+Cada opción dentro de **inCollectionWithOptions** es igual a las condiciones descritas en la sección 5.b "En Colección".
+
+- **type**: Define cómo se seleccionará la mejor opción de las condiciones dadas. Puede ser:
+  - `"best"`: Selecciona la opción con la mejor puntuación.
+  - `"worst"`: Selecciona la opción con la peor puntuación.
+  - `"first"`: Selecciona la primera opción en orden que cumpla la condición. 
+
+En el ejemplo, el tipo es `"best"`, lo que significa que se seleccionará la opción con la mayor puntuación de todas las que cumplan las condiciones.
+
+#### d. Contar Otros Ítems
 
 **Ejemplo en JSON:**
 ```json
