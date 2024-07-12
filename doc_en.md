@@ -414,7 +414,73 @@ Conditions can be combined using a logical operator.
   - **value**: Value the field must have. Example: "basilisk".
 
 
-### 7. Layouts
+### 7. Clears
+
+The "clears" section allows you to specify cards whose properties will be ignored. These properties are base points, penalties, and bonuses.
+
+**Example in JSON:**
+```json
+{
+    "clears": [
+        {
+            "type": "some",
+            "numberOfCards": 1,
+            "operator": "or",
+            "conditions": [
+                {
+                    "condition": "equal",
+                    "field": "type",
+                    "value": "flood"
+                },
+                {
+                    "condition": "equal",
+                    "field": "type",
+                    "value": "flame"
+                }
+            ]
+        }
+    ]
+}
+```
+
+#### Fields in the "Clears" Section
+
+Each entry in **clears** has the following structure:
+
+**Example in JSON:**
+```json
+{
+    "type": "some",
+    "numberOfCards": 1,
+    "operator": "or",
+    "conditions": [
+        {
+            "condition": "equal",
+            "field": "type",
+            "value": "flood"
+        },
+        {
+            "condition": "equal",
+            "field": "type",
+            "value": "flame"
+        }
+    ]
+}
+```
+
+- **type**: Defines how the conditions will be applied. It can be:
+  - `"all"`: Ignores all values of the cards that meet the conditions.
+  - `"some"`: The user must select one or more cards from those that meet the conditions.
+- **numberOfCards**: Number of cards that the user must select if the type is `"some"`. In the example, `1`.
+- **operator**: Operator that determines how the conditions are evaluated. It can be `"and"` or `"or"`. In the example, `"or"`.
+- **conditions**: List of conditions that must be met for a card to be ignored.
+  - **condition**: Type of condition. It can be `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Example: `"equal"`.
+  - **field**: Field to which the condition applies. It can be any common card field like "type" or "id", or any game-specific fields added in the "metadata" section. Example: `"type"`.
+  - **value**: Value the field must have. Example: `"flood"`.
+  - **value**: Value the field must have. Example: `"flame"`.
+
+
+### 8. Layouts
 
 The "layouts" section in the JSON file contains information on how to modify the appearance of the selected cards list and the dialog where a card is selected. Below is the structure and fields of this section.
 
