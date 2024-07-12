@@ -240,8 +240,59 @@ Each entry in the **countCards** list represents a different set of conditions a
     - **value**: Value the field must have. Example: `"incendio"`.
     - **value**: Value the field must have. Example: `"humo"`.
   - **points**: Additional points awarded if the specified conditions are met. In the example, `50`.
+ 
+#### c. In Collection with Options
 
-#### c. Count Other Items
+**Example in JSON:**
+```json
+{
+    "bonus": {
+        "inCollectionWithOptions": {
+            "type": "best",
+            "options": [
+                {
+                    "conditions": [
+                        {
+                            "condition": "equal",
+                            "field": "type",
+                            "value": "leader"
+                        }
+                    ],
+                    "points": 15
+                },
+                {
+                    "operator": "or",
+                    "strategy": "eachConditionIsFulfilledByACard",
+                    "conditions": [
+                        {
+                            "condition": "equal",
+                            "field": "type",
+                            "value": "leader"
+                        },
+                        {
+                            "condition": "equal",
+                            "field": "id",
+                            "value": "espada_keth"
+                        }
+                    ],
+                    "points": 40
+                }
+            ]
+        }
+    }
+}
+```
+
+Each option within **inCollectionWithOptions** is teh same to the conditions described in section 5.b "In Collection".
+
+- **type**: Defines how the best option from the given conditions will be selected. It can be:
+  - `"best"`: Selects the option with the best score.
+  - `"worst"`: Selects the option with the worst score.
+  - `"first"`: Selects the first option in order that meets the condition. 
+
+In the example, the type is `"best"`, which means that the option with the highest score from all that meet the conditions will be selected.
+
+#### d. Count Other Items
 
 **Example in JSON:**
 ```json
