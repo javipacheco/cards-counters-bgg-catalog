@@ -211,26 +211,35 @@ Cada entrada en la lista **countCards** representa un conjunto diferente de cond
 {
     "bonus": {
         "inCollection": {
+            "operator": "or",
+            "strategy": "eachConditionIsFulfilledByACard",
             "conditions": [
                 {
                     "condition": "equal",
                     "field": "id",
-                    "value": "esposo"
+                    "value": "incendio"
+                },
+                {
+                    "condition": "equal",
+                    "field": "id",
+                    "value": "humo"
                 }
             ],
-            "points": 3
+            "points": 50
         }
     }
 }
 ```
 
 - **inCollection**: Comprueba si se cumplen ciertas condiciones para las cartas en tu colección.
-  - **operator**: Operador que determina cómo se evalúan las condiciones. Puede ser `"and"` o `"or"`. Por defecto es `"and"`. En el ejemplo, `"and"`.
+  - **operator**: Operador que determina cómo se evalúan las condiciones. Puede ser `"and"` o `"or"`. Por defecto es `"and"`. En el ejemplo, `"or"`.
+  - **strategy**: Estrategia para evaluar las condiciones. Puede ser `"eachConditionIsFulfilledByACard"` donde cada condición debe ser cumplida al menos por una carta, o `"oneCardFulfillAllTheConditions"` donde una carta debe cumplir todas las condiciones. Por defecto es `"oneCardFulfillAllTheConditions"`. En el ejemplo, `"eachConditionIsFulfilledByACard"`.
   - **conditions**: Lista de condiciones que deben cumplirse.
     - **condition**: Tipo de condición. Puede ser `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Ejemplo: `"equal"`.
     - **field**: Campo sobre el cual se aplica la condición. Puede ser cualquier campo común de la carta como "id" o "points", o cualquiera de los campos específicos del juego añadidos en el apartado de "metadata". Ejemplo: `"id"`.
-    - **value**: Valor que debe tener el campo. Ejemplo: `"esposo"`.
-  - **points**: Puntos adicionales otorgados si se cumplen las condiciones especificadas. En el ejemplo, `3`.
+    - **value**: Valor que debe tener el campo. Ejemplo: `"incendio"`.
+    - **value**: Valor que debe tener el campo. Ejemplo: `"humo"`.
+  - **points**: Puntos adicionales otorgados si se cumplen las condiciones especificadas. En el ejemplo, `50`.
 
 #### c. Contar Otros Ítems
 
