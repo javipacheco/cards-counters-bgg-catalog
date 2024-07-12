@@ -211,27 +211,35 @@ Each entry in the **countCards** list represents a different set of conditions a
 {
     "bonus": {
         "inCollection": {
-            "operator": "and",
+            "operator": "or",
+            "strategy": "eachConditionIsFulfilledByACard",
             "conditions": [
                 {
                     "condition": "equal",
                     "field": "id",
-                    "value": "esposo"
+                    "value": "incendio"
+                },
+                {
+                    "condition": "equal",
+                    "field": "id",
+                    "value": "humo"
                 }
             ],
-            "points": 3
+            "points": 50
         }
     }
 }
 ```
 
 - **inCollection**: Checks if certain conditions are met for the cards in your collection.
-  - **operator**: Operator that determines how the conditions are evaluated. It can be `"and"` or `"or"`. The default is `"and"`. In the example, `"and"`.
+  - **operator**: Operator that determines how conditions are evaluated. It can be `"and"` or `"or"`. The default is `"and"`. In the example, `"or"`.
+  - **strategy**: Strategy for evaluating the conditions. It can be `"eachConditionIsFulfilledByACard"` where each condition must be met by at least one card, or `"oneCardFulfillAllTheConditions"` where one card must meet all conditions. The default is `"oneCardFulfillAllTheConditions"`. In the example, `"eachConditionIsFulfilledByACard"`.
   - **conditions**: List of conditions that must be met.
     - **condition**: Type of condition. It can be `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Example: `"equal"`.
     - **field**: Field to which the condition applies. It can be any common card field like "id" or "points", or any game-specific fields added in the "metadata" section. Example: `"id"`.
-    - **value**: Value the field must have. Example: `"esposo"`.
-  - **points**: Additional points awarded if the specified conditions are met. In the example, `3`.
+    - **value**: Value the field must have. Example: `"incendio"`.
+    - **value**: Value the field must have. Example: `"humo"`.
+  - **points**: Additional points awarded if the specified conditions are met. In the example, `50`.
 
 #### c. Count Other Items
 
