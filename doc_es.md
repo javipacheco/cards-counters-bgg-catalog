@@ -418,7 +418,73 @@ Las condiciones pueden combinarse utilizando un operador lógico.
   - **value**: Valor que debe tener el campo. Ejemplo: `"basilisco"`.
 
 
-### 7. Diseños (Layouts)
+### 7. Ignorar
+
+El apartado "ignorar" permite especificar cartas cuyas propiedades serán ignoradas. Estas propiedades son los puntos base, las penalizaciones y los bonus.
+
+**Ejemplo en JSON:**
+```json
+{
+    "clears": [
+        {
+            "type": "some",
+            "numberOfCards": 1,
+            "operator": "or",
+            "conditions": [
+                {
+                    "condition": "equal",
+                    "field": "type",
+                    "value": "flood"
+                },
+                {
+                    "condition": "equal",
+                    "field": "type",
+                    "value": "flame"
+                }
+            ]
+        }
+    ]
+}
+```
+
+#### Campos del Apartado "Ignorar"
+
+Cada entrada dentro de **clears** tiene la siguiente estructura:
+
+**Ejemplo en JSON:**
+```json
+{
+    "type": "some",
+    "numberOfCards": 1,
+    "operator": "or",
+    "conditions": [
+        {
+            "condition": "equal",
+            "field": "type",
+            "value": "flood"
+        },
+        {
+            "condition": "equal",
+            "field": "type",
+            "value": "flame"
+        }
+    ]
+}
+```
+
+- **type**: Define cómo se aplicarán las condiciones. Puede ser:
+  - `"all"`: Ignora todos los valores de las cartas que cumplan las condiciones.
+  - `"some"`: El usuario debe seleccionar 1 o más cartas dentro de las que cumplan las condiciones.
+- **numberOfCards**: Número de cartas que el usuario debe seleccionar en caso de que el tipo sea `"some"`. En el ejemplo, `1`.
+- **operator**: Operador que determina cómo se evalúan las condiciones. Puede ser `"and"` o `"or"`. En el ejemplo, `"or"`.
+- **conditions**: Lista de condiciones que deben cumplirse para que una carta sea ignorada.
+  - **condition**: Tipo de condición. Puede ser `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Ejemplo: `"equal"`.
+  - **field**: Campo sobre el cual se aplica la condición. Puede ser cualquier campo común de la carta como "type" o "id", o cualquiera de los campos específicos del juego añadidos en el apartado de "metadata". Ejemplo: `"type"`.
+  - **value**: Valor que debe tener el campo. Ejemplo: `"flood"`.
+  - **value**: Valor que debe tener el campo. Ejemplo: `"flame"`.
+
+
+### 8. Diseños (Layouts)
 
 El apartado "layouts" en el archivo JSON contiene información sobre cómo modificar el aspecto del listado de cartas seleccionadas y el diálogo donde se selecciona una carta. A continuación se detalla la estructura y los campos de este apartado.
 
