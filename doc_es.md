@@ -1,11 +1,13 @@
 
 # Manual para Generar un Sistema de Puntuación para Juegos de Mesa
 
-Este manual proporciona una guía detallada sobre cómo generar un sistema de puntuación para juegos de mesa utilizando un archivo JSON. A continuación se presenta la estructura del archivo JSON con ejemplos específicos para el juego "Everdell".
+Este manual proporciona una guía detallada sobre cómo generar un sistema de puntuación para juegos de mesa utilizando un archivo JSON. A continuación se presenta la estructura del archivo JSON con ejemplos específicos para el juego "Everdell" y "Fantasy Realms".
 
 ## Estructura del JSON
 
 ### 1. Información del Juego
+
+Lo primero es ponerle nombre al juego.
 
 **Ejemplo en JSON:**
 ```json
@@ -18,64 +20,9 @@ Este manual proporciona una guía detallada sobre cómo generar un sistema de pu
 - **game**: Nombre del juego. En el ejemplo, `"Everdell"`.
 - **maxCards**: Número máximo de cartas permitidas. Puede ser `null` si no hay un límite específico. En el ejemplo, `null`.
 
-### 2. Traducciones
+### 2. Cajas de Cartas (Expansiones)
 
-Contiene las traducciones de mensajes y nombres de cartas en diferentes idiomas.
-
-#### a. Mensajes
-
-**Ejemplo en JSON:**
-```json
-{
-    "translations": {
-        "others": {
-            "arquitecto_msg": {
-                "es": "por cada resina y guijarro, máximo 6",
-                "en": "for each resin and pebble, maximum 6"
-            },
-            "rey_msg_1": {
-                "es": "por cada Evento Básico",
-                "en": "for each Basic Event"
-            },
-            "rey_msg_2": {
-                "es": "por cada Evento Especial",
-                "en": "for each Special Event"
-            }
-        }
-    }
-}
-```
-
-- **translations.others**: Son textos generales, donde se usará la llave, por ejemplo `arquitecto_msg` y será traducido al idioma correspodiente.
-
-#### b. Cartas
-
-**Ejemplo en JSON:**
-```json
-{
-    "translations": {
-        "cards": {
-            "arbol_eterno": {
-                "es": "Árbol Eterno",
-                "en": "Ever Tree"
-            },
-            "esposa": {
-                "es": "Esposa",
-                "en": "Wife"
-            }
-        }
-    }
-}
-```
-
-- **translations.cards**: Traducciones de los nombres de las cartas.
-  - **[id_de_carta]**: Traducción del nombre de la carta.
-    - **es**: Nombre en español. Ejemplo: `"Árbol Eterno"`
-    - **en**: Nombre en inglés. Ejemplo: `"Ever Tree"`
-
-### 3. Cajas de Cartas (Expansiones)
-
-Contiene la información sobre las diferentes expansiones de cartas disponibles en el juego.
+Contiene la información sobre las diferentes expansiones de cartas disponibles en el juego. El apartado `"boxes"` contiene las cajas del juego. En muchos casos habrá sólo una, la caja "base", pero en otras se podría añadir las cartas de las expansiones. Cada caja contendrá el nombre de la caja y las cartas que trae. 
 
 **Ejemplo en JSON:**
 ```json
@@ -103,59 +50,36 @@ Contiene la información sobre las diferentes expansiones de cartas disponibles 
 ```
 
 - **name**: Nombre de la expansión. En el ejemplo, `"base"`.
-- **cards**: Lista de cartas incluidas en esta expansión.
+- **cards**: Lista de cartas incluidas en esta caja.
 
-### 4. Cartas
+### 3. Cartas
+
+Esta es la parte más importante del archivo, ya que contiene la información de cada una de las cartas. Cada carta tendrá unos campos comunes como un identificador o los puntos de esa carta, pero también tendrá una serie de metadatos que es información exclusiva para el juego que se está construyendo, por ejemplo "Everdell" tiene un el número de resinas que vale la carta y esta información es exclisiva para "Everdell". Además debemos añadir inforamción de los bonus que da la carta o si anula o ignora otras cartas de tu mano. Todo se explica a continuación.
 
 Cada carta tiene la siguiente estructura:
 
-#### a. Identificación
+#### a. Campos comunes
 
 **Ejemplo en JSON:**
 ```json
 {
-    "id": "arbol_eterno"
-}
-```
-
-- **id**: Identificador único de la carta. En el ejemplo, `"arbol_eterno"`.
-
-#### b. Puntuación
-
-**Ejemplo en JSON:**
-```json
-{
-    "points": 5
-}
-```
-
-- **points**: Puntos base de la carta. En el ejemplo, `5`.
-
-#### c. Tipo de Carta
-
-**Ejemplo en JSON:**
-```json
-{
-    "type": "construction"
-}
-```
-
-- **type**: Tipo de carta (e.g., "construction", "critter"). En el ejemplo, `"construction"`.
-
-#### d. Unicidad
-
-**Ejemplo en JSON:**
-```json
-{
+    "id": "arbol_eterno",
+    "points": 5,
+    "type": "construction",
     "unique": true
 }
 ```
 
+- **id**: Identificador único de la carta. En el ejemplo, `"arbol_eterno"`.
+- **points**: Puntos base de la carta. En el ejemplo, `5`.
+- **type**: Tipo de carta (e.g., "construction", "critter"). En el ejemplo, `"construction"`.
 - **unique**: Indica si la carta es única. En el ejemplo, `true`.
 
-#### e. Metadatos
+#### b. Metadatos
 
 Información adicional específica del juego. Puedes añadir la información que veas necesaria para luego usar en las condiciones de los "Bonus" por ejemplo
+
+Esto es un ejemplo de unos metadatos para "Everdell", pero aquí puedes añadir cualquier información relacionada con el juego.
 
 **Ejemplo en JSON:**
 ```json
@@ -169,11 +93,17 @@ Información adicional específica del juego. Puedes añadir la información que
 }
 ```
 
-### 5. Bonus
+Por ejemplo en este caso, como veremos en las condiciones, podremos preguntar las cartas donde `cardType` sea igual a `purple_prosperity`. Te puede imaginar esto para cualquier campo que tengas en tu juego
 
-Los bonus se calculan en función de ciertas condiciones especificadas.
+#### c. Bonus
 
-#### a. Contar Cartas
+Los bonus se calculan en función de ciertas condiciones especificadas. Cada tipo de bonus te ayudará a contar los puntos extras de la cartas según el propio tipo.
+
+Existen 4 tipos de bonus:
+
+##### 1. Contar Cartas
+
+Este tipo de bonus añade puntos a la carta contando el número de otras cartas que tiene en tu mano. Por ejemplo en este caso, por cada carta que tengas que tu mano que cumpla la condición donde `cardType` sea igual a `purple_prosperity` te añadirá 1 punto extra.
 
 **Ejemplo en JSON:**
 ```json
@@ -204,7 +134,9 @@ Los bonus se calculan en función de ciertas condiciones especificadas.
 
 Cada entrada en la lista **countCards** representa un conjunto diferente de condiciones y un multiplicador correspondiente para los puntos.
 
-#### b. En Colección
+##### 2. En Colección
+
+Este tipo de bonus añade puntos extras a la carta en cuestión en el caso que tengas otras cartas en tu mano. Por ejemplo, en el ejemplo siguiente para "Fantasy Realms", ganarás 50 puntos en el caso que en tu mano tengas la carta con idenficador `incendio` o `humo`
 
 **Ejemplo en JSON:**
 ```json
@@ -241,7 +173,14 @@ Cada entrada en la lista **countCards** representa un conjunto diferente de cond
     - **value**: Valor que debe tener el campo. Ejemplo: `"humo"`.
   - **points**: Puntos adicionales otorgados si se cumplen las condiciones especificadas. En el ejemplo, `50`.
 
-#### c. En Colección con Opciones
+##### 3. En Colección con Opciones
+
+Este tipo de bonus es parecido al bonus "En Colección" pero añadirás diferentes opciones y sólo te dará la puntuación. En este caso de las 2 opciones:
+
+1. Ganas 15 puntos si tienes una carta de `type` igual a `leader` 
+2. Ganas 40 puntos si además de tener una carta de `type` igual a `leader` tienes también la carta con identificador `espada_keth`
+
+De los 2 casos, este bonus te añadirá el caso con mayor puntuación, ya que en el ejemplo el `type` es igual a `best`
 
 **Ejemplo en JSON:**
 ```json
@@ -292,7 +231,9 @@ Cada opción dentro de **inCollectionWithOptions** es igual a las condiciones de
 
 En el ejemplo, el tipo es `"best"`, lo que significa que se seleccionará la opción con la mayor puntuación de todas las que cumplan las condiciones.
 
-#### d. Contar Otros Ítems
+##### 4. Contar Otros Ítems
+
+Usado normalmente para contar puntos al final de la partida según el número de recursos que tienes, objetivos alcanzados, etc. Este dato tiene que añadirlo el jugador a mano y no puede ser calculado automáticamente. Por ejemplo en este caso, en "Everdell" el usuario tiene que contar los recursos que tiene al final de la partida y añadirlos, esos serán los puntos a añadir como bonus, con un máximo de 6.
 
 **Ejemplo en JSON:**
 ```json
@@ -309,16 +250,16 @@ En el ejemplo, el tipo es `"best"`, lo que significa que se seleccionará la opc
 }
 ```
 
-- **countOtherItems**: Usado normalmente para contar puntos al final de la partida según el número de recursos que tienes, objetivos alcanzados, etc. Este dato tiene que añadirlo el jugador a mano y no puede ser calculado automáticamente.
-  - **translation**: Mensaje de traducción obteneido desde `translations.others`. En el ejemplo, `"arquitecto_msg"`
-  - **max**: Máximo de ítems a contar. En el ejemplo, `6`
-  - **multiply**: Factor de multiplicación para los puntos. En el ejemplo, `1`
+- **translation**: Mensaje de traducción obteneido desde `translations.others`. En el ejemplo, `"arquitecto_msg"`
+- **max**: Máximo de ítems a contar. En el ejemplo, `6`
+- **multiply**: Factor de multiplicación para los puntos. En el ejemplo, `1`
 
 
+#### d. Anular
 
-### 6. Anular
+El apartado "anular" contiene información sobre cómo anular las propiedades de otras cartas. Una carta que tiene anulaciones aplicará estas condiciones a las cartas que has bajado, haciendo que no tengan tipo, ni puntos base, ni bonus, ni penalizaciones. A continuación se detalla la estructura y los campos de este apartado.
 
-El apartado "anular" contiene información sobre cómo anular las propiedades de otras cartas. Una carta que tiene anulaciones aplicará estas condiciones a las cartas que has bajado, haciendo que no tengan ni puntos base, ni bonus, ni penalizaciones. A continuación se detalla la estructura y los campos de este apartado.
+En este caso del juego "Fantasy Realms" si tienes esta carta en mano anula todas las cartas donde `type` es `army`, `leader` y `beast` (en este último caso menos la carta con identificador `basilisco`). Para todas esas cartas no se contarán los puntos base, bonux ni penalizaciones.
 
 **Ejemplo en JSON:**
 ```json
@@ -361,9 +302,9 @@ El apartado "anular" contiene información sobre cómo anular las propiedades de
 }
 ```
 
-#### Campos del Apartado "Anular"
+A continuación se describen los campos del apartado "Anular"
 
-##### a. Anulaciones
+##### 1. Lista de condiciones para anular otras cartas
 
 Cada entrada dentro de "anular" tiene la siguiente estructura:
 
@@ -385,7 +326,7 @@ Cada entrada dentro de "anular" tiene la siguiente estructura:
   - **field**: Campo sobre el cual se aplica la condición. Puede ser cualquier campo común de la carta como "id" o "type", o cualquiera de los campos específicos del juego añadidos en el apartado de "metadata". Ejemplo: `"type"`.
   - **value**: Valor que debe tener el campo. Ejemplo: `"army"`.
 
-##### b. Condiciones Combinadas
+##### 2. Condiciones Combinadas
 
 Las condiciones pueden combinarse utilizando un operador lógico.
 
@@ -418,9 +359,11 @@ Las condiciones pueden combinarse utilizando un operador lógico.
   - **value**: Valor que debe tener el campo. Ejemplo: `"basilisco"`.
 
 
-### 7. Ignorar
+#### e. Ignorar Penalizaciones
 
-El apartado "ignorar" permite especificar cartas cuyas propiedades serán ignoradas. Estas propiedades son los puntos base, las penalizaciones y los bonus.
+El apartado permite especificar cartas cuyas penalizaciones serán ignoradas. Todas los ignorado ocurre antes de que la penalización sea aplicada.
+
+En el siguiente caso del juego "Fantasy Realms" el usuario puede seleccionar una carta para ignorar sus penalizaciones, pero no puede elegir cualquier carta, la carta que puede elegir está dentro de las condiciones, en este caso que el `type` sea `flood` o `flame`. En la aplicación se habilitará un botón para que el usuario puede seleccionar la carta.
 
 **Ejemplo en JSON:**
 ```json
@@ -447,30 +390,7 @@ El apartado "ignorar" permite especificar cartas cuyas propiedades serán ignora
 }
 ```
 
-#### Campos del Apartado "Ignorar"
-
-Cada entrada dentro de **clears** tiene la siguiente estructura:
-
-**Ejemplo en JSON:**
-```json
-{
-    "type": "some",
-    "numberOfCards": 1,
-    "operator": "or",
-    "conditions": [
-        {
-            "condition": "equal",
-            "field": "type",
-            "value": "flood"
-        },
-        {
-            "condition": "equal",
-            "field": "type",
-            "value": "flame"
-        }
-    ]
-}
-```
+A continuación se describen los campos del apartado "Ignorar"
 
 - **type**: Define cómo se aplicarán las condiciones. Puede ser:
   - `"all"`: Ignora todos los valores de las cartas que cumplan las condiciones.
@@ -483,8 +403,74 @@ Cada entrada dentro de **clears** tiene la siguiente estructura:
   - **value**: Valor que debe tener el campo. Ejemplo: `"flood"`.
   - **value**: Valor que debe tener el campo. Ejemplo: `"flame"`.
 
+### 4. Traducciones
 
-### 8. Diseños (Layouts)
+Contiene las traducciones de mensajes y nombres de cartas en diferentes idiomas. Los idiomas soportados por el momento son:
+
+- Ingles (en)
+- Español (es)
+- Alemán (de)
+- Portugués (pt)
+- Italiano (it)
+- Polaco (pl)
+- Ruso (ru)
+
+#### a. Mensajes
+
+Estos mensaje se podrán usar en algunos bonus o campos de las cartas.
+
+**Ejemplo en JSON:**
+```json
+{
+    "translations": {
+        "others": {
+            "arquitecto_msg": {
+                "es": "por cada resina y guijarro, máximo 6",
+                "en": "for each resin and pebble, maximum 6"
+            },
+            "rey_msg_1": {
+                "es": "por cada Evento Básico",
+                "en": "for each Basic Event"
+            },
+            "rey_msg_2": {
+                "es": "por cada Evento Especial",
+                "en": "for each Special Event"
+            }
+        }
+    }
+}
+```
+
+- **translations.others**: Son textos generales, donde se usará la llave, por ejemplo `arquitecto_msg` y será traducido al idioma correspodiente.
+
+#### b. Cartas
+
+Estas son todas las traducciones de las cartas por tu identificador.
+
+**Ejemplo en JSON:**
+```json
+{
+    "translations": {
+        "cards": {
+            "arbol_eterno": {
+                "es": "Árbol Eterno",
+                "en": "Ever Tree"
+            },
+            "esposa": {
+                "es": "Esposa",
+                "en": "Wife"
+            }
+        }
+    }
+}
+```
+
+- **translations.cards**: Traducciones de los nombres de las cartas.
+  - **[id_de_carta]**: Traducción del nombre de la carta.
+    - **es**: Nombre en español. Ejemplo: `"Árbol Eterno"`
+    - **en**: Nombre en inglés. Ejemplo: `"Ever Tree"`
+
+### 5. Diseños (Layouts)
 
 El apartado "layouts" en el archivo JSON contiene información sobre cómo modificar el aspecto del listado de cartas seleccionadas y el diálogo donde se selecciona una carta. A continuación se detalla la estructura y los campos de este apartado.
 
