@@ -55,7 +55,18 @@ Contains information about the different card expansions available in the game. 
 
 ### 3. Cards
 
-This is the most important part of the file, as it contains information about each of the cards. Each card will have some common fields like an identifier or the points of that card, but it will also have a series of metadata that is exclusive information for the game being built. For example, "Everdell" has the number of resins that the card is worth, and this information is exclusive to "Everdell." Additionally, we must add information about the bonuses the card gives or if it cancels or ignores other cards in your hand. Everything is explained below.
+This is the most important part of the file, as it contains information about each of the cards. Each card will have some common fields like an identifier or the points of that card, but it will also have a series of metadata that is exclusive information for the game being built. For example, "Everdell" has the number of resins that the card is worth, and this information is exclusive to "Everdell." Additionally, we must add information about the bonuses the card gives or if it cancels or ignores other cards in your hand. 
+
+To understand the fields of the cards it is essential to understand how the process that loads the information of each card is executed. For each card there are 3 very important parts: 
+- Bonus: it is any extra bonus for the card, for that it must fulfill some conditions normally.
+- Penalties: can be for example negative bonuses (for a condition you lose points) or cancels other cards (for example remove the positive bonus of another card).
+- Ignore penalties: Cards can make you ignore the penalty of other things, usually by conditions.
+
+Each field that a card can contain will be explained below, but the first thing to know is the order of execution:
+
+1. Cards that ignore penalties are calculated.
+2. The penalties are calculated, taking into account whether or not they have been previously ignored.
+3. The bonus of the card that can be eliminated by the penalty of another card, for example, is calculated to be 0.
 
 Each card has the following structure:
 
@@ -66,14 +77,14 @@ Each card has the following structure:
 {
     "id": "eternal_tree",
     "points": 5,
-    "type": "construction",
+    "types": ["construction"],
     "unique": true
 }
 ```
 
 - **id**: Unique identifier of the card. In the example, `"eternal_tree"`.
 - **points**: Base points of the card. In the example, `5`.
-- **type**: Type of card (e.g., "construction", "critter"). In the example, `"construction"`.
+- **types**: Types of card (e.g., "construction", "critter"). In the example, `"construction"`.
 - **unique**: Indicates whether the card is unique. In the example, `true`.
 
 #### b. Metadata
@@ -144,7 +155,6 @@ This type of bonus adds extra points to the card in question if you have other c
 {
     "bonus": {
         "inCollection": {
-            "operator": "or",
             "strategy": "eachConditionIsFulfilledByACard",
             "conditions": [
                 {
@@ -165,13 +175,15 @@ This type of bonus adds extra points to the card in question if you have other c
 ```
 
 - **inCollection**: Checks if certain conditions are met for the cards in your collection.
-  - **operator**: Operator that determines how the conditions are evaluated. Can be `"and"` or `"or"`. Default is `"and"`. In the example, `"or"`.
-  - **strategy**: Strategy for evaluating the conditions. Can be `"eachConditionIsFulfilledByACard"` where each condition must be met by at least one card, or `"oneCardFulfillAllTheConditions"` where one card must meet all conditions. Default is `"oneCardFulfillAllTheConditions"`. In the example, `"eachConditionIsFulfilledByACard"`.
+  - **strategy**: Strategy for evaluating the conditions. It can be:
+        - `"oneCardFulfillSomeCondition"` (default) where one card must fulfill some condition
+        - `"oneCardFulfillAllTheConditions"` where one card must fulfill all the conditions
+        - `"eachConditionIsFulfilledByACard"` where each condition must be fulfilled by at least one different card
+        - `"unlessOneCardFulfillAllTheConditions"` unless you have one card that fulfills all the conditions
   - **conditions**: List of conditions that must be met.
     - **condition**: Type of condition. Can be `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Example: `"equal"`.
     - **field**: Field on which the condition is applied. Can be any common field of the card like "id" or "points", or any of the game-specific fields added in the "metadata" section. Example: `"id"`.
     - **value**: Value the field must have. Example: `"fire"`.
-    - **value**: Value the field must have. Example: `"smoke"`.
   - **points**: Additional points awarded if the specified conditions are met. In the example, `50`.
 
 
@@ -202,7 +214,6 @@ Out of the 2 cases, this bonus will add the one with the highest score, as in th
                     "points": 15
                 },
                 {
-                    "operator": "or",
                     "strategy": "eachConditionIsFulfilledByACard",
                     "conditions": [
                         {
@@ -258,7 +269,7 @@ This is typically used to count points at the end of the game based on the numbe
 
 #### d. Blanks
 
-The "blanks" section contains information on how to blank the properties of other cards. A card with blanks will apply these conditions to the cards you have played, making them lose their type, base points, bonuses, and penalties. Below is the structure and fields of this section.
+The "blanks" section contains information on how to blank the properties of other or the cards itself. A card with blanks will apply these conditions to the cards you have played, making them lose their type, base points, bonuses, and penalties. Below is the structure and fields of this section.
 
 In this case, for the game "Fantasy Realms," if you have this card in hand, it blanks all cards where `type` is `army`, `leader`, and `beast` (in the latter case except for the card with identifier `basilisk`). For all those cards, base points, bonuses, and penalties will not be counted.
 
@@ -267,6 +278,7 @@ In this case, for the game "Fantasy Realms," if you have this card in hand, it b
 {
     "blanks": [
         {
+            "strategy": "otherCards",
             "conditions": [
                 {
                     "condition": "equal",
@@ -276,6 +288,7 @@ In this case, for the game "Fantasy Realms," if you have this card in hand, it b
             ]
         },
         {
+            "strategy": "otherCards",
             "conditions": [
                 {
                     "condition": "equal",
@@ -285,6 +298,7 @@ In this case, for the game "Fantasy Realms," if you have this card in hand, it b
             ]
         },
         {
+            "strategy": "otherCards",
             "operator": "and",
             "conditions": [
                 {
@@ -303,15 +317,14 @@ In this case, for the game "Fantasy Realms," if you have this card in hand, it b
 }
 ```
 
-Below are the fields in the "Blanks" section:
+##### 1. Blanking Other Cards
 
-##### 1. List of Conditions for Blanking Other Cards
-
-Each entry within "blanks" has the following structure:
+Default strategy. Cancels other cards in your hand
 
 **Example in JSON:**
 ```json
 {
+    "strategy": "otherCards",
     "conditions": [
         {
             "condition": "equal",
@@ -327,38 +340,41 @@ Each entry within "blanks" has the following structure:
   - **field**: Field on which the condition is applied. Can be any common field of the card like "id" or "type", or any of the game-specific fields added in the "metadata" section. Example: `"type"`.
   - **value**: Value the field must have. Example: `"army"`.
 
-##### 2. Combined Conditions
+##### 2. Blanking myselft at least
 
-Conditions can be combined using a logical operator.
+Cancels own card unless it has cards that meet the condition
 
-**Example in JSON:**
+**Ejemplo en JSON:**
 ```json
 {
-    "operator": "and",
+    "strategy": "myselfAtLeast",
     "conditions": [
         {
             "condition": "equal",
             "field": "type",
-            "value": "beast"
-        },
-        {
-            "condition": "notEqual",
-            "field": "id",
-            "value": "basilisk"
+            "value": "flame"
         }
     ]
 }
 ```
 
-- **operator**: Operator that determines how the conditions are evaluated. Can be `"and"` or `"or"`. Default is `"and"`. In the example, `"and"`.
-- **conditions**: List of conditions that must be met for a card to be blanked.
-  - **condition**: Type of condition. Can be `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Example: `"equal"`.
-  - **field**: Field on which the condition is applied. Can be any common field of the card like "id" or "type", or any of the game-specific fields added in the "metadata" section. Example: `"type"`.
-  - **value**: Value the field must have. Example: `"beast"`.
-  - **condition**: Type of condition. Example: `"notEqual"`.
-  - **field**: Field on which the condition is applied. Example: `"id"`.
-  - **value**: Value the field must have. Example: `"basilisk"`.
+##### 3. Blanking myself with
 
+Cancels own card if it has cards that meet the condition
+
+**Ejemplo en JSON:**
+```json
+{
+    "strategy": "myselfWith",
+    "conditions": [
+        {
+            "condition": "equal",
+            "field": "type",
+            "value": "flood"
+        }
+    ]
+}
+```
 
 #### e. Ignore Penalties
 
@@ -396,13 +412,39 @@ Below are the fields in the "Ignore Penalties" section:
 - **type**: Defines how the conditions will be applied. It can be:
   - `"all"`: Ignores all values of the cards that meet the conditions.
   - `"some"`: The user must select 1 or more cards from those that meet the conditions.
+  - `"valueOfCondition"`: ignores the value of a condition in a penalty. Example below
 - **numberOfCards**: Number of cards the user must select if the type is `"some"`. In the example, `1`.
+- **valueToIgnore**: Word to ignore in case the type is `"valueOfCondition"`.
 - **operator**: Operator that determines how the conditions are evaluated. Can be `"and"` or `"or"`. In the example, `"or"`.
 - **conditions**: List of conditions that must be met for a card to be ignored.
   - **condition**: Type of condition. Can be `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Example: `"equal"`.
   - **field**: Field on which the condition is applied. Can be any common field of the card like "type" or "id", or any of the game-specific fields added in the "metadata" section. Example: `"type"`.
   - **value**: Value the field must have. Example: `"flood"`.
   - **value**: Value the field must have. Example: `"flame"`.
+
+**Example in JSON for `valueOfCondition`:**
+
+This example ignores the word `army` for all penalties except `dirigible_guerra`.
+
+```json
+{
+    "id": "exploradores",
+    "points": 5,
+    "clears": [
+        {
+            "type": "valueOfCondition",
+            "valueToIgnore": "army",
+            "conditions": [
+                {
+                    "condition": "notEqual",
+                    "field": "id",
+                    "value": "dirigible_guerra"
+                }
+            ]
+        }
+    ]
+}
+```
 
 ### 4. Translations
 

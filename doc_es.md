@@ -54,7 +54,18 @@ Contiene la información sobre las diferentes expansiones de cartas disponibles 
 
 ### 3. Cartas
 
-Esta es la parte más importante del archivo, ya que contiene la información de cada una de las cartas. Cada carta tendrá unos campos comunes como un identificador o los puntos de esa carta, pero también tendrá una serie de metadatos que es información exclusiva para el juego que se está construyendo, por ejemplo "Everdell" tiene un el número de resinas que vale la carta y esta información es exclisiva para "Everdell". Además debemos añadir inforamción de los bonus que da la carta o si anula o ignora otras cartas de tu mano. Todo se explica a continuación.
+Esta es la parte más importante del archivo, ya que contiene la información de cada una de las cartas. Cada carta tendrá unos campos comunes como un identificador o los puntos de esa carta, pero también tendrá una serie de metadatos que es información exclusiva para el juego que se está construyendo, por ejemplo "Everdell" tiene un el número de resinas que vale la carta y esta información es exclisiva para "Everdell". Además debemos añadir inforamción de los bonus que da la carta o si anula o ignora otras cartas de tu mano. 
+
+Para entender los campos de las cartas en imprescindible entender como se ejecuta el proceso que carga la información de cada. Para cada carta hay 3 partes muy importantes que son: 
+- Bonus: es cualquier bonificación extra para la carta, para ello debe cumplicar una condiciones normalmente
+- Penalizaciones: pueden ser por ejemplo bonus negativos (por una condición se pierden puntos) o anular otras cartas (por ejemplo elimina el bonus positivo de otra carta)
+- Ignorar penalizaciones: Cartas pueden hacer que ignore la penalización de otras cosas, normalmente mediante condiciones
+
+A continuación se explicará cada campo que puede contener una carta, pero lo primero es saber el orden de ejecución:
+
+1. Se calculan las cartas que ignoran penalizaciones
+2. Se calculan las penalizaciones, teniendo en cuenta si han sido ignoradas o no previamente
+3. Se calcula el bonus de la carta que puede eliminarse por la penalización de otra carta por ejemplo y ser 0
 
 Cada carta tiene la siguiente estructura:
 
@@ -65,14 +76,14 @@ Cada carta tiene la siguiente estructura:
 {
     "id": "arbol_eterno",
     "points": 5,
-    "type": "construction",
+    "types": ["construction"],
     "unique": true
 }
 ```
 
 - **id**: Identificador único de la carta. En el ejemplo, `"arbol_eterno"`.
 - **points**: Puntos base de la carta. En el ejemplo, `5`.
-- **type**: Tipo de carta (e.g., "construction", "critter"). En el ejemplo, `"construction"`.
+- **types**: Tipos de carta (e.g., "construction", "critter"). En el ejemplo, `"construction"`.
 - **unique**: Indica si la carta es única. En el ejemplo, `true`.
 
 #### b. Metadatos
@@ -143,7 +154,6 @@ Este tipo de bonus añade puntos extras a la carta en cuestión en el caso que t
 {
     "bonus": {
         "inCollection": {
-            "operator": "or",
             "strategy": "eachConditionIsFulfilledByACard",
             "conditions": [
                 {
@@ -164,13 +174,15 @@ Este tipo de bonus añade puntos extras a la carta en cuestión en el caso que t
 ```
 
 - **inCollection**: Comprueba si se cumplen ciertas condiciones para las cartas en tu colección.
-  - **operator**: Operador que determina cómo se evalúan las condiciones. Puede ser `"and"` o `"or"`. Por defecto es `"and"`. En el ejemplo, `"or"`.
-  - **strategy**: Estrategia para evaluar las condiciones. Puede ser `"eachConditionIsFulfilledByACard"` donde cada condición debe ser cumplida al menos por una carta, o `"oneCardFulfillAllTheConditions"` donde una carta debe cumplir todas las condiciones. Por defecto es `"oneCardFulfillAllTheConditions"`. En el ejemplo, `"eachConditionIsFulfilledByACard"`.
+  - **strategy**: Estrategia para evaluar las condiciones. Puede ser: 
+        - `"oneCardFulfillSomeCondition"` (por defecto) donde una carta debe cumplir alguna condición
+        - `"oneCardFulfillAllTheConditions"` donde una carta debe cumplir todas las condiciones
+        - `"eachConditionIsFulfilledByACard"` donde cada condición debe ser cumplida al menos por una carta diferente
+        - `"unlessOneCardFulfillAllTheConditions"` a menos que tengas una carta que cumpla todas las condiciones
   - **conditions**: Lista de condiciones que deben cumplirse.
     - **condition**: Tipo de condición. Puede ser `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Ejemplo: `"equal"`.
     - **field**: Campo sobre el cual se aplica la condición. Puede ser cualquier campo común de la carta como "id" o "points", o cualquiera de los campos específicos del juego añadidos en el apartado de "metadata". Ejemplo: `"id"`.
     - **value**: Valor que debe tener el campo. Ejemplo: `"incendio"`.
-    - **value**: Valor que debe tener el campo. Ejemplo: `"humo"`.
   - **points**: Puntos adicionales otorgados si se cumplen las condiciones especificadas. En el ejemplo, `50`.
 
 ##### 3. En Colección con Opciones
@@ -200,7 +212,6 @@ De los 2 casos, este bonus te añadirá el caso con mayor puntuación, ya que en
                     "points": 15
                 },
                 {
-                    "operator": "or",
                     "strategy": "eachConditionIsFulfilledByACard",
                     "conditions": [
                         {
@@ -257,7 +268,7 @@ Usado normalmente para contar puntos al final de la partida según el número de
 
 #### d. Anular
 
-El apartado "anular" contiene información sobre cómo anular las propiedades de otras cartas. Una carta que tiene anulaciones aplicará estas condiciones a las cartas que has bajado, haciendo que no tengan tipo, ni puntos base, ni bonus, ni penalizaciones. A continuación se detalla la estructura y los campos de este apartado.
+El apartado "anular" contiene información sobre cómo anular las propiedades de otras o la propia carta. Una carta que tiene anulaciones aplicará estas condiciones a las cartas que has bajado, haciendo que no tengan tipo, ni puntos base, ni bonus, ni penalizaciones. A continuación se detalla la estructura y los campos de este apartado.
 
 En este caso del juego "Fantasy Realms" si tienes esta carta en mano anula todas las cartas donde `type` es `army`, `leader` y `beast` (en este último caso menos la carta con identificador `basilisco`). Para todas esas cartas no se contarán los puntos base, bonux ni penalizaciones.
 
@@ -266,6 +277,7 @@ En este caso del juego "Fantasy Realms" si tienes esta carta en mano anula todas
 {
     "blanks": [
         {
+            "strategy": "otherCards",
             "conditions": [
                 {
                     "condition": "equal",
@@ -275,6 +287,7 @@ En este caso del juego "Fantasy Realms" si tienes esta carta en mano anula todas
             ]
         },
         {
+            "strategy": "otherCards",
             "conditions": [
                 {
                     "condition": "equal",
@@ -284,6 +297,7 @@ En este caso del juego "Fantasy Realms" si tienes esta carta en mano anula todas
             ]
         },
         {
+            "strategy": "otherCards",
             "operator": "and",
             "conditions": [
                 {
@@ -302,15 +316,16 @@ En este caso del juego "Fantasy Realms" si tienes esta carta en mano anula todas
 }
 ```
 
-A continuación se describen los campos del apartado "Anular"
+Hay 3 tipos de estrategias para anular cartas:
 
-##### 1. Lista de condiciones para anular otras cartas
+##### 1. Anular otras cartas
 
-Cada entrada dentro de "anular" tiene la siguiente estructura:
+Estrategia por defecto. Anula otras cartas que tienes en tu mano
 
 **Ejemplo en JSON:**
 ```json
 {
+    "strategy": "otherCards",
     "conditions": [
         {
             "condition": "equal",
@@ -326,38 +341,41 @@ Cada entrada dentro de "anular" tiene la siguiente estructura:
   - **field**: Campo sobre el cual se aplica la condición. Puede ser cualquier campo común de la carta como "id" o "type", o cualquiera de los campos específicos del juego añadidos en el apartado de "metadata". Ejemplo: `"type"`.
   - **value**: Valor que debe tener el campo. Ejemplo: `"army"`.
 
-##### 2. Condiciones Combinadas
+##### 2. Anula la propia carta a menos que tenga cartas
 
-Las condiciones pueden combinarse utilizando un operador lógico.
+Anula la propia carta a menos que tenga cartas que cumplan la condición
 
 **Ejemplo en JSON:**
 ```json
 {
-    "operator": "and",
+    "strategy": "myselfAtLeast",
     "conditions": [
         {
             "condition": "equal",
             "field": "type",
-            "value": "beast"
-        },
-        {
-            "condition": "notEqual",
-            "field": "id",
-            "value": "basilisco"
+            "value": "flame"
         }
     ]
 }
 ```
 
-- **operator**: Operador que determina cómo se evalúan las condiciones. Puede ser `"and"` o `"or"`. Por defecto es `"and"`. En el ejemplo, `"and"`.
-- **conditions**: Lista de condiciones que deben cumplirse para que una carta sea anulada.
-  - **condition**: Tipo de condición. Puede ser `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Ejemplo: `"equal"`.
-  - **field**: Campo sobre el cual se aplica la condición. Puede ser cualquier campo común de la carta como "id" o "type", o cualquiera de los campos específicos del juego añadidos en el apartado de "metadata". Ejemplo: `"type"`.
-  - **value**: Valor que debe tener el campo. Ejemplo: `"beast"`.
-  - **condition**: Tipo de condición. Ejemplo: `"notEqual"`.
-  - **field**: Campo sobre el cual se aplica la condición. Ejemplo: `"id"`.
-  - **value**: Valor que debe tener el campo. Ejemplo: `"basilisco"`.
+##### 3. Anula la propia carta si tiene cartas
 
+Anula la propia carta si tiene cartas que cumplen la condición
+
+**Ejemplo en JSON:**
+```json
+{
+    "strategy": "myselfWith",
+    "conditions": [
+        {
+            "condition": "equal",
+            "field": "type",
+            "value": "flood"
+        }
+    ]
+}
+```
 
 #### e. Ignorar Penalizaciones
 
@@ -395,13 +413,39 @@ A continuación se describen los campos del apartado "Ignorar"
 - **type**: Define cómo se aplicarán las condiciones. Puede ser:
   - `"all"`: Ignora todos los valores de las cartas que cumplan las condiciones.
   - `"some"`: El usuario debe seleccionar 1 o más cartas dentro de las que cumplan las condiciones.
+  - `"valueOfCondition"`: ignora el valor de una condición en una penalización. Ejemplo más abajo
 - **numberOfCards**: Número de cartas que el usuario debe seleccionar en caso de que el tipo sea `"some"`. En el ejemplo, `1`.
+- **valueToIgnore**: Palabra a ignorar en el caso de que el tipo sea `"valueOfCondition"`
 - **operator**: Operador que determina cómo se evalúan las condiciones. Puede ser `"and"` o `"or"`. En el ejemplo, `"or"`.
 - **conditions**: Lista de condiciones que deben cumplirse para que una carta sea ignorada.
   - **condition**: Tipo de condición. Puede ser `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Ejemplo: `"equal"`.
   - **field**: Campo sobre el cual se aplica la condición. Puede ser cualquier campo común de la carta como "type" o "id", o cualquiera de los campos específicos del juego añadidos en el apartado de "metadata". Ejemplo: `"type"`.
   - **value**: Valor que debe tener el campo. Ejemplo: `"flood"`.
   - **value**: Valor que debe tener el campo. Ejemplo: `"flame"`.
+
+**Ejemplo en JSON para `valueOfCondition`:**
+
+Este ejemplo ignora la palabra `army` de todas las penalizaciones excepto `dirigible_guerra`
+
+```json
+{
+    "id": "exploradores",
+    "points": 5,
+    "clears": [
+        {
+            "type": "valueOfCondition",
+            "valueToIgnore": "army",
+            "conditions": [
+                {
+                    "condition": "notEqual",
+                    "field": "id",
+                    "value": "dirigible_guerra"
+                }
+            ]
+        }
+    ]
+}
+```
 
 ### 4. Traducciones
 
