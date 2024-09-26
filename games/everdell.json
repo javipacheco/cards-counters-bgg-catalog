@@ -2,6 +2,40 @@
     "game": "Everdell",
     "maxCards": null,
     "layouts": {
+        "selectedCards": {
+            "title": [
+                {
+                    "type": "text",
+                    "value": "%name%",
+                    "style": "title"
+                }
+            ],
+            "subtitle": [
+                {
+                    "type": "text",
+                    "value": "%cardType%",
+                    "style": "nano",
+                    "label": true
+                }
+            ]
+        },
+        "dialogCards": {
+            "title": [
+                {
+                    "type": "text",
+                    "value": "%name%",
+                    "style": "title"
+                }
+            ],
+            "subtitle": [
+                {
+                    "type": "text",
+                    "value": "%cardType%",
+                    "style": "nano",
+                    "label": true
+                }
+            ]
+        },
         "colors": [
             {
                 "type": "border",
@@ -87,6 +121,66 @@
             "rey_msg_2": {
                 "es": "por cada Evento Especial",
                 "en": "for each Special Event"
+            },
+            "base": {
+                "es": "Base",
+                "en": "Base"
+            },
+            "construction": {
+                "es": "Construcción",
+                "en": "Construction"
+            },
+            "critter": {
+                "es": "Criatura",
+                "en": "Critter"
+            },
+            "combined": {
+                "es": "Combina con",
+                "en": "Combined with"
+            },
+            "berries": {
+                "es": "Bayas",
+                "en": "Berries"
+            },
+            "twigs": {
+                "es": "Madera",
+                "en": "Twigs"
+            },
+            "resin": {
+                "es": "Resina",
+                "en": "Resin"
+            },
+            "pebbles": {
+                "es": "Guijarros",
+                "en": "Pebbles"
+            },
+            "cardType": {
+                "es": "Tipo de Carta",
+                "en": "Card Type"
+            },
+            "green_production": {
+                "es": "Producción",
+                "en": "Green Production"
+            },
+            "purple_prosperity": {
+                "es": "Prosperidad",
+                "en": "Purple Prosperity"
+            },
+            "blue_governance": {
+                "es": "Gobernanza",
+                "en": "Blue Governance"
+            },
+            "red_destination": {
+                "es": "Destino",
+                "en": "Red Destination"
+            },
+            "tan_traveler": {
+                "es": "Viajero",
+                "en": "Tan Traveler"
+            },
+            "opened": {
+                "es": "Abierta",
+                "en": "Opened"
             }
         },
         "cards": {
@@ -292,18 +386,21 @@
                     "id": "arbol_eterno",
                     "points": 5,
                     "bonus": {
-                        "countCards": {
-                            "conditions": [
-                                {
-                                    "condition": "equal",
-                                    "field": "cardType",
-                                    "value": "purple_prosperity"
-                                }
-                            ],
-                            "multiply": 1
-                        }
+                        "thisCardIncluded": true,
+                        "countCards": [
+                            {
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "cardType",
+                                        "value": "purple_prosperity"
+                                    }
+                                ],
+                                "multiply": 1
+                            }
+                        ]
                     },
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": true,
                     "metadata": {
                         "cardType": "purple_prosperity",
@@ -327,7 +424,7 @@
                             "points": 3
                         }
                     },
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": false,
                     "metadata": {
                         "cardType": "purple_prosperity",
@@ -338,7 +435,7 @@
                 {
                     "id": "esposo",
                     "points": 2,
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -349,7 +446,7 @@
                 {
                     "id": "granja",
                     "points": 1,
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": false,
                     "metadata": {
                         "cardType": "red_destination",
@@ -361,7 +458,7 @@
                 {
                     "id": "monje",
                     "points": 0,
-                    "type": "critter",
+                    "types": ["critter"],
                     "metadata": {
                         "cardType": "green_production",
                         "unique": false,
@@ -372,7 +469,7 @@
                 {
                     "id": "monasterio",
                     "points": 1,
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": true,
                     "metadata": {
                         "cardType": "red_destination",
@@ -394,7 +491,7 @@
                             }
                         ]
                     },
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": true,
                     "metadata": {
                         "cardType": "purple_prosperity",
@@ -405,7 +502,7 @@
                 {
                     "id": "grua",
                     "points": 1,
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": true,
                     "metadata": {
                         "cardType": "blue_governance",
@@ -416,7 +513,7 @@
                 {
                     "id": "mina",
                     "points": 2,
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -429,7 +526,7 @@
                 {
                     "id": "topo_minero",
                     "points": 2,
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -440,7 +537,7 @@
                 {
                     "id": "tendera",
                     "points": 1,
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": true,
                     "metadata": {
                         "cardType": "blue_governance",
@@ -451,7 +548,7 @@
                 {
                     "id": "tienda",
                     "points": 1,
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -464,24 +561,26 @@
                     "id": "palacio",
                     "points": 4,
                     "bonus": {
-                        "countCards": {
-                            "operator": "and",
-                            "conditions": [
-                                {
-                                    "condition": "equal",
-                                    "field": "type",
-                                    "value": "construction"
-                                },
-                                {
-                                    "condition": "equal",
-                                    "field": "unique",
-                                    "value": true
-                                }
-                            ],
-                            "multiply": 1
-                        }
+                        "countCards": [
+                            {
+                                "operator": "and",
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "construction"
+                                    },
+                                    {
+                                        "condition": "equal",
+                                        "field": "unique",
+                                        "value": true
+                                    }
+                                ],
+                                "multiply": 1
+                            }
+                        ]
                     },
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": true,
                     "metadata": {
                         "cardType": "purple_prosperity",
@@ -494,7 +593,7 @@
                 {
                     "id": "reina",
                     "points": 4,
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": true,
                     "metadata": {
                         "cardType": "red_destination",
@@ -517,7 +616,7 @@
                             }
                         ]
                     },
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": true,
                     "metadata": {
                         "cardType": "purple_prosperity",
@@ -529,24 +628,26 @@
                     "id": "castillo",
                     "points": 4,
                     "bonus": {
-                        "countCards": {
-                            "operator": "and",
-                            "conditions": [
-                                {
-                                    "condition": "equal",
-                                    "field": "type",
-                                    "value": "construction"
-                                },
-                                {
-                                    "condition": "equal",
-                                    "field": "unique",
-                                    "value": false
-                                }
-                            ],
-                            "multiply": 1
-                        }
+                        "countCards": [
+                            {
+                                "operator": "and",
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "construction"
+                                    },
+                                    {
+                                        "condition": "equal",
+                                        "field": "unique",
+                                        "value": false
+                                    }
+                                ],
+                                "multiply": 1
+                            }
+                        ]
                     },
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": true,
                     "metadata": {
                         "cardType": "purple_prosperity",
@@ -559,7 +660,7 @@
                 {
                     "id": "posadero",
                     "points": 1,
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": true,
                     "metadata": {
                         "cardType": "blue_governance",
@@ -570,7 +671,7 @@
                 {
                     "id": "posada",
                     "points": 2,
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": false,
                     "metadata": {
                         "cardType": "red_destination",
@@ -582,7 +683,7 @@
                 {
                     "id": "almacen",
                     "points": 2,
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -595,7 +696,7 @@
                 {
                     "id": "tallista",
                     "points": 2,
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -606,7 +707,7 @@
                 {
                     "id": "profersor",
                     "points": 2,
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -618,24 +719,26 @@
                     "id": "escuela",
                     "points": 2,
                     "bonus": {
-                        "countCards": {
-                            "operator": "and",
-                            "conditions": [
-                                {
-                                    "condition": "equal",
-                                    "field": "type",
-                                    "value": "critter"
-                                },
-                                {
-                                    "condition": "equal",
-                                    "field": "unique",
-                                    "value": false
-                                }
-                            ],
-                            "multiply": 1
-                        }
+                        "countCards": [
+                            {
+                                "operator": "and",
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "critter"
+                                    },
+                                    {
+                                        "condition": "equal",
+                                        "field": "unique",
+                                        "value": false
+                                    }
+                                ],
+                                "multiply": 1
+                            }
+                        ]
                     },
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": true,
                     "metadata": {
                         "cardType": "purple_prosperity",
@@ -647,7 +750,7 @@
                 {
                     "id": "sapo_barquero",
                     "points": 1,
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -658,8 +761,8 @@
                 {
                     "id": "barcaza",
                     "points": 1,
-                    "type": "construction",
-                    "unique": true,
+                    "types": ["construction"],
+                    "unique": false,
                     "metadata": {
                         "cardType": "green_production",
                         "combined": "sapo_barquero",
@@ -670,7 +773,7 @@
                 {
                     "id": "torre_vigia",
                     "points": 2,
-                    "type": "construction",
+                    "types": ["construction"],
                     "metadata": {
                         "cardType": "red_destination",
                         "unique": true,
@@ -683,7 +786,7 @@
                 {
                     "id": "trotamundos",
                     "points": 1,
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": false,
                     "metadata": {
                         "cardType": "tan_traveler",
@@ -694,7 +797,7 @@
                 {
                     "id": "pastor",
                     "points": 1,
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": true,
                     "metadata": {
                         "cardType": "tan_traveler",
@@ -706,7 +809,7 @@
                 {
                     "id": "capilla",
                     "points": 2,
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": true,
                     "metadata": {
                         "cardType": "red_destination",
@@ -719,7 +822,7 @@
                 {
                     "id": "universidad",
                     "points": 3,
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": true,
                     "metadata": {
                         "cardType": "red_destination",
@@ -731,7 +834,7 @@
                 {
                     "id": "doctor",
                     "points": 4,
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": true,
                     "metadata": {
                         "cardType": "green_production",
@@ -742,7 +845,7 @@
                 {
                     "id": "roedor_barredor",
                     "points": 2,
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -753,7 +856,7 @@
                 {
                     "id": "refineria_resina",
                     "points": 1,
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -765,7 +868,7 @@
                 {
                     "id": "juzgados",
                     "points": 2,
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": true,
                     "metadata": {
                         "cardType": "blue_governance",
@@ -778,7 +881,7 @@
                 {
                     "id": "juez",
                     "points": 2,
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": true,
                     "metadata": {
                         "cardType": "blue_governance",
@@ -789,7 +892,7 @@
                 {
                     "id": "bardo",
                     "points": 0,
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": true,
                     "metadata": {
                         "cardType": "tan_traveler",
@@ -801,24 +904,26 @@
                     "id": "teatro",
                     "points": 3,
                     "bonus": {
-                        "countCards": {
-                            "operator": "and",
-                            "conditions": [
-                                {
-                                    "condition": "equal",
-                                    "field": "type",
-                                    "value": "critter"
-                                },
-                                {
-                                    "condition": "equal",
-                                    "field": "unique",
-                                    "value": true
-                                }
-                            ],
-                            "multiply": 1
-                        }
+                        "countCards": [
+                            {
+                                "operator": "and",
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "critter"
+                                    },
+                                    {
+                                        "condition": "equal",
+                                        "field": "unique",
+                                        "value": true
+                                    }
+                                ],
+                                "multiply": 1
+                            }
+                        ]
                     },
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": true,
                     "metadata": {
                         "cardType": "purple_prosperity",
@@ -831,7 +936,7 @@
                 {
                     "id": "bufon",
                     "points": -2,
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": true,
                     "metadata": {
                         "cardType": "tan_traveler",
@@ -842,7 +947,7 @@
                 {
                     "id": "feria",
                     "points": 3,
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": true,
                     "metadata": {
                         "cardType": "green_production",
@@ -855,7 +960,7 @@
                 {
                     "id": "cementerio",
                     "points": 0,
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": true,
                     "metadata": {
                         "cardType": "red_destination",
@@ -866,7 +971,7 @@
                 {
                     "id": "enterrador",
                     "points": 1,
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": true,
                     "metadata": {
                         "cardType": "tan_traveler",
@@ -877,7 +982,7 @@
                 {
                     "id": "paloma_postal",
                     "points": 0,
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": false,
                     "metadata": {
                         "cardType": "tan_traveler",
@@ -888,7 +993,7 @@
                 {
                     "id": "oficina_postal",
                     "points": 2,
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": false,
                     "metadata": {
                         "cardType": "red_destination",
@@ -901,7 +1006,7 @@
                 {
                     "id": "torre_del_reloj",
                     "points": 0,
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": true,
                     "metadata": {
                         "cardType": "blue_governance",
@@ -913,7 +1018,7 @@
                 {
                     "id": "historiador",
                     "points": 1,
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": true,
                     "metadata": {
                         "cardType": "blue_governance",
@@ -924,7 +1029,7 @@
                 {
                     "id": "buhonero",
                     "points": 1,
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -935,7 +1040,7 @@
                 {
                     "id": "ruinas",
                     "points": 0,
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": false,
                     "metadata": {
                         "cardType": "tan_traveler",
@@ -945,7 +1050,7 @@
                 {
                     "id": "mazmorra",
                     "points": 0,
-                    "type": "construction",
+                    "types": ["construction"],
                     "unique": true,
                     "metadata": {
                         "cardType": "blue_governance",
@@ -957,7 +1062,7 @@
                 {
                     "id": "guardabosques",
                     "points": 1,
-                    "type": "critter",
+                    "types": ["critter"],
                     "unique": true,
                     "metadata": {
                         "cardType": "tan_traveler",

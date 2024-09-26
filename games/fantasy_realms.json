@@ -1,0 +1,2304 @@
+{
+    "game": "Fantasy Realms",
+    "maxCards": null,
+    "layouts": {
+        "selectedCards": {
+            "title": [
+                {
+                    "type": "text",
+                    "value": "%name%",
+                    "style": "title"
+                }
+            ],
+            "subtitle": [
+                {
+                    "type": "text",
+                    "value": "%type%",
+                    "style": "nano",
+                    "label": true
+                },
+                {
+                    "type": "space",
+                    "value": "8"
+                },
+                {
+                    "type": "copied",
+                    "style": "nano"
+                },
+                {
+                    "type": "converted",
+                    "style": "nano"
+                }
+            ]
+        },
+        "dialogCards": {
+            "title": [
+                {
+                    "type": "text",
+                    "value": "%name%",
+                    "style": "title"
+                },
+                {
+                    "type": "space",
+                    "value": "8"
+                },
+                {
+                    "type": "text",
+                    "value": "(%number%)",
+                    "style": "nano"
+                }
+            ],
+            "subtitle": [
+                {
+                    "type": "text",
+                    "value": "%type%",
+                    "style": "nano",
+                    "label": true
+                }
+            ]
+        },
+        "colors": [
+            {
+                "type": "border",
+                "selectedCards": true,
+                "dialogCards": true,
+                "darkTheme": true,
+                "ligthTheme": true,
+                "options": [
+                    {
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "wild"
+                            }
+                        ],
+                        "color": "ffc5b9b3",
+                        "borderWidth": 10,
+                        "borderSide": "left"
+                    },
+                    {
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "artifact"
+                            }
+                        ],
+                        "color": "ffaa2e30",
+                        "borderWidth": 10,
+                        "borderSide": "left"
+                    },
+                    {
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "leader"
+                            }
+                        ],
+                        "color": "ff6d3395",
+                        "borderWidth": 10,
+                        "borderSide": "left"
+                    },
+                    {
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "land"
+                            }
+                        ],
+                        "color": "ff422921",
+                        "borderWidth": 10,
+                        "borderSide": "left"
+                    },
+                    {
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "wizard"
+                            }
+                        ],
+                        "color": "ffdf38e1",
+                        "borderWidth": 10,
+                        "borderSide": "left"
+                    },
+                    {
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "army"
+                            }
+                        ],
+                        "color": "ff2e2e2f",
+                        "borderWidth": 10,
+                        "borderSide": "left"
+                    },
+                    {
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "beast"
+                            }
+                        ],
+                        "color": "ff4ba347",
+                        "borderWidth": 10,
+                        "borderSide": "left"
+                    },
+                    {
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "weapon"
+                            }
+                        ],
+                        "color": "ff6c7070",
+                        "borderWidth": 10,
+                        "borderSide": "left"
+                    },
+                    {
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "weather"
+                            }
+                        ],
+                        "color": "ff82b2e3",
+                        "borderWidth": 10,
+                        "borderSide": "left"
+                    },
+                    {
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "flame"
+                            }
+                        ],
+                        "color": "ffaa2e30",
+                        "borderWidth": 10,
+                        "borderSide": "left"
+                    },
+                    {
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "flood"
+                            }
+                        ],
+                        "color": "ff323b72",
+                        "borderWidth": 10,
+                        "borderSide": "left"
+                    }
+                ]
+            }
+        ]
+    },
+    "translations": {
+        "others": {
+            "arbol_del_mundo_msg": {
+                "es": "+50 si todas las cartas no ANULADAS que tengas son de diferente tipo",
+                "en": "+50 if all the non-cancelled cards you have are of different type"
+            },
+            "bufon_msg": {
+                "es": "+3 por cada carta impar o +50 si toda la mano es impar",
+                "en": "+3 for each odd card or +50 if the whole hand is odd"
+            },
+            "recolector_msg": {
+                "es": "cartas diferentes del mismo tipo: +10 con 3, +40 con 4, +100 con 5",
+                "en": "different cards of the same type: +10 with 3, +40 with 4, +100 with 5"
+            },
+            "gema_orden_msg": {
+                "es": "cartas seguidas en fuerza base: +10 con 3, +30 con 4, +60 con 5, +100 con 6, +150 con 7",
+                "en": "cards in a row in base strength: +10 with 3, +30 with 4, +60 with 5, +100 with 6, +150 with 7"
+            },
+            "artifact": {
+                "es": "Artefacto",
+                "en": "Artifact"
+            },
+            "leader": {
+                "es": "Líder",
+                "en": "Leader"
+            },
+            "land": {
+                "es": "Tierra",
+                "en": "Land"
+            },
+            "wizard": {
+                "es": "Mago",
+                "en": "Wizard"
+            },
+            "army": {
+                "es": "Ejército",
+                "en": "Army"
+            },
+            "beast": {
+                "es": "Bestia",
+                "en": "Beast"
+            },
+            "weapon": {
+                "es": "Arma",
+                "en": "Weapon"
+            },
+            "weather": {
+                "es": "Aire",
+                "en": "Weather"
+            },
+            "flame": {
+                "es": "Fuego",
+                "en": "Flame"
+            },
+            "flood": {
+                "es": "Agua",
+                "en": "Flood"
+            },
+            "wild": {
+                "es": "Variable",
+                "en": "Wild"
+            },
+            "number": {
+                "es": "Número",
+                "en": "Number"
+            },
+            "base": {
+                "es": "Base",
+                "en": "Base"
+            }
+        },
+        "cards": {
+            "escudo_keth": {
+                "es": "Escudo de Keth",
+                "en": "Keth's Shield"
+            },
+            "montana": {
+                "es": "Montaña",
+                "en": "Mountain"
+            },
+            "caverna": {
+                "es": "Caverna",
+                "en": "Cave"
+            },
+            "campanario": {
+                "es": "Campanario",
+                "en": "Bell Tower"
+            },
+            "torbellino": {
+                "es": "Torbellino",
+                "en": "Whirlwind"
+            },
+            "arqueros_elficos": {
+                "es": "Arqueros Elficos",
+                "en": "Elven Archers"
+            },
+            "hidra": {
+                "es": "Hidra",
+                "en": "Hydra"
+            },
+            "arco_elfico": {
+                "es": "Arco Elfico",
+                "en": "Elven Bow"
+            },
+            "caballo_batalla": {
+                "es": "Caballo de Batalla",
+                "en": "Warhorse"
+            },
+            "varita_magica": {
+                "es": "Varita Mágica",
+                "en": "Magic Wand"
+            },
+            "unicornio": {
+                "es": "Unicornio",
+                "en": "Unicorn"
+            },
+            "espada_keth": {
+                "es": "Espada de Keth",
+                "en": "Keth's Sword"
+            },
+            "vela": {
+                "es": "Vela",
+                "en": "Candle"
+            },
+            "senor_guerra": {
+                "es": "Señor de la Guerra",
+                "en": "Warlord"
+            },
+            "fuente_vida": {
+                "es": "Fuente de Vida",
+                "en": "Life Fountain"
+            },
+            "bosque": {
+                "es": "Bosque",
+                "en": "Forest"
+            },
+            "elemental_tierra": {
+                "es": "Elemental de Tierra",
+                "en": "Earth Elemental"
+            },
+            "pantano": {
+                "es": "Pantano",
+                "en": "Swamp"
+            },
+            "elemental_agua": {
+                "es": "Elemental de Agua",
+                "en": "Water Elemental"
+            },
+            "tormenta": {
+                "es": "Tormenta",
+                "en": "Storm"
+            },
+            "elemental_aire": {
+                "es": "Elemental de Aire",
+                "en": "Air Elemental"
+            },
+            "forja": {
+                "es": "Forja",
+                "en": "Forge"
+            },
+            "elemental_fuego": {
+                "es": "Elemental de Fuego",
+                "en": "Fire Elemental"
+            },
+            "caballeria": {
+                "es": "Caballería",
+                "en": "Cavalry"
+            },
+            "exploradores": {
+                "es": "Exploradores",
+                "en": "Scouts"
+            },
+            "senor_bestias": {
+                "es": "Señor de las Bestias",
+                "en": "Beastmaster"
+            },
+            "encantadora": {
+                "es": "Encantadora",
+                "en": "Enchantress"
+            },
+            "princesa": {
+                "es": "Princesa",
+                "en": "Princess"
+            },
+            "inundacion": {
+                "es": "Inundación",
+                "en": "Flood"
+            },
+            "ventisca_helada": {
+                "es": "Ventisca Helada",
+                "en": "Frostbite"
+            },
+            "infanteria_enana": {
+                "es": "Infantería Enana",
+                "en": "Dwarven Infantry"
+            },
+            "basilisco": {
+                "es": "Basilisco",
+                "en": "Basilisk"
+            },
+            "isla": {
+                "es": "Isla",
+                "en": "Island"
+            },
+            "runa_protectora": {
+                "es": "Runa Protectora",
+                "en": "Protective Rune"
+            },
+            "emperatriz": {
+                "es": "Emperatriz",
+                "en": "Empress"
+            },
+            "brujo_maestro": {
+                "es": "Brujo Maestro",
+                "en": "Master Wizard"
+            },
+            "nigromante": {
+                "es": "Nigromante",
+                "en": "Necromancer"
+            },
+            "incendio": {
+                "es": "Incendio",
+                "en": "Fire"
+            },
+            "reina": {
+                "es": "Reina",
+                "en": "Queen"
+            },
+            "rey": {
+                "es": "Rey",
+                "en": "King"
+            },
+            "arbol_del_mundo": {
+                "es": "Árbol del Mundo",
+                "en": "World Tree"
+            },
+            "bufon": {
+                "es": "Bufón",
+                "en": "Jester"
+            },
+            "recolector": {
+                "es": "Recolector",
+                "en": "Collector"
+            },
+            "gema_orden": {
+                "es": "Gema del Orden",
+                "en": "Order Gem"
+            },
+            "dragon": {
+                "es": "Dragón",
+                "en": "Dragon"
+            },
+            "paladines": {
+                "es": "Paladines",
+                "en": "Paladins"
+            },
+            "humo": {
+                "es": "Humo",
+                "en": "Smoke"
+            },
+            "dirigible_guerra": {
+                "es": "Dirigible de Guerra",
+                "en": "War Zeppelin"
+            },
+            "buque_guerra": {
+                "es": "Buque de Guerra",
+                "en": "Warship"
+            },
+            "relampago": {
+                "es": "Relámpago",
+                "en": "Lightning"
+            },
+            "espejismo": {
+                "es": "Espejismo",
+                "en": "Mirage"
+            },
+            "doppelganger": {
+                "es": "Doppelgänger",
+                "en": "Doppelgänger"
+            },
+            "cambiaformas": {
+                "es": "Cambiaformas",
+                "en": "Shapeshifter"
+            },
+            "libro_cambios": {
+                "es": "Libro de Cambios",
+                "en": "Book of Changes"
+            },
+            "fenix": {
+                "es": "Fénix",
+                "en": "Phoenix"
+            }
+        }
+    },
+    "boxes": [
+        {
+            "name": "base",
+            "cards": [
+                {
+                    "id": "escudo_keth",
+                    "points": 4,
+                    "bonus": {
+                        "fromOptions": {
+                            "type": "best",
+                            "inCollectionOptions": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "condition": "equal",
+                                            "field": "type",
+                                            "value": "leader"
+                                        }
+                                    ],
+                                    "points": 15
+                                },
+                                {
+                                    "strategy": "eachConditionIsFulfilledByACard",
+                                    "conditions": [
+                                        {
+                                            "condition": "equal",
+                                            "field": "type",
+                                            "value": "leader"
+                                        },
+                                        {
+                                            "condition": "equal",
+                                            "field": "id",
+                                            "value": "espada_keth"
+                                        }
+                                    ],
+                                    "points": 40
+                                }
+                            ]
+                        }
+                    },
+                    "types": [
+                        "artifact"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "46"
+                    }
+                },
+                {
+                    "id": "montana",
+                    "points": 9,
+                    "clears": [
+                        {
+                            "type": "all",
+                            "operator": "and",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "flood"
+                                }
+                            ]
+                        }
+                    ],
+                    "bonus": {
+                        "inCollection": {
+                            "strategy": "eachConditionIsFulfilledByACard",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "id",
+                                    "value": "incendio"
+                                },
+                                {
+                                    "condition": "equal",
+                                    "field": "id",
+                                    "value": "humo"
+                                }
+                            ],
+                            "points": 50
+                        }
+                    },
+                    "types": [
+                        "land"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "1"
+                    }
+                },
+                {
+                    "id": "caverna",
+                    "points": 6,
+                    "clears": [
+                        {
+                            "type": "all",
+                            "operator": "and",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "weather"
+                                }
+                            ]
+                        }
+                    ],
+                    "bonus": {
+                        "inCollection": {
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "id",
+                                    "value": "dragon"
+                                },
+                                {
+                                    "condition": "equal",
+                                    "field": "id",
+                                    "value": "infanteria_enana"
+                                }
+                            ],
+                            "points": 25
+                        }
+                    },
+                    "types": [
+                        "land"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "2"
+                    }
+                },
+                {
+                    "id": "campanario",
+                    "points": 8,
+                    "bonus": {
+                        "inCollection": {
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "wizard"
+                                }
+                            ],
+                            "points": 15
+                        }
+                    },
+                    "types": [
+                        "land"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "3"
+                    }
+                },
+                {
+                    "id": "torbellino",
+                    "points": 13,
+                    "bonus": {
+                        "fromOptions": {
+                            "type": "best",
+                            "inCollectionOptions": [
+                                {
+                                    "strategy": "eachConditionIsFulfilledByACard",
+                                    "conditions": [
+                                        {
+                                            "condition": "equal",
+                                            "field": "id",
+                                            "value": "tormenta"
+                                        },
+                                        {
+                                            "condition": "equal",
+                                            "field": "id",
+                                            "value": "ventisca_helada"
+                                        }
+                                    ],
+                                    "points": 40
+                                },
+                                {
+                                    "operator": "or",
+                                    "strategy": "eachConditionIsFulfilledByACard",
+                                    "conditions": [
+                                        {
+                                            "condition": "equal",
+                                            "field": "id",
+                                            "value": "tormenta"
+                                        },
+                                        {
+                                            "condition": "equal",
+                                            "field": "id",
+                                            "value": "inundacion"
+                                        }
+                                    ],
+                                    "points": 40
+                                }
+                            ]
+                        }
+                    },
+                    "types": [
+                        "weather"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "14"
+                    }
+                },
+                {
+                    "id": "arqueros_elficos",
+                    "points": 10,
+                    "bonus": {
+                        "inCollection": {
+                            "strategy": "eachConditionIsFulfilledByAllCards",
+                            "conditions": [
+                                {
+                                    "condition": "notEqual",
+                                    "field": "type",
+                                    "value": "weather"
+                                }
+                            ],
+                            "points": 5
+                        }
+                    },
+                    "types": [
+                        "army"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "22"
+                    }
+                },
+                {
+                    "id": "hidra",
+                    "points": 12,
+                    "bonus": {
+                        "inCollection": {
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "id",
+                                    "value": "pantano"
+                                }
+                            ],
+                            "points": 28
+                        }
+                    },
+                    "types": [
+                        "beast"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "40"
+                    }
+                },
+                {
+                    "id": "arco_elfico",
+                    "points": 3,
+                    "bonus": {
+                        "inCollection": {
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "id",
+                                    "value": "arqueros_elficos"
+                                },
+                                {
+                                    "condition": "equal",
+                                    "field": "id",
+                                    "value": "senor_guerra"
+                                },
+                                {
+                                    "condition": "equal",
+                                    "field": "id",
+                                    "value": "senor_bestias"
+                                }
+                            ],
+                            "points": 30
+                        }
+                    },
+                    "types": [
+                        "weapon"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "44"
+                    }
+                },
+                {
+                    "id": "caballo_batalla",
+                    "points": 6,
+                    "bonus": {
+                        "inCollection": {
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "leader"
+                                },
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "wizard"
+                                }
+                            ],
+                            "points": 14
+                        }
+                    },
+                    "types": [
+                        "beast"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "38"
+                    }
+                },
+                {
+                    "id": "varita_magica",
+                    "points": 1,
+                    "bonus": {
+                        "inCollection": {
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "wizard"
+                                }
+                            ],
+                            "points": 25
+                        }
+                    },
+                    "types": [
+                        "weapon"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "42"
+                    }
+                },
+                {
+                    "id": "unicornio",
+                    "points": 9,
+                    "bonus": {
+                        "fromOptions": {
+                            "type": "best",
+                            "inCollectionOptions": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "condition": "equal",
+                                            "field": "id",
+                                            "value": "princesa"
+                                        }
+                                    ],
+                                    "points": 30
+                                },
+                                {
+                                    "conditions": [
+                                        {
+                                            "condition": "equal",
+                                            "field": "id",
+                                            "value": "emperatriz"
+                                        },
+                                        {
+                                            "condition": "equal",
+                                            "field": "id",
+                                            "value": "reina"
+                                        },
+                                        {
+                                            "condition": "equal",
+                                            "field": "id",
+                                            "value": "encantadora"
+                                        }
+                                    ],
+                                    "points": 15
+                                }
+                            ]
+                        }
+                    },
+                    "types": [
+                        "beast"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "36"
+                    }
+                },
+                {
+                    "id": "espada_keth",
+                    "points": 7,
+                    "bonus": {
+                        "fromOptions": {
+                            "type": "best",
+                            "inCollectionOptions": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "condition": "equal",
+                                            "field": "type",
+                                            "value": "leader"
+                                        }
+                                    ],
+                                    "points": 10
+                                },
+                                {
+                                    "strategy": "eachConditionIsFulfilledByACard",
+                                    "conditions": [
+                                        {
+                                            "condition": "equal",
+                                            "field": "type",
+                                            "value": "leader"
+                                        },
+                                        {
+                                            "condition": "equal",
+                                            "field": "id",
+                                            "value": "escudo_keth"
+                                        }
+                                    ],
+                                    "points": 40
+                                }
+                            ]
+                        }
+                    },
+                    "types": [
+                        "artifact"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "43"
+                    }
+                },
+                {
+                    "id": "vela",
+                    "points": 2,
+                    "bonus": {
+                        "inCollection": {
+                            "strategy": "eachConditionIsFulfilledByACard",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "id",
+                                    "value": "libro_cambios"
+                                },
+                                {
+                                    "condition": "equal",
+                                    "field": "id",
+                                    "value": "campanario"
+                                },
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "wizard"
+                                }
+                            ],
+                            "points": 100
+                        }
+                    },
+                    "types": [
+                        "flame"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "17"
+                    }
+                },
+                {
+                    "id": "senor_guerra",
+                    "points": 4,
+                    "bonus": {
+                        "sumPointsOtherCards": {
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "army"
+                                }
+                            ]
+                        }
+                    },
+                    "types": [
+                        "leader"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "34"
+                    }
+                },
+                {
+                    "id": "fuente_vida",
+                    "points": 1,
+                    "bonus": {
+                        "sumPointsOtherCards": {
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "weapon"
+                                },
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "flood"
+                                },
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "flame"
+                                },
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "land"
+                                },
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "weather"
+                                }
+                            ]
+                        }
+                    },
+                    "types": [
+                        "flood"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "6"
+                    }
+                },
+                {
+                    "id": "bosque",
+                    "points": 7,
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "operator": "or",
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "beast"
+                                    },
+                                    {
+                                        "condition": "equal",
+                                        "field": "id",
+                                        "value": "arqueros_elficos"
+                                    }
+                                ],
+                                "multiply": 12
+                            }
+                        ]
+                    },
+                    "types": [
+                        "land"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "4"
+                    }
+                },
+                {
+                    "id": "elemental_tierra",
+                    "points": 4,
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "land"
+                                    }
+                                ],
+                                "multiply": 15
+                            }
+                        ]
+                    },
+                    "types": [
+                        "land"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "5"
+                    }
+                },
+                {
+                    "id": "pantano",
+                    "points": 18,
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "operator": "or",
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "army"
+                                    },
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "flame"
+                                    }
+                                ],
+                                "multiply": -3
+                            }
+                        ]
+                    },
+                    "types": [
+                        "flood"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "7"
+                    }
+                },
+                {
+                    "id": "elemental_agua",
+                    "points": 4,
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "flood"
+                                    }
+                                ],
+                                "multiply": 15
+                            }
+                        ]
+                    },
+                    "types": [
+                        "flood"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "10"
+                    }
+                },
+                {
+                    "id": "tormenta",
+                    "points": 8,
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "flood"
+                                    }
+                                ],
+                                "multiply": 10
+                            }
+                        ]
+                    },
+                    "blanks": [
+                        {
+                            "operator": "and",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "flame"
+                                },
+                                {
+                                    "condition": "notEqual",
+                                    "field": "id",
+                                    "value": "relampago"
+                                }
+                            ]
+                        }
+                    ],
+                    "types": [
+                        "weather"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "11"
+                    }
+                },
+                {
+                    "id": "elemental_aire",
+                    "points": 4,
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "weather"
+                                    }
+                                ],
+                                "multiply": 15
+                            }
+                        ]
+                    },
+                    "types": [
+                        "weather"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "15"
+                    }
+                },
+                {
+                    "id": "forja",
+                    "points": 9,
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "operator": "or",
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "weapon"
+                                    },
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "artifact"
+                                    }
+                                ],
+                                "multiply": 9
+                            }
+                        ]
+                    },
+                    "types": [
+                        "flame"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "18"
+                    }
+                },
+                {
+                    "id": "elemental_fuego",
+                    "points": 4,
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "flame"
+                                    }
+                                ],
+                                "multiply": 15
+                            }
+                        ]
+                    },
+                    "types": [
+                        "flame"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "20"
+                    }
+                },
+                {
+                    "id": "caballeria",
+                    "points": 17,
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "land"
+                                    }
+                                ],
+                                "multiply": -2
+                            }
+                        ]
+                    },
+                    "types": [
+                        "army"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "23"
+                    }
+                },
+                {
+                    "id": "exploradores",
+                    "points": 5,
+                    "clears": [
+                        {
+                            "type": "valueOfCondition",
+                            "valueToIgnore": "army",
+                            "conditions": [
+                                {
+                                    "condition": "notEqual",
+                                    "field": "id",
+                                    "value": "dirigible_guerra"
+                                }
+                            ]
+                        }
+                    ],
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "land"
+                                    }
+                                ],
+                                "multiply": 10
+                            }
+                        ]
+                    },
+                    "types": [
+                        "army"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "25"
+                    }
+                },
+                {
+                    "id": "senor_bestias",
+                    "points": 9,
+                    "clears": [
+                        {
+                            "type": "all",
+                            "operator": "and",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "beast"
+                                }
+                            ]
+                        }
+                    ],
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "beast"
+                                    }
+                                ],
+                                "multiply": 9
+                            }
+                        ]
+                    },
+                    "types": [
+                        "wizard"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "27"
+                    }
+                },
+                {
+                    "id": "encantadora",
+                    "points": 5,
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "operator": "or",
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "land"
+                                    },
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "weather"
+                                    },
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "flood"
+                                    },
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "flame"
+                                    }
+                                ],
+                                "multiply": 5
+                            }
+                        ]
+                    },
+                    "types": [
+                        "wizard"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "30"
+                    }
+                },
+                {
+                    "id": "princesa",
+                    "points": 2,
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "operator": "or",
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "army"
+                                    },
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "wizard"
+                                    },
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "leader"
+                                    }
+                                ],
+                                "multiply": 8
+                            }
+                        ]
+                    },
+                    "types": [
+                        "leader"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "33"
+                    }
+                },
+                {
+                    "id": "inundacion",
+                    "points": 32,
+                    "blanks": [
+                        {
+                            "operator": "and",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "army"
+                                }
+                            ]
+                        },
+                        {
+                            "operator": "and",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "land"
+                                },
+                                {
+                                    "condition": "notEqual",
+                                    "field": "id",
+                                    "value": "montana"
+                                }
+                            ]
+                        },
+                        {
+                            "operator": "and",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "flame"
+                                },
+                                {
+                                    "condition": "notEqual",
+                                    "field": "id",
+                                    "value": "relampago"
+                                }
+                            ]
+                        }
+                    ],
+                    "types": [
+                        "flood"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "8"
+                    }
+                },
+                {
+                    "id": "ventisca_helada",
+                    "points": 30,
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "operator": "or",
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "army"
+                                    },
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "leader"
+                                    },
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "beast"
+                                    },
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "flame"
+                                    }
+                                ],
+                                "multiply": -5
+                            }
+                        ]
+                    },
+                    "blanks": [
+                        {
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "flood"
+                                }
+                            ]
+                        }
+                    ],
+                    "types": [
+                        "weather"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "12"
+                    }
+                },
+                {
+                    "id": "infanteria_enana",
+                    "points": 15,
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "army"
+                                    }
+                                ],
+                                "multiply": -2
+                            }
+                        ]
+                    },
+                    "types": [
+                        "army"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "24"
+                    }
+                },
+                {
+                    "id": "basilisco",
+                    "points": 35,
+                    "blanks": [
+                        {
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "army"
+                                }
+                            ]
+                        },
+                        {
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "leader"
+                                }
+                            ]
+                        },
+                        {
+                            "operator": "and",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "beast"
+                                },
+                                {
+                                    "condition": "notEqual",
+                                    "field": "id",
+                                    "value": "basilisco"
+                                }
+                            ]
+                        }
+                    ],
+                    "types": [
+                        "beast"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "37"
+                    }
+                },
+                {
+                    "id": "isla",
+                    "points": 14,
+                    "clears": [
+                        {
+                            "type": "some",
+                            "numberOfCards": 1,
+                            "operator": "or",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "flood"
+                                },
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "flame"
+                                }
+                            ]
+                        }
+                    ],
+                    "types": [
+                        "flood"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "9"
+                    }
+                },
+                {
+                    "id": "runa_protectora",
+                    "points": 1,
+                    "clears": [
+                        {
+                            "type": "all"
+                        }
+                    ],
+                    "types": [
+                        "artifact"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "50"
+                    }
+                },
+                {
+                    "id": "emperatriz",
+                    "points": 15,
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "army"
+                                    }
+                                ],
+                                "multiply": 10
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "leader"
+                                    }
+                                ],
+                                "multiply": -5
+                            }
+                        ]
+                    },
+                    "types": [
+                        "leader"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "35"
+                    }
+                },
+                {
+                    "id": "brujo_maestro",
+                    "points": 25,
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "operator": "or",
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "leader"
+                                    },
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "wizard"
+                                    }
+                                ],
+                                "multiply": -10
+                            }
+                        ]
+                    },
+                    "types": [
+                        "wizard"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "29"
+                    }
+                },
+                {
+                    "todo": "no hace nada, pero hay que añadir message de alerta para final de partida",
+                    "id": "nigromante",
+                    "points": 3,
+                    "types": [
+                        "wizard"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "28"
+                    }
+                },
+                {
+                    "id": "incendio",
+                    "points": 40,
+                    "blanks": [
+                        {
+                            "operator": "and",
+                            "conditions": [
+                                {
+                                    "condition": "notEqual",
+                                    "field": "type",
+                                    "value": "flame"
+                                },
+                                {
+                                    "condition": "notEqual",
+                                    "field": "type",
+                                    "value": "wizard"
+                                },
+                                {
+                                    "condition": "notEqual",
+                                    "field": "type",
+                                    "value": "weather"
+                                },
+                                {
+                                    "condition": "notEqual",
+                                    "field": "type",
+                                    "value": "weapon"
+                                },
+                                {
+                                    "condition": "notEqual",
+                                    "field": "type",
+                                    "value": "artifact"
+                                },
+                                {
+                                    "condition": "notEqual",
+                                    "field": "id",
+                                    "value": "montana"
+                                },
+                                {
+                                    "condition": "notEqual",
+                                    "field": "id",
+                                    "value": "inundacion"
+                                },
+                                {
+                                    "condition": "notEqual",
+                                    "field": "id",
+                                    "value": "isla"
+                                },
+                                {
+                                    "condition": "notEqual",
+                                    "field": "id",
+                                    "value": "unicornio"
+                                },
+                                {
+                                    "condition": "notEqual",
+                                    "field": "id",
+                                    "value": "dragon"
+                                }
+                            ]
+                        }
+                    ],
+                    "types": [
+                        "flame"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "16"
+                    }
+                },
+                {
+                    "id": "reina",
+                    "points": 6,
+                    "bonus": {
+                        "fromOptions": {
+                            "type": "best",
+                            "countCardsOptions": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "condition": "equal",
+                                            "field": "type",
+                                            "value": "army"
+                                        }
+                                    ],
+                                    "multiply": 5
+                                },
+                                {
+                                    "required": {
+                                        "conditions": [
+                                            {
+                                                "condition": "equal",
+                                                "field": "id",
+                                                "value": "rey"
+                                            }
+                                        ]
+                                    },
+                                    "conditions": [
+                                        {
+                                            "condition": "equal",
+                                            "field": "type",
+                                            "value": "army"
+                                        }
+                                    ],
+                                    "multiply": 20
+                                }
+                            ]
+                        }
+                    },
+                    "types": [
+                        "leader"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "32"
+                    }
+                },
+                {
+                    "id": "rey",
+                    "points": 8,
+                    "bonus": {
+                        "fromOptions": {
+                            "type": "best",
+                            "countCardsOptions": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "condition": "equal",
+                                            "field": "type",
+                                            "value": "army"
+                                        }
+                                    ],
+                                    "multiply": 5
+                                },
+                                {
+                                    "required": {
+                                        "conditions": [
+                                            {
+                                                "condition": "equal",
+                                                "field": "id",
+                                                "value": "reina"
+                                            }
+                                        ]
+                                    },
+                                    "conditions": [
+                                        {
+                                            "condition": "equal",
+                                            "field": "type",
+                                            "value": "army"
+                                        }
+                                    ],
+                                    "multiply": 20
+                                }
+                            ]
+                        }
+                    },
+                    "types": [
+                        "leader"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "31"
+                    }
+                },
+                {
+                    "id": "arbol_del_mundo",
+                    "points": 2,
+                    "bonus": {
+                        "function": {
+                            "name": "arbolDelMundoFantasyRealms",
+                            "translation": "arbol_del_mundo_msg"
+                        }
+                    },
+                    "types": [
+                        "artifact"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "48"
+                    }
+                },
+                {
+                    "id": "bufon",
+                    "points": 3,
+                    "bonus": {
+                        "function": {
+                            "name": "bufonFantasyRealms",
+                            "translation": "bufon_msg"
+                        }
+                    },
+                    "types": [
+                        "wizard"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "Promo"
+                    }
+                },
+                {
+                    "id": "recolector",
+                    "points": 7,
+                    "bonus": {
+                        "function": {
+                            "name": "recolectorFantasyRealms",
+                            "translation": "recolector_msg"
+                        }
+                    },
+                    "types": [
+                        "wizard"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "26"
+                    }
+                },
+                {
+                    "id": "gema_orden",
+                    "points": 5,
+                    "bonus": {
+                        "function": {
+                            "name": "gemaOrdenFantasyRealms",
+                            "translation": "gema_orden_msg"
+                        }
+                    },
+                    "types": [
+                        "artifact"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "47"
+                    }
+                },
+                {
+                    "id": "dragon",
+                    "points": 30,
+                    "bonus": {
+                        "inCollection": {
+                            "strategy": "unlessOneCardFulfillAllTheConditions",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "wizard"
+                                }
+                            ],
+                            "points": -40
+                        }
+                    },
+                    "types": [
+                        "beast"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "39"
+                    }
+                },
+                {
+                    "id": "paladines",
+                    "points": 20,
+                    "bonus": {
+                        "inCollection": {
+                            "strategy": "unlessOneCardFulfillAllTheConditions",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "leader"
+                                }
+                            ],
+                            "points": -8
+                        }
+                    },
+                    "types": [
+                        "army"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "21"
+                    }
+                },
+                {
+                    "id": "humo",
+                    "points": 27,
+                    "blanks": [
+                        {
+                            "strategy": "myselfAtLeast",
+                            "operator": "or",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "flame"
+                                }
+                            ]
+                        }
+                    ],
+                    "types": [
+                        "weather"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "13"
+                    }
+                },
+                {
+                    "id": "dirigible_guerra",
+                    "points": 35,
+                    "blanks": [
+                        {
+                            "strategy": "myselfAtLeast",
+                            "operator": "or",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "army"
+                                }
+                            ]
+                        },
+                        {
+                            "strategy": "myselfWith",
+                            "operator": "or",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "weather"
+                                }
+                            ]
+                        }
+                    ],
+                    "types": [
+                        "weapon"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "45"
+                    }
+                },
+                {
+                    "id": "buque_guerra",
+                    "points": 23,
+                    "clears": [
+                        {
+                            "type": "valueOfCondition",
+                            "valueToIgnore": "army",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "flood"
+                                }
+                            ]
+                        }
+                    ],
+                    "blanks": [
+                        {
+                            "strategy": "myselfAtLeast",
+                            "operator": "or",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "flood"
+                                }
+                            ]
+                        }
+                    ],
+                    "types": [
+                        "weapon"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "41"
+                    }
+                },
+                {
+                    "id": "relampago",
+                    "points": 11,
+                    "bonus": {
+                        "inCollection": {
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "id",
+                                    "value": "tormenta"
+                                }
+                            ],
+                            "points": 30
+                        }
+                    },
+                    "types": [
+                        "flame"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "19"
+                    }
+                },
+                {
+                    "id": "fenix",
+                    "points": 14,
+                    "blanks": [
+                        {
+                            "strategy": "myselfWith",
+                            "operator": "or",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "flood"
+                                }
+                            ]
+                        }
+                    ],
+                    "types": [
+                        "flame",
+                        "beast",
+                        "weather"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "Promo"
+                    }
+                },
+                {
+                    "id": "espejismo",
+                    "points": 0,
+                    "copy": {
+                        "from": "all",
+                        "attributes": {
+                            "name": true,
+                            "types": true,
+                            "points": false,
+                            "bonus": false,
+                            "penaltyBonus": false
+                        },
+                        "operator": "or",
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "army"
+                            },
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "land"
+                            },
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "weather"
+                            },
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "flood"
+                            },
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "flame"
+                            }
+                        ]
+                    },
+                    "types": [
+                        "wild"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "52"
+                    }
+                },
+                {
+                    "id": "cambiaformas",
+                    "points": 0,
+                    "copy": {
+                        "from": "all",
+                        "attributes": {
+                            "name": true,
+                            "types": true,
+                            "points": false,
+                            "bonus": false,
+                            "penaltyBonus": false
+                        },
+                        "operator": "or",
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "artifact"
+                            },
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "leader"
+                            },
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "wizard"
+                            },
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "weapon"
+                            },
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "beast"
+                            }
+                        ]
+                    },
+                    "types": [
+                        "wild"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "51"
+                    }
+                },
+                {
+                    "id": "doppelganger",
+                    "points": 0,
+                    "copy": {
+                        "from": "hand",
+                        "attributes": {
+                            "name": true,
+                            "types": true,
+                            "points": true,
+                            "bonus": false,
+                            "penaltyBonus": true
+                        }
+                    },
+                    "types": [
+                        "wild"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "53"
+                    }
+                },
+                {
+                    "id": "libro_cambios",
+                    "points": 3,
+                    "convert": {
+                        "attribute": "types",
+                        "numberOfTypes": 1,
+                        "conditions": [
+                            {
+                                "condition": "notEqual",
+                                "field": "id",
+                                "value": "fenix"
+                            }
+                        ]
+                    },
+                    "types": [
+                        "artifact"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "49"
+                    }
+                }
+            ]
+        }
+    ]
+}

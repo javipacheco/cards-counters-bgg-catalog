@@ -28,9 +28,23 @@ The Spanish documentation can be found in the `doc_es.md` file.
 
 ## Example File
 
-An example JSON file for the game "Everdell" is also included to demonstrate the structure and format needed for the scoring system.
+The following games include the JSON file to demonstrate the structure and format needed for the scoring system.
 
-[View Everdell Example](./games/everdell.json)
+- [View Everdell Example](./games/everdell.json)
+- [View Fantasy Realms Example](./games/fantasy_realms.json)
+
+## Current Status
+
+The current games inside BGG Catalog with app for scoring are:
+
+- Everdell
+- Everdell Farshore
+- Fantasy Realms
+
+Possible games in the future:
+
+- Fantasy Realms expansion
+- Marvel Remix
 
 # License
 
