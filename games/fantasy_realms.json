@@ -226,11 +226,15 @@
             },
             "recolector_msg": {
                 "es": "cartas diferentes del mismo tipo: +10 con 3, +40 con 4, +100 con 5",
-                "en": "different cards of the same type: +10 with 3, +40 with 4, +100 with 5"
+                "en": "+10 for 3-card run, +30 for 4-card run, +60 for 5-card run, +100 for 6-card run, +150 for 7-card run"
             },
             "gema_orden_msg": {
                 "es": "cartas seguidas en fuerza base: +10 con 3, +30 con 4, +60 con 5, +100 con 6, +150 con 7",
                 "en": "cards in a row in base strength: +10 with 3, +30 with 4, +60 with 5, +100 with 6, +150 with 7"
+            },
+            "fuente_vida_msg": {
+                "es": "Añade la fuerza base de cualquier Arma, Agua, Fuego, Tierra o Aire de tu mano",
+                "en": "Add the base strength of any one Weapon, Flood, Flame, Land or Weather in your hand"
             },
             "artifact": {
                 "es": "Artefacto",
@@ -996,34 +1000,9 @@
                     "id": "fuente_vida",
                     "points": 1,
                     "bonus": {
-                        "sumPointsOtherCards": {
-                            "conditions": [
-                                {
-                                    "condition": "equal",
-                                    "field": "type",
-                                    "value": "weapon"
-                                },
-                                {
-                                    "condition": "equal",
-                                    "field": "type",
-                                    "value": "flood"
-                                },
-                                {
-                                    "condition": "equal",
-                                    "field": "type",
-                                    "value": "flame"
-                                },
-                                {
-                                    "condition": "equal",
-                                    "field": "type",
-                                    "value": "land"
-                                },
-                                {
-                                    "condition": "equal",
-                                    "field": "type",
-                                    "value": "weather"
-                                }
-                            ]
+                        "function": {
+                            "name": "fuenteVidaFantasyRealms",
+                            "translation": "fuente_vida_msg"
                         }
                     },
                     "types": [
