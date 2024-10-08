@@ -111,6 +111,11 @@ For example, in this case, as we will see in the conditions, we can query the ca
 
 Bonuses are calculated based on certain specified conditions. Each type of bonus will help you count the extra points of the cards according to their type.
 
+There is a field in the bonus that is common to all types of bonuses which is `affectCards`. It can have different cases:
+
+- **allExceptMe**: To calculate the bonus all cards in your hand are used, except the card itself that is calculating the bonus value. This is the default value
+- **all**: To calculate the bonus all cards are used, including the card that is calculating the bonus.
+
 There are 4 types of bonuses:
 
 ##### 1. Count Cards

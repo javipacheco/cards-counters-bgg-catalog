@@ -110,6 +110,11 @@ Por ejemplo en este caso, como veremos en las condiciones, podremos preguntar la
 
 Los bonus se calculan en función de ciertas condiciones especificadas. Cada tipo de bonus te ayudará a contar los puntos extras de la cartas según el propio tipo.
 
+Existe un campo en el bonus que es común para todos los tipos de bonus que es `affectCards`. Este puede tener diferentes casos:
+
+- **allExceptMe**: Para calcular el bonus se usan todas las cartas de tu mano, excepto la propia carta que está calculando el valor del bonus. Este es el valor por defecto
+- **all**:  Para calcular el bonus se usan todas las cartas, incluyendo la propia carta que calcula el bonus
+
 Existen 4 tipos de bonus:
 
 ##### 1. Contar Cartas

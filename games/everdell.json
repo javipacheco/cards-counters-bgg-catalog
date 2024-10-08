@@ -386,7 +386,7 @@
                     "id": "arbol_eterno",
                     "points": 5,
                     "bonus": {
-                        "thisCardIncluded": true,
+                        "affectCards": "all",
                         "countCards": [
                             {
                                 "conditions": [
