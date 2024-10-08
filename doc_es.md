@@ -137,6 +137,7 @@ Este tipo de bonus añade puntos a la carta contando el número de otras cartas 
 ```
 
 - **countCards**: Cuenta las cartas según las condiciones especificadas y añade puntos extra según el multiplicador.
+  - **operator**: Operador que determina cómo se evalúan las condiciones. Puede ser `"and"` o `"or"`. En el ejemplo, `"or"`.
   - **conditions**: Lista de condiciones que deben cumplirse para que las cartas sean contadas.
     - **condition**: Tipo de condición. Puede ser `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Ejemplo: `"equal"`.
     - **field**: Campo sobre el cual se aplica la condición. Puede ser cualquier campo común de la carta como "id" o "points", o cualquiera de los campos específicos del juego añadidos en el apartado de "metadata". Ejemplo: `"cardType"`.
@@ -178,6 +179,7 @@ Este tipo de bonus añade puntos extras a la carta en cuestión en el caso que t
         - `"oneCardFulfillSomeCondition"` (por defecto) donde una carta debe cumplir alguna condición
         - `"oneCardFulfillAllTheConditions"` donde una carta debe cumplir todas las condiciones
         - `"eachConditionIsFulfilledByACard"` donde cada condición debe ser cumplida al menos por una carta diferente
+        - `"eachConditionIsFulfilledByAllCards"` donde cada condición debe ser cumplida por todas las cartas
         - `"unlessOneCardFulfillAllTheConditions"` a menos que tengas una carta que cumpla todas las condiciones
   - **conditions**: Lista de condiciones que deben cumplirse.
     - **condition**: Tipo de condición. Puede ser `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Ejemplo: `"equal"`.
@@ -185,64 +187,7 @@ Este tipo de bonus añade puntos extras a la carta en cuestión en el caso que t
     - **value**: Valor que debe tener el campo. Ejemplo: `"incendio"`.
   - **points**: Puntos adicionales otorgados si se cumplen las condiciones especificadas. En el ejemplo, `50`.
 
-##### 3. En Colección con Opciones
-
-Este tipo de bonus es parecido al bonus "En Colección" pero añadirás diferentes opciones y sólo te dará la puntuación. En este caso de las 2 opciones:
-
-1. Ganas 15 puntos si tienes una carta de `type` igual a `leader` 
-2. Ganas 40 puntos si además de tener una carta de `type` igual a `leader` tienes también la carta con identificador `espada_keth`
-
-De los 2 casos, este bonus te añadirá el caso con mayor puntuación, ya que en el ejemplo el `type` es igual a `best`
-
-**Ejemplo en JSON:**
-```json
-{
-    "bonus": {
-        "inCollectionWithOptions": {
-            "type": "best",
-            "options": [
-                {
-                    "conditions": [
-                        {
-                            "condition": "equal",
-                            "field": "type",
-                            "value": "leader"
-                        }
-                    ],
-                    "points": 15
-                },
-                {
-                    "strategy": "eachConditionIsFulfilledByACard",
-                    "conditions": [
-                        {
-                            "condition": "equal",
-                            "field": "type",
-                            "value": "leader"
-                        },
-                        {
-                            "condition": "equal",
-                            "field": "id",
-                            "value": "espada_keth"
-                        }
-                    ],
-                    "points": 40
-                }
-            ]
-        }
-    }
-}
-```
-
-Cada opción dentro de **inCollectionWithOptions** es igual a las condiciones descritas en la sección 5.b "En Colección".
-
-- **type**: Define cómo se seleccionará la mejor opción de las condiciones dadas. Puede ser:
-  - `"best"`: Selecciona la opción con la mejor puntuación.
-  - `"worst"`: Selecciona la opción con la peor puntuación.
-  - `"first"`: Selecciona la primera opción en orden que cumpla la condición. 
-
-En el ejemplo, el tipo es `"best"`, lo que significa que se seleccionará la opción con la mayor puntuación de todas las que cumplan las condiciones.
-
-##### 4. Contar Otros Ítems
+##### 3. Contar Otros Ítems
 
 Usado normalmente para contar puntos al final de la partida según el número de recursos que tienes, objetivos alcanzados, etc. Este dato tiene que añadirlo el jugador a mano y no puede ser calculado automáticamente. Por ejemplo en este caso, en "Everdell" el usuario tiene que contar los recursos que tiene al final de la partida y añadirlos, esos serán los puntos a añadir como bonus, con un máximo de 6.
 
@@ -265,6 +210,69 @@ Usado normalmente para contar puntos al final de la partida según el número de
 - **max**: Máximo de ítems a contar. En el ejemplo, `6`
 - **multiply**: Factor de multiplicación para los puntos. En el ejemplo, `1`
 
+##### 4. Combinar diferentes bonus
+
+Este tipo de bonus combina diferentes bonus para elegir uno de ellos. Por ejemplo, puedes tener
+diferentes opciones y eligir cual de ellas es la mejor (te da mas puntos).
+
+Dentro de estas opciones podrás encontrar 2 listas:
+
+1. `countCardsOptions`: una lista de bonus "Contar Cartas" (descrita en sección "5.c.1")
+2. `inCollectionOptions`: una lista de bonus "En Colección" (descrita en sección "5.c.2")
+
+Para el siguiente ejemplo tenemos 2 opciones:
+
+1. Ganas 15 puntos si tienes una carta de `type` igual a `leader` 
+2. Ganas 40 puntos si además de tener una carta de `type` igual a `leader` tienes también la carta con identificador `espada_keth`
+
+De los 2 casos, este bonus te añadirá el caso con mayor puntuación, ya que en el ejemplo el `type` es igual a `best`
+
+**Ejemplo en JSON:**
+```json
+{
+    "bonus": {
+        "fromOptions": {
+            "type": "best",
+            "inCollectionOptions": [
+                {
+                    "conditions": [
+                        {
+                            "condition": "equal",
+                            "field": "type",
+                            "value": "leader"
+                        }
+                    ],
+                    "points": 10
+                },
+                {
+                    "strategy": "eachConditionIsFulfilledByACard",
+                    "conditions": [
+                        {
+                            "condition": "equal",
+                            "field": "type",
+                            "value": "leader"
+                        },
+                        {
+                            "condition": "equal",
+                            "field": "id",
+                            "value": "escudo_keth"
+                        }
+                    ],
+                    "points": 40
+                }
+            ]
+        }
+    }
+}
+```
+
+Los nuevos campos son:
+
+- **type**: Define cómo se seleccionará la mejor opción de las condiciones dadas. Puede ser:
+  - `"best"`: Selecciona la opción con la mejor puntuación.
+  - `"worst"`: Selecciona la opción con la peor puntuación.
+
+En el ejemplo, el tipo es `"best"`, lo que significa que se seleccionará la opción con la mayor puntuación de todas las que cumplan las condiciones.
 
 #### d. Anular
 
@@ -277,7 +285,6 @@ En este caso del juego "Fantasy Realms" si tienes esta carta en mano anula todas
 {
     "blanks": [
         {
-            "strategy": "otherCards",
             "conditions": [
                 {
                     "condition": "equal",
@@ -287,7 +294,6 @@ En este caso del juego "Fantasy Realms" si tienes esta carta en mano anula todas
             ]
         },
         {
-            "strategy": "otherCards",
             "conditions": [
                 {
                     "condition": "equal",
@@ -297,7 +303,6 @@ En este caso del juego "Fantasy Realms" si tienes esta carta en mano anula todas
             ]
         },
         {
-            "strategy": "otherCards",
             "operator": "and",
             "conditions": [
                 {
@@ -379,7 +384,7 @@ Anula la propia carta si tiene cartas que cumplen la condición
 
 #### e. Ignorar Penalizaciones
 
-El apartado permite especificar cartas cuyas penalizaciones serán ignoradas. Todas los ignorado ocurre antes de que la penalización sea aplicada.
+El apartado permite especificar cartas cuyas penalizaciones serán ignoradas. Todo lo ignorado ocurre antes de que la penalización sea aplicada.
 
 En el siguiente caso del juego "Fantasy Realms" el usuario puede seleccionar una carta para ignorar sus penalizaciones, pero no puede elegir cualquier carta, la carta que puede elegir está dentro de las condiciones, en este caso que el `type` sea `flood` o `flame`. En la aplicación se habilitará un botón para que el usuario puede seleccionar la carta.
 

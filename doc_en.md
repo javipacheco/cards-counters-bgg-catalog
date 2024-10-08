@@ -138,6 +138,7 @@ This type of bonus adds points to the card by counting the number of other cards
 ```
 
 - **countCards**: Counts the cards according to the specified conditions and adds extra points according to the multiplier.
+  - **operator**: Operator that determines how the conditions are evaluated. Can be `"and"` or `"or"`. In the example, `"or"`.
   - **conditions**: List of conditions that must be met for the cards to be counted.
     - **condition**: Type of condition. Can be `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Example: `"equal"`.
     - **field**: Field on which the condition is applied. Can be any common field of the card like "id" or "points", or any of the game-specific fields added in the "metadata" section. Example: `"cardType"`.
@@ -179,6 +180,7 @@ This type of bonus adds extra points to the card in question if you have other c
         - `"oneCardFulfillSomeCondition"` (default) where one card must fulfill some condition
         - `"oneCardFulfillAllTheConditions"` where one card must fulfill all the conditions
         - `"eachConditionIsFulfilledByACard"` where each condition must be fulfilled by at least one different card
+        - `"eachConditionIsFulfilledByAllCards"` where each condition must be fulfilled by all cards
         - `"unlessOneCardFulfillAllTheConditions"` unless you have one card that fulfills all the conditions
   - **conditions**: List of conditions that must be met.
     - **condition**: Type of condition. Can be `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Example: `"equal"`.
@@ -186,65 +188,7 @@ This type of bonus adds extra points to the card in question if you have other c
     - **value**: Value the field must have. Example: `"fire"`.
   - **points**: Additional points awarded if the specified conditions are met. In the example, `50`.
 
-
-##### 3. In Collection with Options
-
-This type of bonus is similar to the "In Collection" bonus, but you will add different options, and it will only give you the highest scoring one. In this case, of the 2 options:
-
-1. You earn 15 points if you have a card with `type` equal to `leader`.
-2. You earn 40 points if, in addition to having a card with `type` equal to `leader`, you also have the card with the identifier `keth_sword`.
-
-Out of the 2 cases, this bonus will add the one with the highest score, as in the example the `type` is equal to `best`.
-
-**Example in JSON:**
-```json
-{
-    "bonus": {
-        "inCollectionWithOptions": {
-            "type": "best",
-            "options": [
-                {
-                    "conditions": [
-                        {
-                            "condition": "equal",
-                            "field": "type",
-                            "value": "leader"
-                        }
-                    ],
-                    "points": 15
-                },
-                {
-                    "strategy": "eachConditionIsFulfilledByACard",
-                    "conditions": [
-                        {
-                            "condition": "equal",
-                            "field": "type",
-                            "value": "leader"
-                        },
-                        {
-                            "condition": "equal",
-                            "field": "id",
-                            "value": "keth_sword"
-                        }
-                    ],
-                    "points": 40
-                }
-            ]
-        }
-    }
-}
-```
-
-Each option within **inCollectionWithOptions** is the same as the conditions described in section 5.b "In Collection."
-
-- **type**: Defines how the best option from the given conditions will be selected. It can be:
-  - `"best"`: Selects the option with the highest score.
-  - `"worst"`: Selects the option with the lowest score.
-  - `"first"`: Selects the first option in order that meets the condition.
-
-In the example, the type is `"best"`, meaning that the option with the highest score among those that meet the conditions will be selected.
-
-##### 4. Count Other Items
+##### 3. Count Other Items
 
 This is typically used to count points at the end of the game based on the number of resources you have, objectives achieved, etc. This data must be manually added by the player and cannot be automatically calculated. For example, in this case in "Everdell," the user has to count the resources they have at the end of the game and add them, which will be the points to be added as a bonus, with a maximum of 6.
 
@@ -267,6 +211,71 @@ This is typically used to count points at the end of the game based on the numbe
 - **max**: Maximum number of items to count. In the example, `6`.
 - **multiply**: Multiplication factor for the points. In the example, `1`.
 
+##### 4. Combine different bonuses
+
+This type of bonus combines different bonuses to choose one of them. For example, you can have
+different options and choose which of them is the best (gives you more points).
+
+Within these options you can find 2 lists:
+
+1. `countCardsOptions`: a list of “Count Cards” bonus (described in section “5.c.1”)
+2. `inCollectionOptions`: a bonus list “In Collection” (described in section “5.c.2”)
+
+For the following example we have 2 options:
+
+1. You earn 15 points if you have a card with `type` equal to `leader`.
+2. You earn 40 points if, in addition to having a card with `type` equal to `leader`, you also have the card with the identifier `keth_sword`.
+
+Out of the 2 cases, this bonus will add the one with the highest score, as in the example the `type` is equal to `best`.
+
+**Example in JSON:**
+```json
+{
+    "bonus": {
+        "fromOptions": {
+            "type": "best",
+            "inCollectionOptions": [
+                {
+                    "conditions": [
+                        {
+                            "condition": "equal",
+                            "field": "type",
+                            "value": "leader"
+                        }
+                    ],
+                    "points": 10
+                },
+                {
+                    "strategy": "eachConditionIsFulfilledByACard",
+                    "conditions": [
+                        {
+                            "condition": "equal",
+                            "field": "type",
+                            "value": "leader"
+                        },
+                        {
+                            "condition": "equal",
+                            "field": "id",
+                            "value": "escudo_keth"
+                        }
+                    ],
+                    "points": 40
+                }
+            ]
+        }
+    }
+}
+```
+
+The new fields are:
+
+- **type**: Defines how the best option from the given conditions will be selected. It can be:
+  - `"best"`: Selects the option with the highest score.
+  - `"worst"`: Selects the option with the lowest score.
+  - `"first"`: Selects the first option in order that meets the condition.
+
+In the example, the type is `"best"`, meaning that the option with the highest score among those that meet the conditions will be selected.
+
 #### d. Blanks
 
 The "blanks" section contains information on how to blank the properties of other or the cards itself. A card with blanks will apply these conditions to the cards you have played, making them lose their type, base points, bonuses, and penalties. Below is the structure and fields of this section.
@@ -278,7 +287,6 @@ In this case, for the game "Fantasy Realms," if you have this card in hand, it b
 {
     "blanks": [
         {
-            "strategy": "otherCards",
             "conditions": [
                 {
                     "condition": "equal",
@@ -288,7 +296,6 @@ In this case, for the game "Fantasy Realms," if you have this card in hand, it b
             ]
         },
         {
-            "strategy": "otherCards",
             "conditions": [
                 {
                     "condition": "equal",
@@ -298,7 +305,6 @@ In this case, for the game "Fantasy Realms," if you have this card in hand, it b
             ]
         },
         {
-            "strategy": "otherCards",
             "operator": "and",
             "conditions": [
                 {
