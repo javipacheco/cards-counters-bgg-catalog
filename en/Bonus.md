@@ -33,10 +33,7 @@ This type of bonus adds points to the card by counting the number of other cards
 
 - **countCards**: Counts the cards according to the specified conditions and adds extra points according to the multiplier.
   - **operator**: Operator that determines how the conditions are evaluated. Can be `"and"` or `"or"`. In the example, `"or"`.
-  - **conditions**: List of conditions that must be met for the cards to be counted.
-    - **condition**: Type of condition. Can be `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Example: `"equal"`.
-    - **field**: Field on which the condition is applied. Can be any common field of the card like "id" or "points", or any of the game-specific fields added in the "metadata" section. Example: `"cardType"`.
-    - **value**: Value the field must have. Example: `"purple_prosperity"`.
+  - **conditions**: more information [here](en/Conditions.md)
   - **multiply**: Multiplier for the points. In the example, `1`.
 
 Each entry in the **countCards** list represents a different set of conditions and a corresponding multiplier for the points.
@@ -76,10 +73,7 @@ This type of bonus adds extra points to the card in question if you have other c
         - `"eachConditionIsFulfilledByACard"` where each condition must be fulfilled by at least one different card
         - `"eachConditionIsFulfilledByAllCards"` where each condition must be fulfilled by all cards
         - `"unlessOneCardFulfillAllTheConditions"` unless you have one card that fulfills all the conditions
-  - **conditions**: List of conditions that must be met.
-    - **condition**: Type of condition. Can be `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Example: `"equal"`.
-    - **field**: Field on which the condition is applied. Can be any common field of the card like "id" or "points", or any of the game-specific fields added in the "metadata" section. Example: `"id"`.
-    - **value**: Value the field must have. Example: `"fire"`.
+  - **conditions**: more information [here](en/Conditions.md)
   - **points**: Additional points awarded if the specified conditions are met. In the example, `50`.
 
 ##### 3. Count Other Items

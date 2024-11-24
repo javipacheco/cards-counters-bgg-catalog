@@ -36,11 +36,7 @@ A continuación se describen los campos del apartado "Ignorar"
 - **numberOfCards**: Número de cartas que el usuario debe seleccionar en caso de que el tipo sea `"some"`. En el ejemplo, `1`.
 - **valueToIgnore**: Palabra a ignorar en el caso de que el tipo sea `"valueOfCondition"`
 - **operator**: Operador que determina cómo se evalúan las condiciones. Puede ser `"and"` o `"or"`. En el ejemplo, `"or"`.
-- **conditions**: Lista de condiciones que deben cumplirse para que una carta sea ignorada.
-  - **condition**: Tipo de condición. Puede ser `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Ejemplo: `"equal"`.
-  - **field**: Campo sobre el cual se aplica la condición. Puede ser cualquier campo común de la carta como "type" o "id", o cualquiera de los campos específicos del juego añadidos en el apartado de "metadata". Ejemplo: `"type"`.
-  - **value**: Valor que debe tener el campo. Ejemplo: `"flood"`.
-  - **value**: Valor que debe tener el campo. Ejemplo: `"flame"`.
+- **conditions**: más información [aquí](es/Condiciones.md)
 
 **Ejemplo en JSON para `valueOfCondition`:**
 

@@ -75,10 +75,7 @@ Each option within "options" has the following structure:
 ```
 
 - **operator**: Operator that determines how the conditions are evaluated. Can be `"and"` or `"or"`. Default is `"and"`. In the example, `"and"`.
-- **conditions**: List of conditions that must be met to apply this option.
-  - **condition**: Type of condition. Can be `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Example: `"equal"`.
-  - **field**: Field on which the condition is applied. Can be any common field of the card like "id" or "points", or any of the game-specific fields added in the "metadata" section. Example: `"cardType"`.
-  - **value**: Value the field must have. Example: `"purple_prosperity"`.
+- **conditions**: more information [here](en/Conditions.md)
 - **color**: Color in ARGB format. The first two hexadecimal digits represent the alpha value. Example: `"ff5f39a5"`.
 - **borderWidth**: Border width in pixels. Applies only if the `type` is `"border"`. In the example, `10`.
 - **borderSide**: Side of the border where the color is applied. Applies only if the `type` is `"border"`. Possible values are `"left"`, `"right"`, `"top"`, and `"bottom"`. In the example, `"left"`.

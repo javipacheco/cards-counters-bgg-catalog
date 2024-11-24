@@ -61,10 +61,7 @@ Default strategy. Cancels other cards in your hand
 }
 ```
 
-- **conditions**: List of conditions that must be met for a card to be blanked.
-  - **condition**: Type of condition. Can be `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Example: `"equal"`.
-  - **field**: Field on which the condition is applied. Can be any common field of the card like "id" or "type", or any of the game-specific fields added in the "metadata" section. Example: `"type"`.
-  - **value**: Value the field must have. Example: `"army"`.
+- **conditions**: more information [here](en/Conditions.md)
 
 ##### 2. Blanking myselft at least
 

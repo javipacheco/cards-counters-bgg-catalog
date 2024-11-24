@@ -33,10 +33,7 @@ Este tipo de bonus añade puntos a la carta contando el número de otras cartas 
 
 - **countCards**: Cuenta las cartas según las condiciones especificadas y añade puntos extra según el multiplicador.
   - **operator**: Operador que determina cómo se evalúan las condiciones. Puede ser `"and"` o `"or"`. En el ejemplo, `"or"`.
-  - **conditions**: Lista de condiciones que deben cumplirse para que las cartas sean contadas.
-    - **condition**: Tipo de condición. Puede ser `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Ejemplo: `"equal"`.
-    - **field**: Campo sobre el cual se aplica la condición. Puede ser cualquier campo común de la carta como "id" o "points", o cualquiera de los campos específicos del juego añadidos en el apartado de "metadata". Ejemplo: `"cardType"`.
-    - **value**: Valor que debe tener el campo. Ejemplo: `"purple_prosperity"`.
+  - **conditions**: más información [aquí](es/Condiciones.md)
   - **multiply**: Multiplicador para los puntos. En el ejemplo, `1`.
 
 Cada entrada en la lista **countCards** representa un conjunto diferente de condiciones y un multiplicador correspondiente para los puntos.
@@ -76,10 +73,7 @@ Este tipo de bonus añade puntos extras a la carta en cuestión en el caso que t
         - `"eachConditionIsFulfilledByACard"` donde cada condición debe ser cumplida al menos por una carta diferente
         - `"eachConditionIsFulfilledByAllCards"` donde cada condición debe ser cumplida por todas las cartas
         - `"unlessOneCardFulfillAllTheConditions"` a menos que tengas una carta que cumpla todas las condiciones
-  - **conditions**: Lista de condiciones que deben cumplirse.
-    - **condition**: Tipo de condición. Puede ser `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Ejemplo: `"equal"`.
-    - **field**: Campo sobre el cual se aplica la condición. Puede ser cualquier campo común de la carta como "id" o "points", o cualquiera de los campos específicos del juego añadidos en el apartado de "metadata". Ejemplo: `"id"`.
-    - **value**: Valor que debe tener el campo. Ejemplo: `"incendio"`.
+  - **conditions**: más información [aquí](es/Condiciones.md)
   - **points**: Puntos adicionales otorgados si se cumplen las condiciones especificadas. En el ejemplo, `50`.
 
 ##### 3. Contar Otros Ítems

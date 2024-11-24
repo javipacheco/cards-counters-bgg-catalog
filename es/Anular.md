@@ -63,10 +63,7 @@ Estrategia por defecto. Anula otras cartas que tienes en tu mano
 }
 ```
 
-- **conditions**: Lista de condiciones que deben cumplirse para que una carta sea anulada.
-  - **condition**: Tipo de condición. Puede ser `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Ejemplo: `"equal"`.
-  - **field**: Campo sobre el cual se aplica la condición. Puede ser cualquier campo común de la carta como "id" o "type", o cualquiera de los campos específicos del juego añadidos en el apartado de "metadata". Ejemplo: `"type"`.
-  - **value**: Valor que debe tener el campo. Ejemplo: `"army"`.
+- **conditions**: más información [aquí](es/Condiciones.md)
 
 ##### 2. Anula la propia carta a menos que tenga cartas
 

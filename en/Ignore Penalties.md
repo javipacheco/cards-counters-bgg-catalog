@@ -36,11 +36,7 @@ Below are the fields in the "Ignore Penalties" section:
 - **numberOfCards**: Number of cards the user must select if the type is `"some"`. In the example, `1`.
 - **valueToIgnore**: Word to ignore in case the type is `"valueOfCondition"`.
 - **operator**: Operator that determines how the conditions are evaluated. Can be `"and"` or `"or"`. In the example, `"or"`.
-- **conditions**: List of conditions that must be met for a card to be ignored.
-  - **condition**: Type of condition. Can be `"equal"`, `"notEqual"`, `"greater"`, `"less"`, `"greaterOrEqual"`, `"lessOrEqual"`. Example: `"equal"`.
-  - **field**: Field on which the condition is applied. Can be any common field of the card like "type" or "id", or any of the game-specific fields added in the "metadata" section. Example: `"type"`.
-  - **value**: Value the field must have. Example: `"flood"`.
-  - **value**: Value the field must have. Example: `"flame"`.
+- **conditions**: more information [here](en/Conditions.md)
 
 **Example in JSON for `valueOfCondition`:**
 
