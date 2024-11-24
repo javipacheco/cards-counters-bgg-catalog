@@ -18,13 +18,13 @@ The documentation is provided in both English and Spanish to cater to a wider au
 
 The English documentation can be found in the `doc_en.md` file.
 
-[Read English Documentation](./doc_en.md)
+[Read English Documentation](./en/index.md)
 
 ### Spanish Documentation
 
 The Spanish documentation can be found in the `doc_es.md` file.
 
-[Read Spanish Documentation](./doc_es.md)
+[Read Spanish Documentation](./es/index.md)
 
 ## Example File
 
