@@ -219,27 +219,27 @@
             "arbol_del_mundo_msg": {
                 "es": "+50 si todas las cartas no ANULADAS que tengas son de diferente tipo",
                 "en": "+50 if all the non-cancelled cards you have are of different type",
-                "de": ""
+                "de": "+50 wenn jede Nicht-BLOCKIERTE Karte eine unterschiedliche Farbe hat"
             },
             "bufon_msg": {
                 "es": "+3 por cada carta impar o +50 si toda la mano es impar",
                 "en": "+3 for each odd card or +50 if the whole hand is odd",
-                "de": ""
+                "de": "+3 für jede andere ungerade Karte +50 wenn alle Karten ungerade sind"
             },
             "recolector_msg": {
                 "es": "cartas diferentes del mismo tipo: +10 con 3, +40 con 4, +100 con 5",
-                "en": "+10 for 3-card run, +30 for 4-card run, +60 for 5-card run, +100 for 6-card run, +150 for 7-card run",
-                "de": ""
+                "en": "Points for cards of the same suit: +10 for 3, +30 for 4, +100 for 5",
+                "de": "Punkte für Karten gleicher Farbe: +10 für 3, +40 für 4, +100 für 5"
             },
             "gema_orden_msg": {
                 "es": "cartas seguidas en fuerza base: +10 con 3, +30 con 4, +60 con 5, +100 con 6, +150 con 7",
                 "en": "cards in a row in base strength: +10 with 3, +30 with 4, +60 with 5, +100 with 6, +150 with 7",
-                "de": ""
+                "de": "Karten mit aufeinanderfolgender Basisstärke: +10 für 3, +30 für 4, +60 für 5, +100 für 6, +150 für 7"
             },
             "fuente_vida_msg": {
                 "es": "Añade la fuerza base de cualquier Arma, Agua, Fuego, Tierra o Aire de tu mano",
                 "en": "Add the base strength of any one Weapon, Flood, Flame, Land or Weather in your hand",
-                "de": ""
+                "de": "Addiere die Basisstärke einer beliebigen Waffe, Flut, Flamme, Land oder Wetter in deiner Hand"
             },
             "artifact": {
                 "es": "Artefacto",
@@ -304,7 +304,7 @@
             "base": {
                 "es": "Base",
                 "en": "Base",
-                "de": ""
+                "de": "Basis"
             }
         },
         "cards": {
@@ -316,12 +316,12 @@
             "montana": {
                 "es": "Montaña",
                 "en": "Mountain",
-                "de": ""
+                "de": "Gebirge"
             },
             "caverna": {
                 "es": "Caverna",
                 "en": "Cavern",
-                "de": ""
+                "de": "Höhle"
             },
             "campanario": {
                 "es": "Campanario",
@@ -331,12 +331,12 @@
             "torbellino": {
                 "es": "Torbellino",
                 "en": "Whirlwind",
-                "de": ""
+                "de": "Wirbelsturm"
             },
             "arqueros_elficos": {
                 "es": "Arqueros Elficos",
                 "en": "Elven Archers",
-                "de": ""
+                "de": "Elbenschützen"
             },
             "hidra": {
                 "es": "Hidra",
@@ -346,12 +346,12 @@
             "arco_elfico": {
                 "es": "Arco Elfico",
                 "en": "Elven Longbow",
-                "de": ""
+                "de": "Elbischer Bogen"
             },
             "caballo_batalla": {
                 "es": "Caballo de Batalla",
                 "en": "Warhorse",
-                "de": ""
+                "de": "Schlachtross"
             },
             "varita_magica": {
                 "es": "Varita Mágica",
@@ -376,12 +376,12 @@
             "senor_guerra": {
                 "es": "Señor de la Guerra",
                 "en": "Warlord",
-                "de": ""
+                "de": "Kriegsherr"
             },
             "fuente_vida": {
                 "es": "Fuente de Vida",
                 "en": "Fountain of Life",
-                "de": ""
+                "de": "Quelle des Lebens"
             },
             "bosque": {
                 "es": "Bosque",
@@ -391,7 +391,7 @@
             "elemental_tierra": {
                 "es": "Elemental de Tierra",
                 "en": "Earth Elemental",
-                "de": ""
+                "de": "Erdwesen"
             },
             "pantano": {
                 "es": "Pantano",
@@ -401,7 +401,7 @@
             "elemental_agua": {
                 "es": "Elemental de Agua",
                 "en": "Water Elemental",
-                "de": ""
+                "de": "Wasserwesen"
             },
             "tormenta": {
                 "es": "Tormenta",
@@ -411,7 +411,7 @@
             "elemental_aire": {
                 "es": "Elemental de Aire",
                 "en": "Air Elemental",
-                "de": ""
+                "de": "Luftwesen"
             },
             "forja": {
                 "es": "Forja",
@@ -421,7 +421,7 @@
             "elemental_fuego": {
                 "es": "Elemental de Fuego",
                 "en": "Fire Elemental",
-                "de": ""
+                "de": "Feuerwesen"
             },
             "caballeria": {
                 "es": "Caballería",
@@ -431,7 +431,7 @@
             "exploradores": {
                 "es": "Exploradores",
                 "en": "Rangers",
-                "de": ""
+                "de": "Waldläufer"
             },
             "senor_bestias": {
                 "es": "Señor de las Bestias",
@@ -441,7 +441,7 @@
             "encantadora": {
                 "es": "Encantadora",
                 "en": "Enchantress",
-                "de": ""
+                "de": "Magierin"
             },
             "princesa": {
                 "es": "Princesa",
@@ -461,7 +461,7 @@
             "infanteria_enana": {
                 "es": "Infantería Enana",
                 "en": "Dwarvish Infantry",
-                "de": ""
+                "de": "Zwergeninfanterie"
             },
             "basilisco": {
                 "es": "Basilisco",
@@ -486,12 +486,12 @@
             "brujo_maestro": {
                 "es": "Brujo Maestro",
                 "en": "Warlock Lord",
-                "de": ""
+                "de": "Hexenmeister"
             },
             "nigromante": {
                 "es": "Nigromante",
                 "en": "Necromancer",
-                "de": ""
+                "de": "Totenbeschwörer"
             },
             "incendio": {
                 "es": "Incendio",
@@ -516,17 +516,17 @@
             "bufon": {
                 "es": "Bufón",
                 "en": "Jester",
-                "de": ""
+                "de": "Hofnarr"
             },
             "recolector": {
                 "es": "Recolector",
                 "en": "Collector",
-                "de": ""
+                "de": "Sammler"
             },
             "gema_orden": {
                 "es": "Gema del Orden",
                 "en": "Gem of Order",
-                "de": ""
+                "de": "Juwel der Ordnung"
             },
             "dragon": {
                 "es": "Dragón",
@@ -541,47 +541,47 @@
             "humo": {
                 "es": "Humo",
                 "en": "Smoke",
-                "de": ""
+                "de": "Rauch"
             },
             "dirigible_guerra": {
                 "es": "Dirigible de Guerra",
                 "en": "War Dirigible",
-                "de": ""
+                "de": "Kampfzeppelin"
             },
             "buque_guerra": {
                 "es": "Buque de Guerra",
                 "en": "Warship",
-                "de": ""
+                "de": "Kriegsschiff"
             },
             "relampago": {
                 "es": "Relámpago",
                 "en": "Lightning",
-                "de": ""
+                "de": "Blitz"
             },
             "espejismo": {
                 "es": "Espejismo",
                 "en": "Mirage",
-                "de": ""
+                "de": "Spiegelung"
             },
             "doppelganger": {
                 "es": "Doppelgänger",
                 "en": "Doppelgänger",
-                "de": ""
+                "de": "Doppelgänger"
             },
             "cambiaformas": {
                 "es": "Cambiaformas",
                 "en": "Shapeshifter",
-                "de": ""
+                "de": "Gestaltwandler"
             },
             "libro_cambios": {
                 "es": "Libro de Cambios",
                 "en": "Book of Changes",
-                "de": ""
+                "de": "Buch der Veränderung"
             },
             "fenix": {
                 "es": "Fénix",
                 "en": "Phoenix",
-                "de": ""
+                "de": "Phönix"
             }
         }
     },
