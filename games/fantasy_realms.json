@@ -83,6 +83,42 @@
                             {
                                 "condition": "equal",
                                 "field": "type",
+                                "value": "outsider"
+                            }
+                        ],
+                        "color": "fffba934",
+                        "borderWidth": 10,
+                        "borderSide": "left"
+                    },
+                    {
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "building"
+                            }
+                        ],
+                        "color": "ff463153",
+                        "borderWidth": 10,
+                        "borderSide": "left"
+                    },
+                    {
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "undead"
+                            }
+                        ],
+                        "color": "ff004e4a",
+                        "borderWidth": 10,
+                        "borderSide": "left"
+                    },
+                    {
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "type",
                                 "value": "wild"
                             }
                         ],
@@ -220,6 +256,10 @@
                 "es": "+50 si todas las cartas no ANULADAS que tengas son de diferente tipo",
                 "en": "+50 if all the non-cancelled cards you have are of different type"
             },
+            "arbol_del_mundo_expa_msg": {
+                "es": "+70 si todas las cartas no ANULADAS que tengas son de diferente tipo",
+                "en": "+70 if all the non-cancelled cards you have are of different type"
+            },
             "bufon_msg": {
                 "es": "+3 por cada carta impar o +50 si toda la mano es impar",
                 "en": "+3 for each odd card or +50 if the whole hand is odd"
@@ -235,6 +275,50 @@
             "fuente_vida_msg": {
                 "es": "Añade la fuerza base de cualquier Arma, Agua, Fuego, Tierra o Aire de tu mano",
                 "en": "Add the base strength of any one Weapon, Flood, Flame, Land or Weather in your hand"
+            },
+            "fuente_vida_expa_msg": {
+                "es": "Añade la fuerza base de cualquier Edificio, Arma, Agua, Fuego, Tierra o Aire de tu mano",
+                "en": "Add the base strength of any one Building, Weapon, Flood, Flame, Land or Weather in your hand"
+            },
+            "mazmorra_msg": {
+                "es": "+10 por el primer No-Muerto, Bestia y Artefacto, +5 por las siguientes y Nigromante, Brujo Mestro y Demonio",
+                "en": "+10 for the first Undead, Beast and Artifact, +5 for the following and Necromancer, Warlock Lord and Demon"
+            },
+            "castillo_msg": {
+                "es": "+10 por el primer Líder, Ejército, Tierra y otro Edificio, +5 por cada otro Edificio",
+                "en": "+10 for the first Leader, Army, Land and other Building, +5 for each other Building"
+            },
+            "capilla_msg": {
+                "es": "+40 si tienes exactamente 2 cartas de Leader, Mago, Visitante y No-Muerto",
+                "en": "+40 if you have exactly 2 cards from among of these suits: Leader, Wizard, Outsider and Undead"
+            },
+            "genio_msg": {
+                "es": "+10 por cada otro jugador. ¿Cuántos jugadores hay en la partida sin contar tú?",
+                "en": "+10 for each other player. How many players are in the game, not counting you?"
+            },
+            "juez_msg": {
+                "es": "+10 por cada carta que tenga una Penalización que no haya sido IGNORADA",
+                "en": "+10 for each card that contains a Penalty that is not CLEARED"
+            },
+            "reina_oscura": {
+                "es": "Numero de cartas de Tierra, Agua, Fuego, Aire y Unicornio en el área de descarte",
+                "en": "Number of Land, Flood, Flame, Weather and Unicorn cards in the discard area"
+            },
+            "ghoul_msg": {
+                "es": "Número de cartas de Mago, Líder, Ejército, Bestia y No-Muerto en el área de descarte",
+                "en": "Number of Wizard, Leader, Army, Beast, and Undead cards in the discard area"
+            },
+            "espectro_msg": {
+                "es": "Número de cartas de Mago, Artefacto y Visitante en el área de descarte",
+                "en": "Number of Wizard, Artifact, and Outsider cards in the discard area"
+            },
+            "caballero_oscuro_msg": {
+                "es": "Número de cartas de Arma y Ejército en el área de descarte",
+                "en": "Number of Weapon and Army cards in the discard area"
+            },
+            "demonio_msg": {
+                "es": "Cada carta que no sea Visitante es anulada si es la única de su tipo",
+                "en": "Each card that is not an Outsider is blanked if it is the only one of its type"
             },
             "artifact": {
                 "es": "Artefacto",
@@ -280,13 +364,29 @@
                 "es": "Variable",
                 "en": "Wild"
             },
+            "undead": {
+                "es": "No-Muerto",
+                "en": "Undead"
+            },
+            "outsider": {
+                "es": "Visitante",
+                "en": "Outsider"
+            },
+            "building": {
+                "es": "Edificio",
+                "en": "Building"
+            },
             "number": {
                 "es": "Número",
                 "en": "Number"
             },
             "base": {
-                "es": "Base",
-                "en": "Base"
+                "es": "Fantasy Realms (Base)",
+                "en": "Fantasy Realms (Base)"
+            },
+            "tesoro_maldito": {
+                "es": "Fantasy Realms: Tesoro Maldito",
+                "en": "Fantasy Realms: The Cursed Hoard"
             }
         },
         "cards": {
@@ -509,6 +609,66 @@
             "fenix": {
                 "es": "Fénix",
                 "en": "Phoenix"
+            },
+            "mazmorra": {
+                "es": "Mazmorra",
+                "en": "Dungeon"
+            },
+            "castillo": {
+                "es": "Castillo",
+                "en": "Castle"
+            },
+            "cripta": {
+                "es": "Cripta",
+                "en": "Crypt"
+            },
+            "capilla": {
+                "es": "Capilla",
+                "en": "Chapel"
+            },
+            "jardin": {
+                "es": "Jardín",
+                "en": "Garden"
+            },
+            "genio": {
+                "es": "Genio",
+                "en": "Genie"
+            },
+            "juez": {
+                "es": "Juez",
+                "en": "Judge"
+            },
+            "angel": {
+                "es": "Ángel",
+                "en": "Angel"
+            },
+            "leprechaun": {
+                "es": "Leprechaun",
+                "en": "Leprechaun"
+            },
+            "reina_oscura": {
+                "es": "Reina Oscura",
+                "en": "Dark Queen"
+            },
+            "ghoul": {
+                "es": "Ghoul",
+                "en": "Ghoul"
+            },
+            "espectro": {
+                "es": "Espectro",
+                "en": "Specter"
+            },
+            "liche": {
+                "es": "Liche",
+                "en": "Lich"
+            },
+            "caballero_oscuro": {
+                "es": "Caballero Oscuro",
+                "en": "Dark Knight"
+            },
+            "demonio": {
+                "es": "Demonio",
+                "en": "Demon"
             }
         }
     },
@@ -933,7 +1093,7 @@
                         }
                     },
                     "types": [
-                        "artifact"
+                        "weapon"
                     ],
                     "unique": true,
                     "metadata": {
@@ -2288,6 +2448,659 @@
                     "unique": true,
                     "metadata": {
                         "number": "49"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "tesoro_maldito",
+            "cards": [
+                {
+                    "id": "mazmorra",
+                    "points": 7,
+                    "bonus": {
+                        "function": {
+                            "name": "mazmorraFantasyRealms",
+                            "translation": "mazmorra_msg"
+                        }
+                    },
+                    "types": [
+                        "building"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "1/47"
+                    }
+                },
+                {
+                    "id": "castillo",
+                    "points": 10,
+                    "bonus": {
+                        "function": {
+                            "name": "castilloFantasyRealms",
+                            "translation": "castillo_msg"
+                        }
+                    },
+                    "types": [
+                        "building"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "2/47"
+                    }
+                },
+                {
+                    "id": "cripta",
+                    "points": 21,
+                    "bonus": {
+                        "sumPointsOtherCards": {
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "undead"
+                                }
+                            ]
+                        }
+                    },
+                    "blanks": [
+                        {
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "leader"
+                                }
+                            ]
+                        }
+                    ],
+                    "types": [
+                        "building"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "3/47"
+                    }
+                },
+                {
+                    "id": "capilla",
+                    "points": 2,
+                    "bonus": {
+                        "function": {
+                            "name": "capillaFantasyRealms",
+                            "translation": "capilla_msg"
+                        }
+                    },
+                    "types": [
+                        "building"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "4/47"
+                    }
+                },
+                {
+                    "id": "jardin",
+                    "points": 11,
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "operator": "or",
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "leader"
+                                    },
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "beast"
+                                    }
+                                ],
+                                "multiply": 11
+                            }
+                        ]
+                    },
+                    "blanks": [
+                        {
+                            "strategy": "myselfWith",
+                            "operator": "or",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "undead"
+                                },
+                                {
+                                    "condition": "equal",
+                                    "field": "id",
+                                    "value": "nigromante"
+                                },
+                                {
+                                    "condition": "equal",
+                                    "field": "id",
+                                    "value": "demonio"
+                                }
+                            ]
+                        }
+                    ],
+                    "types": [
+                        "land"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "5/47"
+                    }
+                },
+                {
+                    "id": "genio",
+                    "points": -50,
+                    "bonus": {
+                        "countOtherItems": [
+                            {
+                                "translation": "genio_msg",
+                                "multiply": 10
+                            }
+                        ]
+                    },
+                    "types": [
+                        "outsider"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "6/47"
+                    }
+                },
+                {
+                    "id": "juez",
+                    "points": 11,
+                    "bonus": {
+                        "function": {
+                            "name": "juezFantasyRealms",
+                            "translation": "juez_msg"
+                        }
+                    },
+                    "types": [
+                        "outsider"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "7/47"
+                    }
+                },
+                {
+                    "id": "angel",
+                    "points": 16,
+                    "clears": [
+                        {
+                            "type": "some",
+                            "numberOfCards": 1
+                        },
+                        {
+                            "type": "all",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "id",
+                                    "value": "angel"
+                                }
+                            ]
+                        }
+                    ],
+                    "types": [
+                        "outsider"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "8/47"
+                    }
+                },
+                {
+                    "id": "leprechaun",
+                    "points": 20,
+                    "types": [
+                        "outsider"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "9/47"
+                    }
+                },
+                {
+                    "id": "demonio",
+                    "points": 45,
+                    "blankFunction": {
+                        "name": "demonioFantasyRealms",
+                        "translation": "demonio_msg"
+                    },
+                    "types": [
+                        "outsider"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "10/47"
+                    }
+                },
+                {
+                    "id": "reina_oscura",
+                    "points": 10,
+                    "bonus": {
+                        "countOtherItems": [
+                            {
+                                "translation": "reina_oscura_msg",
+                                "multiply": 5
+                            }
+                        ]
+                    },
+                    "types": [
+                        "undead"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "11/47"
+                    }
+                },
+                {
+                    "id": "ghoul",
+                    "points": 8,
+                    "bonus": {
+                        "countOtherItems": [
+                            {
+                                "translation": "ghoul_msg",
+                                "multiply": 4
+                            }
+                        ]
+                    },
+                    "types": [
+                        "undead"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "12/47"
+                    }
+                },
+                {
+                    "id": "espectro",
+                    "points": 12,
+                    "bonus": {
+                        "countOtherItems": [
+                            {
+                                "translation": "espectro_msg",
+                                "multiply": 6
+                            }
+                        ]
+                    },
+                    "types": [
+                        "undead"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "13/47"
+                    }
+                },
+                {
+                    "id": "liche",
+                    "points": 13,
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "operator": "or",
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "undead"
+                                    },
+                                    {
+                                        "condition": "equal",
+                                        "field": "id",
+                                        "value": "nigromante"
+                                    }
+                                ],
+                                "multiply": 10
+                            }
+                        ]
+                    },
+                    "clears": [
+                        {
+                            "type": "all",
+                            "operator": "and",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "undead"
+                                }
+                            ]
+                        }
+                    ],
+                    "types": [
+                        "undead"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "14/47"
+                    }
+                },
+                {
+                    "id": "caballero_oscuro",
+                    "points": 14,
+                    "bonus": {
+                        "countOtherItems": [
+                            {
+                                "translation": "caballero_oscuro_msg",
+                                "multiply": 7
+                            }
+                        ]
+                    },
+                    "types": [
+                        "undead"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "15/47"
+                    }
+                },
+                {
+                    "id": "campanario",
+                    "points": 8,
+                    "bonus": {
+                        "inCollection": {
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "wizard"
+                                },
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "undead"
+                                }
+                            ],
+                            "points": 15
+                        }
+                    },
+                    "types": [
+                        "building"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "16/47"
+                    }
+                },
+                {
+                    "id": "fuente_vida",
+                    "points": 1,
+                    "bonus": {
+                        "function": {
+                            "name": "fuenteVidaExpaFantasyRealms",
+                            "translation": "fuente_vida_expa_msg"
+                        }
+                    },
+                    "types": [
+                        "flood"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "17/47"
+                    }
+                },
+                {
+                    "id": "inundacion",
+                    "points": 32,
+                    "blanks": [
+                        {
+                            "operator": "and",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "army"
+                                }
+                            ]
+                        },
+                        {
+                            "operator": "and",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "building"
+                                }
+                            ]
+                        },
+                        {
+                            "operator": "and",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "land"
+                                },
+                                {
+                                    "condition": "notEqual",
+                                    "field": "id",
+                                    "value": "montana"
+                                }
+                            ]
+                        },
+                        {
+                            "operator": "and",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "flame"
+                                },
+                                {
+                                    "condition": "notEqual",
+                                    "field": "id",
+                                    "value": "relampago"
+                                }
+                            ]
+                        }
+                    ],
+                    "types": [
+                        "flood"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "18/47"
+                    }
+                },
+                {
+                    "id": "exploradores",
+                    "points": 5,
+                    "clears": [
+                        {
+                            "type": "valueOfCondition",
+                            "valueToIgnore": "army",
+                            "conditions": [
+                                {
+                                    "condition": "notEqual",
+                                    "field": "id",
+                                    "value": "dirigible_guerra"
+                                }
+                            ]
+                        }
+                    ],
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "operator": "or",
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "land"
+                                    },
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "building"
+                                    }
+                                ],
+                                "multiply": 10
+                            }
+                        ]
+                    },
+                    "types": [
+                        "army"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "19/47"
+                    }
+                },
+                {
+                    "id": "nigromante",
+                    "points": 3,
+                    "clears": [
+                        {
+                            "type": "all",
+                            "operator": "and",
+                            "conditions": [
+                                {
+                                    "condition": "equal",
+                                    "field": "type",
+                                    "value": "undead"
+                                }
+                            ]
+                        }
+                    ],
+                    "types": [
+                        "wizard"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "20/47"
+                    }
+                },
+                {
+                    "id": "arbol_del_mundo",
+                    "points": 2,
+                    "bonus": {
+                        "function": {
+                            "name": "arbolDelMundoExpaFantasyRealms",
+                            "translation": "arbol_del_mundo_expa_msg"
+                        }
+                    },
+                    "types": [
+                        "artifact"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "21/47"
+                    }
+                },
+                {
+                    "id": "cambiaformas",
+                    "points": 0,
+                    "copy": {
+                        "from": "all",
+                        "attributes": {
+                            "name": true,
+                            "types": true,
+                            "points": false,
+                            "bonus": false,
+                            "penaltyBonus": false
+                        },
+                        "operator": "or",
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "artifact"
+                            },
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "leader"
+                            },
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "wizard"
+                            },
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "weapon"
+                            },
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "beast"
+                            },
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "undead"
+                            }
+                        ]
+                    },
+                    "types": [
+                        "wild"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "22/47"
+                    }
+                },
+                {
+                    "id": "espejismo",
+                    "points": 0,
+                    "copy": {
+                        "from": "all",
+                        "attributes": {
+                            "name": true,
+                            "types": true,
+                            "points": false,
+                            "bonus": false,
+                            "penaltyBonus": false
+                        },
+                        "operator": "or",
+                        "conditions": [
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "army"
+                            },
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "building"
+                            },
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "land"
+                            },
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "weather"
+                            },
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "flood"
+                            },
+                            {
+                                "condition": "equal",
+                                "field": "type",
+                                "value": "flame"
+                            }
+                        ]
+                    },
+                    "types": [
+                        "wild"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "number": "23/47"
                     }
                 }
             ]

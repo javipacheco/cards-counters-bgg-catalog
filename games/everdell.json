@@ -112,269 +112,465 @@
         "others": {
             "arquitecto_msg": {
                 "es": "por cada resina y guijarro, máximo 6",
-                "en": "for each resin and pebble, maximum 6"
+                "en": "for each resin and pebble, maximum 6",
+                "de": "für jedes Harz und Kiesel, maximal 6"
             },
             "rey_msg_1": {
                 "es": "por cada Evento Básico",
-                "en": "for each Basic Event"
+                "en": "for each Basic Event",
+                "de": "für jedes Einfache Ereignis"
             },
             "rey_msg_2": {
                 "es": "por cada Evento Especial",
-                "en": "for each Special Event"
+                "en": "for each Special Event",
+                "de": "für jedes Besondere Ereignis"
             },
             "base": {
-                "es": "Base",
-                "en": "Base"
+                "es": "Everdell (Base)",
+                "en": "Everdell (Base)",
+                "de": "Everdell (Basis)"
             },
             "construction": {
                 "es": "Construcción",
-                "en": "Construction"
+                "en": "Construction",
+                "de": "Bauwerk"
             },
             "critter": {
                 "es": "Criatura",
-                "en": "Critter"
+                "en": "Critter",
+                "de": "Wesen"
             },
             "combined": {
                 "es": "Combina con",
-                "en": "Combined with"
+                "en": "Combined with",
+                "de": "Zusammen mit"
             },
             "berries": {
                 "es": "Bayas",
-                "en": "Berries"
+                "en": "Berries",
+                "de": "Beeren"
             },
             "twigs": {
                 "es": "Madera",
-                "en": "Twigs"
+                "en": "Twigs",
+                "de": "Zweige"
             },
             "resin": {
                 "es": "Resina",
-                "en": "Resin"
+                "en": "Resin",
+                "de": "Harz"
             },
             "pebbles": {
                 "es": "Guijarros",
-                "en": "Pebbles"
+                "en": "Pebbles",
+                "de": "Kiesel"
             },
             "cardType": {
                 "es": "Tipo de Carta",
-                "en": "Card Type"
+                "en": "Card Type",
+                "de": "Kartentypen"
             },
             "green_production": {
                 "es": "Producción",
-                "en": "Green Production"
+                "en": "Green Production",
+                "de": "Produktion (grün)"
             },
             "purple_prosperity": {
                 "es": "Prosperidad",
-                "en": "Purple Prosperity"
+                "en": "Purple Prosperity",
+                "de": "Wohlstand (lila)"
             },
             "blue_governance": {
                 "es": "Gobernanza",
-                "en": "Blue Governance"
+                "en": "Blue Governance",
+                "de": "Verwaltung (blau)"
             },
             "red_destination": {
                 "es": "Destino",
-                "en": "Red Destination"
+                "en": "Red Destination",
+                "de": "Ziel (rot)"
             },
             "tan_traveler": {
                 "es": "Viajero",
-                "en": "Tan Traveler"
+                "en": "Tan Traveler",
+                "de": "Bewegung (braun)"
             },
             "opened": {
                 "es": "Abierta",
-                "en": "Opened"
+                "en": "Opened",
+                "de": "offen"
+            },
+            "fynn_nobletail_msg_1": {
+                "es": "por cada Evento Básico que hayas logrado",
+                "en": "for each basis Event you achieved",
+                "de": "für jedes Einfache Ereignis, das du erledigt hast"
+            },
+            "fynn_nobletail_msg_2": {
+                "es": "por cada Evento Especial que hayas logrado",
+                "en": "for each special Event you achieved",
+                "de": "für jedes Besondere Ereignis, das du erledigt hast"
+            },
+            "bridge_sky_msg": {
+                "es": "valor de la Construcción sobre esta carta",
+                "en": "value of the Construction on top of this card",
+                "de": "Wert der Bauwerk auf dieser Karte"
+            },
+            "rugwort_ruler_msg": {
+                "es": "por cada Evento logrado por un oponente",
+                "en": "for each Event achieved by an opponent",
+                "de": "für jedes Ereignis, das einer deiner Mitspieler erledigt hat"
+            },
+            "extra_extra": {
+                "es": "Everdell: Extra! Extra!",
+                "en": "Everdell: Extra! Extra!",
+                "de": "Everdell: Extra! Extra!"
+            },
+            "legends": {
+                "es": "Everdell: Leyendas",
+                "en": "Everdell: Legends",
+                "de": "Everdell: Legenden"
+            },
+            "rugwort_pack": {
+                "es": "Everdell: Rugwort Pack",
+                "en": "Everdell: Rugwort Pack",
+                "de": "Everdell: Fusselwürz"
             }
         },
         "cards": {
             "arbol_eterno": {
                 "es": "Árbol Eterno",
-                "en": "Ever Tree"
+                "en": "Ever Tree",
+                "de": "Immerbaum"
             },
             "esposa": {
                 "es": "Esposa",
-                "en": "Wife"
+                "en": "Wife",
+                "de": "Ehefrau"
             },
             "esposo": {
                 "es": "Esposo",
-                "en": "Husband"
+                "en": "Husband",
+                "de": "Ehemann"
             },
             "granja": {
                 "es": "Granja",
-                "en": "Farm"
+                "en": "Farm",
+                "de": "Farm"
             },
             "monje": {
                 "es": "Monje",
-                "en": "Monk"
+                "en": "Monk",
+                "de": "Mönch"
             },
             "monasterio": {
                 "es": "Monasterio",
-                "en": "Monastery"
+                "en": "Monastery",
+                "de": "Kloster"
             },
             "arquitecto": {
                 "es": "Arquitecto",
-                "en": "Architect"
+                "en": "Architect",
+                "de": "Architekt"
             },
             "grua": {
                 "es": "Grúa",
-                "en": "Crane"
+                "en": "Crane",
+                "de": "Kran"
             },
             "mina": {
                 "es": "Mina",
-                "en": "Mine"
+                "en": "Mine",
+                "de": "Mine"
             },
             "topo_minero": {
                 "es": "Topo Minero",
-                "en": "Miner Mole"
+                "en": "Miner Mole",
+                "de": "Minenmaulwurf"
             },
             "tendera": {
                 "es": "Tendera",
-                "en": "Shopkeeper"
+                "en": "Shopkeeper",
+                "de": "Ladeninhaber"
             },
             "tienda": {
                 "es": "Tienda",
-                "en": "General Store"
+                "en": "General Store",
+                "de": "Gemischtwarenladen"
             },
             "palacio": {
                 "es": "Palacio",
-                "en": "Palace"
+                "en": "Palace",
+                "de": "Palast"
             },
             "reina": {
                 "es": "Reina",
-                "en": "Queen"
+                "en": "Queen",
+                "de": "Königin"
             },
             "rey": {
                 "es": "Rey",
-                "en": "King"
+                "en": "King",
+                "de": "König"
             },
             "castillo": {
                 "es": "Castillo",
-                "en": "Castle"
+                "en": "Castle",
+                "de": "Schloss"
             },
             "posadero": {
                 "es": "Posadero",
-                "en": "Innkeeper"
+                "en": "Innkeeper",
+                "de": "Gastwirt"
             },
             "posada": {
                 "es": "Posada",
-                "en": "Inn"
+                "en": "Inn",
+                "de": "Gasthaus"
             },
             "almacen": {
                 "es": "Almacén",
-                "en": "Warehouse"
+                "en": "Storehouse",
+                "de": "Lager"
             },
             "tallista": {
                 "es": "Tallista",
-                "en": "Woodcarver"
+                "en": "Woodcarver",
+                "de": "Holzschnitzer"
             },
             "profersor": {
                 "es": "Profersor",
-                "en": "Teacher"
+                "en": "Teacher",
+                "de": "Lehrer"
             },
             "escuela": {
                 "es": "Escuela",
-                "en": "School"
+                "en": "School",
+                "de": "Schule"
             },
             "sapo_barquero": {
                 "es": "Sapo Barquero",
-                "en": "Barge Toad"
+                "en": "Barge Toad",
+                "de": "Bootskröte"
             },
             "barcaza": {
                 "es": "Barcaza",
-                "en": "Twig Barge"
+                "en": "Twig Barge",
+                "de": "Boot aus Zweigen"
             },
             "torre_vigia": {
                 "es": "Torre Vigía",
-                "en": "Lookout"
+                "en": "Lookout",
+                "de": "Ausguck"
             },
             "trotamundos": {
                 "es": "Trotamundos",
-                "en": "Wanderer"
+                "en": "Wanderer",
+                "de": "Wanderin"
             },
             "pastor": {
                 "es": "Pastor",
-                "en": "Shepherd"
+                "en": "Shepherd",
+                "de": "Hirtin"
             },
             "capilla": {
                 "es": "Capilla",
-                "en": "Chapel"
+                "en": "Chapel",
+                "de": "Kapelle"
             },
             "universidad": {
                 "es": "Universidad",
-                "en": "University"
+                "en": "University",
+                "de": "Universität"
             },
             "doctor": {
                 "es": "Doctor",
-                "en": "Doctor"
+                "en": "Doctor",
+                "de": "Doktor"
             },
             "roedor_barredor": {
                 "es": "Roedor Barredor",
-                "en": "Chip Sweep"
+                "en": "Chip Sweep",
+                "de": "Fegehörnchen"
             },
             "refineria_resina": {
                 "es": "Refinería de Resina",
-                "en": "Resin Refinery"
+                "en": "Resin Refinery",
+                "de": "Harzraffinerie"
             },
             "juzgados": {
                 "es": "Juzgados",
-                "en": "Courthouse"
+                "en": "Courthouse",
+                "de": "Gericht"
             },
             "juez": {
                 "es": "Juez",
-                "en": "Judge"
+                "en": "Judge",
+                "de": "Richterin"
             },
             "bardo": {
                 "es": "Bardo",
-                "en": "Bard"
+                "en": "Bard",
+                "de": "Barde"
             },
             "teatro": {
                 "es": "Teatro",
-                "en": "Theater"
+                "en": "Theater",
+                "de": "Theater"
             },
             "bufon": {
                 "es": "Bufón",
-                "en": "Fool"
+                "en": "Fool",
+                "de": "Narr"
             },
             "feria": {
                 "es": "Feria",
-                "en": "Fairbrounds"
+                "en": "Fairbrounds",
+                "de": "Festplatz"
             },
             "cementerio": {
                 "es": "Cementerio",
-                "en": "Cemetery"
+                "en": "Cemetery",
+                "de": "Friedhof"
             },
             "enterrador": {
                 "es": "Enterrador",
-                "en": "Undertaker"
+                "en": "Undertaker",
+                "de": "Totengräberin"
             },
             "paloma_postal": {
                 "es": "Paloma Postal",
-                "en": "Postal Pigeon"
+                "en": "Postal Pigeon",
+                "de": "Brieftaube"
             },
             "oficina_postal": {
                 "es": "Oficina Postal",
-                "en": "Post Office"
+                "en": "Post Office",
+                "de": "Post"
             },
             "torre_del_reloj": {
                 "es": "Torre del Reloj",
-                "en": "Clock Tower"
+                "en": "Clock Tower",
+                "de": "Uhrenturm"
             },
             "historiador": {
                 "es": "Historiador",
-                "en": "Historian"
+                "en": "Historian",
+                "de": "Historiker"
             },
             "buhonero": {
                 "es": "Buhonero",
-                "en": "Peddler"
+                "en": "Peddler",
+                "de": "Hausierer"
             },
             "ruinas": {
                 "es": "Ruinas",
-                "en": "Ruins"
+                "en": "Ruins",
+                "de": "Ruine"
             },
             "mazmorra": {
                 "es": "Mazmorra",
-                "en": "Dungeon"
+                "en": "Dungeon",
+                "de": "Verlies"
             },
             "guardabosques": {
                 "es": "Guardabosques",
-                "en": "Ranger"
+                "en": "Ranger",
+                "de": "Waldläufer"
+            },
+            "gazette": {
+                "es": "Gaceta",
+                "en": "Gazette",
+                "de": "Zeitungsstand"
+            },
+            "scurrble_stadium": {
+                "es": "Estadio Scurrble",
+                "en": "Scurrble Stadium",
+                "de": "Scurrble-Stadion"
+            },
+            "town_crier": {
+                "es": "Pregonero",
+                "en": "Town Crier",
+                "de": "Herold"
+            },
+            "scurrble_champion": {
+                "es": "Campeón Scurrble",
+                "en": "Scurrble Champion",
+                "de": "Scurrble-Champion"
+            },
+            "carnival": {
+                "es": "Carnaval",
+                "en": "Carnival",
+                "de": "Jahrmarkt"
+            },
+            "juggler": {
+                "es": "Malabarista",
+                "en": "Juggler",
+                "de": "Jongleur"
+            },
+            "poe": {
+                "es": "Poe",
+                "en": "Poe",
+                "de": "Edgar"
+            },
+            "foresight": {
+                "es": "Previsión",
+                "en": "Foresight",
+                "de": "Weitblick"
+            },
+            "amilla_glistendew": {
+                "es": "Amilla Glistendew",
+                "en": "Amilla Glistendew",
+                "de": "Amilla Funkeltau"
+            },
+            "fynn_nobletail": {
+                "es": "Fynn Nobletail",
+                "en": "Fynn Nobletail",
+                "de": "Fynn Nobelschwanz"
+            },
+            "cirrus_windfall": {
+                "es": "Cirrus Windfall",
+                "en": "Cirrus Windfall",
+                "de": "Cirrus Windfall"
+            },
+            "green_acorn": {
+                "es": "The Green Acorn",
+                "en": "The Green Acorn",
+                "de": "Zur grünen Eichel"
+            },
+            "silver_scale_spring": {
+                "es": "Silver Scale Spring",
+                "en": "Silver Scale Spring",
+                "de": "Quelle der Silberschuppen"
+            },
+            "oleander_opera_house": {
+                "es": "Oleander's Opera House",
+                "en": "Oleander's Opera House",
+                "de": "Oleanders Opernhaus"
+            },
+            "mcgregor_market": {
+                "es": "McGregor's Market",
+                "en": "McGregor's Market",
+                "de": "McGregors Markt"
+            },
+            "bridge_sky": {
+                "es": "Bridge of the Sky",
+                "en": "Bridge of the Sky",
+                "de": "Himmelsbrücke"
+            },
+            "rugwort_ruler": {
+                "es": "Rugwort Ruler",
+                "en": "Rugwort Ruler",
+                "de": "Fusselwürz der Fürst"
+            },
+            "rugwort_rowdy": {
+                "es": "Rugwort Rowdy",
+                "en": "Rugwort Rowdy",
+                "de": "Fusselwürz der Flegel"
+            },
+            "rugwort_robber": {
+                "es": "Rugwort Robber",
+                "en": "Rugwort Robber",
+                "de": "Fusselwürz der Fiesling"
             }
         }
     },
@@ -400,10 +596,13 @@
                             }
                         ]
                     },
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "purple_prosperity",
+                        "combined": "any",
                         "twigs": 3,
                         "resin": 3,
                         "pebbles": 3
@@ -424,7 +623,9 @@
                             "points": 3
                         }
                     },
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": false,
                     "metadata": {
                         "cardType": "purple_prosperity",
@@ -435,7 +636,9 @@
                 {
                     "id": "esposo",
                     "points": 2,
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -446,7 +649,9 @@
                 {
                     "id": "granja",
                     "points": 1,
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": false,
                     "metadata": {
                         "cardType": "red_destination",
@@ -458,7 +663,9 @@
                 {
                     "id": "monje",
                     "points": 0,
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "metadata": {
                         "cardType": "green_production",
                         "unique": false,
@@ -469,7 +676,9 @@
                 {
                     "id": "monasterio",
                     "points": 1,
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "red_destination",
@@ -491,7 +700,9 @@
                             }
                         ]
                     },
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "purple_prosperity",
@@ -502,7 +713,9 @@
                 {
                     "id": "grua",
                     "points": 1,
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "blue_governance",
@@ -513,7 +726,9 @@
                 {
                     "id": "mina",
                     "points": 2,
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -526,7 +741,9 @@
                 {
                     "id": "topo_minero",
                     "points": 2,
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -537,7 +754,9 @@
                 {
                     "id": "tendera",
                     "points": 1,
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "blue_governance",
@@ -548,7 +767,9 @@
                 {
                     "id": "tienda",
                     "points": 1,
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -580,7 +801,9 @@
                             }
                         ]
                     },
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "purple_prosperity",
@@ -593,7 +816,9 @@
                 {
                     "id": "reina",
                     "points": 4,
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "red_destination",
@@ -616,7 +841,9 @@
                             }
                         ]
                     },
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "purple_prosperity",
@@ -647,7 +874,9 @@
                             }
                         ]
                     },
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "purple_prosperity",
@@ -660,7 +889,9 @@
                 {
                     "id": "posadero",
                     "points": 1,
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "blue_governance",
@@ -671,7 +902,9 @@
                 {
                     "id": "posada",
                     "points": 2,
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": false,
                     "metadata": {
                         "cardType": "red_destination",
@@ -683,7 +916,9 @@
                 {
                     "id": "almacen",
                     "points": 2,
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -696,7 +931,9 @@
                 {
                     "id": "tallista",
                     "points": 2,
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -707,7 +944,9 @@
                 {
                     "id": "profersor",
                     "points": 2,
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -738,7 +977,9 @@
                             }
                         ]
                     },
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "purple_prosperity",
@@ -750,7 +991,9 @@
                 {
                     "id": "sapo_barquero",
                     "points": 1,
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -761,7 +1004,9 @@
                 {
                     "id": "barcaza",
                     "points": 1,
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -773,7 +1018,9 @@
                 {
                     "id": "torre_vigia",
                     "points": 2,
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "metadata": {
                         "cardType": "red_destination",
                         "unique": true,
@@ -786,7 +1033,9 @@
                 {
                     "id": "trotamundos",
                     "points": 1,
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": false,
                     "metadata": {
                         "cardType": "tan_traveler",
@@ -797,7 +1046,9 @@
                 {
                     "id": "pastor",
                     "points": 1,
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "tan_traveler",
@@ -809,7 +1060,9 @@
                 {
                     "id": "capilla",
                     "points": 2,
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "red_destination",
@@ -822,7 +1075,9 @@
                 {
                     "id": "universidad",
                     "points": 3,
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "red_destination",
@@ -834,7 +1089,9 @@
                 {
                     "id": "doctor",
                     "points": 4,
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "green_production",
@@ -845,7 +1102,9 @@
                 {
                     "id": "roedor_barredor",
                     "points": 2,
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -856,7 +1115,9 @@
                 {
                     "id": "refineria_resina",
                     "points": 1,
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -868,7 +1129,9 @@
                 {
                     "id": "juzgados",
                     "points": 2,
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "blue_governance",
@@ -881,7 +1144,9 @@
                 {
                     "id": "juez",
                     "points": 2,
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "blue_governance",
@@ -892,7 +1157,9 @@
                 {
                     "id": "bardo",
                     "points": 0,
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "tan_traveler",
@@ -923,7 +1190,9 @@
                             }
                         ]
                     },
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "purple_prosperity",
@@ -936,7 +1205,9 @@
                 {
                     "id": "bufon",
                     "points": -2,
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "tan_traveler",
@@ -947,7 +1218,9 @@
                 {
                     "id": "feria",
                     "points": 3,
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "green_production",
@@ -960,7 +1233,9 @@
                 {
                     "id": "cementerio",
                     "points": 0,
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "red_destination",
@@ -971,7 +1246,9 @@
                 {
                     "id": "enterrador",
                     "points": 1,
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "tan_traveler",
@@ -982,7 +1259,9 @@
                 {
                     "id": "paloma_postal",
                     "points": 0,
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": false,
                     "metadata": {
                         "cardType": "tan_traveler",
@@ -993,7 +1272,9 @@
                 {
                     "id": "oficina_postal",
                     "points": 2,
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": false,
                     "metadata": {
                         "cardType": "red_destination",
@@ -1006,7 +1287,9 @@
                 {
                     "id": "torre_del_reloj",
                     "points": 0,
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "blue_governance",
@@ -1018,7 +1301,9 @@
                 {
                     "id": "historiador",
                     "points": 1,
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "blue_governance",
@@ -1029,7 +1314,9 @@
                 {
                     "id": "buhonero",
                     "points": 1,
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": false,
                     "metadata": {
                         "cardType": "green_production",
@@ -1040,7 +1327,9 @@
                 {
                     "id": "ruinas",
                     "points": 0,
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": false,
                     "metadata": {
                         "cardType": "tan_traveler",
@@ -1050,7 +1339,9 @@
                 {
                     "id": "mazmorra",
                     "points": 0,
-                    "types": ["construction"],
+                    "types": [
+                        "construction"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "blue_governance",
@@ -1062,12 +1353,348 @@
                 {
                     "id": "guardabosques",
                     "points": 1,
-                    "types": ["critter"],
+                    "types": [
+                        "critter"
+                    ],
                     "unique": true,
                     "metadata": {
                         "cardType": "tan_traveler",
                         "combined": "mazmorra",
                         "berries": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "extra_extra",
+            "cards": [
+                {
+                    "id": "gazette",
+                    "points": 3,
+                    "types": [
+                        "construction"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "blue_governance",
+                        "combined": "town_crier",
+                        "resin": 2,
+                        "pebbles": 2
+                    }
+                },
+                {
+                    "id": "scurrble_stadium",
+                    "points": 2,
+                    "types": [
+                        "construction"
+                    ],
+                    "unique": false,
+                    "metadata": {
+                        "cardType": "red_destination",
+                        "combined": "scurrble_champion",
+                        "twigs": 1,
+                        "resin": 1,
+                        "pebbles": 1,
+                        "opened": true
+                    }
+                },
+                {
+                    "id": "town_crier",
+                    "points": 2,
+                    "types": [
+                        "critter"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "green_production",
+                        "combined": "gazette",
+                        "berries": 2
+                    }
+                },
+                {
+                    "id": "scurrble_champion",
+                    "points": 2,
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "id",
+                                        "value": "scurrble_champion"
+                                    }
+                                ],
+                                "multiply": 2
+                            }
+                        ]
+                    },
+                    "types": [
+                        "critter"
+                    ],
+                    "unique": false,
+                    "metadata": {
+                        "cardType": "purple_prosperity",
+                        "combined": "scurrble_stadium",
+                        "berries": 2
+                    }
+                },
+                {
+                    "id": "carnival",
+                    "points": 1,
+                    "types": [
+                        "construction"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "green_production",
+                        "combined": "juggler",
+                        "twigs": 2,
+                        "pebbles": 1
+                    }
+                },
+                {
+                    "id": "juggler",
+                    "points": 0,
+                    "types": [
+                        "critter"
+                    ],
+                    "unique": false,
+                    "metadata": {
+                        "cardType": "tan_traveler",
+                        "combined": "carnival",
+                        "berries": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "legends",
+            "cards": [
+                {
+                    "id": "poe",
+                    "points": 4,
+                    "types": [
+                        "critter"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "green_production",
+                        "combined": "profersor",
+                        "berries": 2
+                    }
+                },
+                {
+                    "id": "foresight",
+                    "points": 4,
+                    "types": [
+                        "critter"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "blue_governance",
+                        "combined": "historiador",
+                        "berries": 4
+                    }
+                },
+                {
+                    "id": "amilla_glistendew",
+                    "points": 5,
+                    "types": [
+                        "critter"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "red_destination",
+                        "combined": "reina",
+                        "berries": 6
+                    }
+                },
+                {
+                    "id": "fynn_nobletail",
+                    "points": 5,
+                    "bonus": {
+                        "countOtherItems": [
+                            {
+                                "translation": "fynn_nobletail_msg_1",
+                                "multiply": 2
+                            },
+                            {
+                                "translation": "fynn_nobletail_msg_2",
+                                "multiply": 3
+                            }
+                        ]
+                    },
+                    "types": [
+                        "critter"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "purple_prosperity",
+                        "combined": "rey",
+                        "berries": 7
+                    }
+                },
+                {
+                    "id": "cirrus_windfall",
+                    "points": 4,
+                    "types": [
+                        "critter"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "tan_traveler",
+                        "combined": "paloma_postal",
+                        "berries": 4
+                    }
+                },
+                {
+                    "id": "green_acorn",
+                    "points": 4,
+                    "types": [
+                        "construction"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "red_destination",
+                        "combined": "posadero",
+                        "twigs": 3,
+                        "resin": 3
+                    }
+                },
+                {
+                    "id": "silver_scale_spring",
+                    "points": 2,
+                    "types": [
+                        "construction"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "tan_traveler",
+                        "combined": "buhonero",
+                        "pebbles": 1
+                    }
+                },
+                {
+                    "id": "oleander_opera_house",
+                    "points": 4,
+                    "bonus": {
+                        "countCards": [
+                            {
+                                "operator": "and",
+                                "conditions": [
+                                    {
+                                        "condition": "equal",
+                                        "field": "type",
+                                        "value": "critter"
+                                    },
+                                    {
+                                        "condition": "equal",
+                                        "field": "unique",
+                                        "value": true
+                                    }
+                                ],
+                                "multiply": 2
+                            }
+                        ]
+                    },
+                    "types": [
+                        "construction"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "purple_prosperity",
+                        "combined": "bardo",
+                        "twigs": 3,
+                        "resin": 2,
+                        "pebbles": 2
+                    }
+                },
+                {
+                    "id": "mcgregor_market",
+                    "points": 4,
+                    "types": [
+                        "construction"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "green_production",
+                        "combined": "esposo/esposa",
+                        "twigs": 2,
+                        "resin": 2,
+                        "pebbles": 1
+                    }
+                },
+                {
+                    "id": "bridge_sky",
+                    "points": 0,
+                    "bonus": {
+                        "countOtherItems": [
+                            {
+                                "translation": "bridge_sky_msg",
+                                "multiply": 1
+                            }
+                        ]
+                    },
+                    "types": [
+                        "construction"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "green_production",
+                        "combined": "arquitecto",
+                        "pebbles": 2
+                    }
+                }
+            ]
+        },
+        {
+            "name": "rugwort_pack",
+            "cards": [
+                {
+                    "id": "rugwort_rowdy",
+                    "points": 0,
+                    "types": [
+                        "critter"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "green_production",
+                        "combined": "any",
+                        "berries": 3
+                    }
+                },
+                {
+                    "id": "rugwort_robber",
+                    "points": 0,
+                    "types": [
+                        "critter"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "tan_traveler",
+                        "combined": "any",
+                        "berries": 2
+                    }
+                },
+                {
+                    "id": "rugwort_ruler",
+                    "points": 2,
+                    "bonus": {
+                        "countOtherItems": [
+                            {
+                                "translation": "rugwort_ruler_msg",
+                                "multiply": 1
+                            }
+                        ]
+                    },
+                    "types": [
+                        "critter"
+                    ],
+                    "unique": true,
+                    "metadata": {
+                        "cardType": "purple_prosperity",
+                        "combined": "any",
+                        "berries": 4
                     }
                 }
             ]
