@@ -284,7 +284,8 @@
             },
             "fuente_vida_expa_msg": {
                 "es": "Añade la fuerza base de cualquier Edificio, Arma, Agua, Fuego, Tierra o Aire de tu mano",
-                "en": "Add the base strength of any one Building, Weapon, Flood, Flame, Land or Weather in your hand"
+                "en": "Add the base strength of any one Building, Weapon, Flood, Flame, Land or Weather in your hand",
+                "de": ""
             },
             "mazmorra_msg": {
                 "es": "+10 por el primer No-Muerto, Bestia y Artefacto, +5 por las siguientes y Nigromante, Brujo Mestro y Demonio",
@@ -397,11 +398,13 @@
             },
             "outsider": {
                 "es": "Visitante",
-                "en": "Outsider"
+                "en": "Outsider",
+                "de": ""
             },
             "building": {
                 "es": "Edificio",
-                "en": "Building"
+                "en": "Building",
+                "de": ""
             },
             "number": {
                 "es": "Número",
