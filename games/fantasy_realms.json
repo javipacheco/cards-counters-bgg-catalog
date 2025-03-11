@@ -254,421 +254,525 @@
         "others": {
             "arbol_del_mundo_msg": {
                 "es": "+50 si todas las cartas no ANULADAS que tengas son de diferente tipo",
-                "en": "+50 if all the non-cancelled cards you have are of different type"
+                "en": "+50 if all the non-cancelled cards you have are of different type",
+                "de": "+50 wenn jede Nicht-BLOCKIERTE Karte eine unterschiedliche Farbe hat"
             },
             "arbol_del_mundo_expa_msg": {
                 "es": "+70 si todas las cartas no ANULADAS que tengas son de diferente tipo",
-                "en": "+70 if all the non-cancelled cards you have are of different type"
+                "en": "+70 if all the non-cancelled cards you have are of different type",
+                "de": "+70 wenn jede Nicht-BLOCKIERTE Karte eine unterschiedliche Farbe hat"
             },
             "bufon_msg": {
                 "es": "+3 por cada carta impar o +50 si toda la mano es impar",
-                "en": "+3 for each odd card or +50 if the whole hand is odd"
+                "en": "+3 for each odd card or +50 if the whole hand is odd",
+                "de": "+3 für jede andere ungerade Karte +50 wenn alle Karten ungerade sind"
             },
             "recolector_msg": {
                 "es": "cartas diferentes del mismo tipo: +10 con 3, +40 con 4, +100 con 5",
-                "en": "+10 for 3-card run, +30 for 4-card run, +60 for 5-card run, +100 for 6-card run, +150 for 7-card run"
+                "en": "Points for cards of the same suit: +10 for 3, +30 for 4, +100 for 5",
+                "de": "Punkte für Karten gleicher Farbe: +10 für 3, +40 für 4, +100 für 5"
             },
             "gema_orden_msg": {
                 "es": "cartas seguidas en fuerza base: +10 con 3, +30 con 4, +60 con 5, +100 con 6, +150 con 7",
-                "en": "cards in a row in base strength: +10 with 3, +30 with 4, +60 with 5, +100 with 6, +150 with 7"
+                "en": "cards in a row in base strength: +10 with 3, +30 with 4, +60 with 5, +100 with 6, +150 with 7",
+                "de": "Karten mit aufeinanderfolgender Basisstärke: +10 für 3, +30 für 4, +60 für 5, +100 für 6, +150 für 7"
             },
             "fuente_vida_msg": {
                 "es": "Añade la fuerza base de cualquier Arma, Agua, Fuego, Tierra o Aire de tu mano",
-                "en": "Add the base strength of any one Weapon, Flood, Flame, Land or Weather in your hand"
+                "en": "Add the base strength of any one Weapon, Flood, Flame, Land or Weather in your hand",
+                "de": "Addiere die Basisstärke einer beliebigen Waffe, Flut, Flamme, Land oder Wetter in deiner Hand"
             },
             "fuente_vida_expa_msg": {
                 "es": "Añade la fuerza base de cualquier Edificio, Arma, Agua, Fuego, Tierra o Aire de tu mano",
-                "en": "Add the base strength of any one Building, Weapon, Flood, Flame, Land or Weather in your hand"
+                "en": "Add the base strength of any one Building, Weapon, Flood, Flame, Land or Weather in your hand",
+                "de": "Addiere die Basisstärke einer beliebigen Waffe, Gebäude, Flut, Flamme, Land oder Wetter in deiner Hand"
             },
             "mazmorra_msg": {
                 "es": "+10 por el primer No-Muerto, Bestia y Artefacto, +5 por las siguientes y Nigromante, Brujo Mestro y Demonio",
-                "en": "+10 for the first Undead, Beast and Artifact, +5 for the following and Necromancer, Warlock Lord and Demon"
+                "en": "+10 for the first Undead, Beast and Artifact, +5 for the following and Necromancer, Warlock Lord and Demon",
+                "de": "+10 für den ersten Untoten, Bestie und Artefakt, +5 für jede weitere sowie Totenbeschwörer, Hexenmeister und Dämon"
             },
             "castillo_msg": {
                 "es": "+10 por el primer Líder, Ejército, Tierra y otro Edificio, +5 por cada otro Edificio",
-                "en": "+10 for the first Leader, Army, Land and other Building, +5 for each other Building"
+                "en": "+10 for the first Leader, Army, Land and other Building, +5 for each other Building",
+                "de": "+10 für den ersten Anführer, Armee, Land und andere Gebäude, +5 für jedes weitere Gebäude"
             },
             "capilla_msg": {
                 "es": "+40 si tienes exactamente 2 cartas de Leader, Mago, Visitante y No-Muerto",
-                "en": "+40 if you have exactly 2 cards from among of these suits: Leader, Wizard, Outsider and Undead"
+                "en": "+40 if you have exactly 2 cards from among of these suits: Leader, Wizard, Outsider and Undead",
+                "de": "+40 wenn Du insgesamt genau 2 Karten dieser Farben hast: Anführer, Zauberer, Outsider und Untote"
             },
             "genio_msg": {
                 "es": "+10 por cada otro jugador. ¿Cuántos jugadores hay en la partida sin contar tú?",
-                "en": "+10 for each other player. How many players are in the game, not counting you?"
+                "en": "+10 for each other player. How many players are in the game, not counting you?",
+                "de": "+10 pro Mitspieler. Wie viele Spieler sind im Spiel, dich ausgenommen?"
             },
             "juez_msg": {
                 "es": "+10 por cada carta que tenga una Penalización que no haya sido IGNORADA",
-                "en": "+10 for each card that contains a Penalty that is not CLEARED"
+                "en": "+10 for each card that contains a Penalty that is not CLEARED",
+                "de": "+10 für jede Karte, die eine Strafe enthölt, die nicht AUFGEHOBEN ist"
             },
-            "reina_oscura": {
+            "reina_oscura_msg": {
                 "es": "Numero de cartas de Tierra, Agua, Fuego, Aire y Unicornio en el área de descarte",
-                "en": "Number of Land, Flood, Flame, Weather and Unicorn cards in the discard area"
+                "en": "Number of Land, Flood, Flame, Weather and Unicorn cards in the discard area",
+                "de": "Anzahl der Land, Flut, Flamme, Wetter und Einhorn Karten im Ablagebereich"
             },
             "ghoul_msg": {
                 "es": "Número de cartas de Mago, Líder, Ejército, Bestia y No-Muerto en el área de descarte",
-                "en": "Number of Wizard, Leader, Army, Beast, and Undead cards in the discard area"
+                "en": "Number of Wizard, Leader, Army, Beast, and Undead cards in the discard area",
+                "de": "Anzahl der Zauberer, Anführer, Armeem Bestie und Untoten Karten im Ablagebereich"
             },
             "espectro_msg": {
                 "es": "Número de cartas de Mago, Artefacto y Visitante en el área de descarte",
-                "en": "Number of Wizard, Artifact, and Outsider cards in the discard area"
+                "en": "Number of Wizard, Artifact, and Outsider cards in the discard area",
+                "de": "Anzahl der Zauberer, Artefakt und Outsider Karten im Ablagebereich"
             },
             "caballero_oscuro_msg": {
                 "es": "Número de cartas de Arma y Ejército en el área de descarte",
-                "en": "Number of Weapon and Army cards in the discard area"
+                "en": "Number of Weapon and Army cards in the discard area",
+                "de": "Anzahl der Waffen und Armee Karten im Ablagebereich"
             },
             "demonio_msg": {
                 "es": "Cada carta que no sea Visitante es anulada si es la única de su tipo",
-                "en": "Each card that is not an Outsider is blanked if it is the only one of its type"
+                "en": "Each card that is not an Outsider is blanked if it is the only one of its type",
+                "de": "Jede Nicht-Outsider Karte ist BLOCKIERT wenn sie die einzige ihrer Farbe ist"
             },
             "artifact": {
                 "es": "Artefacto",
-                "en": "Artifact"
+                "en": "Artifact",
+                "de": "Artefakt"
             },
             "leader": {
                 "es": "Líder",
-                "en": "Leader"
+                "en": "Leader",
+                "de": "Anführer"
             },
             "land": {
                 "es": "Tierra",
-                "en": "Land"
+                "en": "Land",
+                "de": "Land"
             },
             "wizard": {
                 "es": "Mago",
-                "en": "Wizard"
+                "en": "Wizard",
+                "de": "Zauberer"
             },
             "army": {
                 "es": "Ejército",
-                "en": "Army"
+                "en": "Army",
+                "de": "Armee"
             },
             "beast": {
                 "es": "Bestia",
-                "en": "Beast"
+                "en": "Beast",
+                "de": "Bestie"
             },
             "weapon": {
                 "es": "Arma",
-                "en": "Weapon"
+                "en": "Weapon",
+                "de": "Waffe"
             },
             "weather": {
                 "es": "Aire",
-                "en": "Weather"
+                "en": "Weather",
+                "de": "Wetter"
             },
             "flame": {
                 "es": "Fuego",
-                "en": "Flame"
+                "en": "Flame",
+                "de": "Flamme"
             },
             "flood": {
                 "es": "Agua",
-                "en": "Flood"
+                "en": "Flood",
+                "de": "Flut"
             },
             "wild": {
                 "es": "Variable",
-                "en": "Wild"
+                "en": "Wild",
+                "de": "Joker"
             },
             "undead": {
                 "es": "No-Muerto",
-                "en": "Undead"
+                "en": "Undead",
+                "de": "Untoter"
             },
             "outsider": {
                 "es": "Visitante",
-                "en": "Outsider"
+                "en": "Outsider",
+                "de": "Outsider"
             },
             "building": {
                 "es": "Edificio",
-                "en": "Building"
+                "en": "Building",
+                "de": "Gebäude"
             },
             "number": {
                 "es": "Número",
-                "en": "Number"
+                "en": "Number",
+                "de": "Nummer"
             },
             "base": {
                 "es": "Fantasy Realms (Base)",
-                "en": "Fantasy Realms (Base)"
+                "en": "Fantasy Realms (Base)",
+                "de": "Fantastische Reiche (Grundspiel)"
             },
             "tesoro_maldito": {
                 "es": "Fantasy Realms: Tesoro Maldito",
-                "en": "Fantasy Realms: The Cursed Hoard"
+                "en": "Fantasy Realms: The Cursed Hoard",
+                "de": "Fantastische Reiche: Der Verfluchte Schatz"
             }
         },
         "cards": {
             "escudo_keth": {
                 "es": "Escudo de Keth",
-                "en": "Shield of Keth"
+                "en": "Shield of Keth",
+                "de": "Schild von Keth"
             },
             "montana": {
                 "es": "Montaña",
-                "en": "Mountain"
+                "en": "Mountain",
+                "de": "Gebirge"
             },
             "caverna": {
                 "es": "Caverna",
-                "en": "Cavern"
+                "en": "Cavern",
+                "de": "Höhle"
             },
             "campanario": {
                 "es": "Campanario",
-                "en": "Bell Tower"
+                "en": "Bell Tower",
+                "de": "Glockenturm"
             },
             "torbellino": {
                 "es": "Torbellino",
-                "en": "Whirlwind"
+                "en": "Whirlwind",
+                "de": "Wirbelsturm"
             },
             "arqueros_elficos": {
                 "es": "Arqueros Elficos",
-                "en": "Elven Archers"
+                "en": "Elven Archers",
+                "de": "Elbenschützen"
             },
             "hidra": {
                 "es": "Hidra",
-                "en": "Hydra"
+                "en": "Hydra",
+                "de": "Hydra"
             },
             "arco_elfico": {
                 "es": "Arco Elfico",
-                "en": "Elven Longbow"
+                "en": "Elven Longbow",
+                "de": "Elbischer Bogen"
             },
             "caballo_batalla": {
                 "es": "Caballo de Batalla",
-                "en": "Warhorse"
+                "en": "Warhorse",
+                "de": "Schlachtross"
             },
             "varita_magica": {
                 "es": "Varita Mágica",
-                "en": "Magic Wand"
+                "en": "Magic Wand",
+                "de": "Zauberstab"
             },
             "unicornio": {
                 "es": "Unicornio",
-                "en": "Unicorn"
+                "en": "Unicorn",
+                "de": "Einhorn"
             },
             "espada_keth": {
                 "es": "Espada de Keth",
-                "en": "Sword of Keth"
+                "en": "Sword of Keth",
+                "de": "Schwert von Keth"
             },
             "vela": {
                 "es": "Vela",
-                "en": "Candle"
+                "en": "Candle",
+                "de": "Kerze"
             },
             "senor_guerra": {
                 "es": "Señor de la Guerra",
-                "en": "Warlord"
+                "en": "Warlord",
+                "de": "Kriegsherr"
             },
             "fuente_vida": {
                 "es": "Fuente de Vida",
-                "en": "Fountain of Life"
+                "en": "Fountain of Life",
+                "de": "Quelle des Lebens"
             },
             "bosque": {
                 "es": "Bosque",
-                "en": "Forest"
+                "en": "Forest",
+                "de": "Wald"
             },
             "elemental_tierra": {
                 "es": "Elemental de Tierra",
-                "en": "Earth Elemental"
+                "en": "Earth Elemental",
+                "de": "Erdwesen"
             },
             "pantano": {
                 "es": "Pantano",
-                "en": "Swamp"
+                "en": "Swamp",
+                "de": "Sumpf"
             },
             "elemental_agua": {
                 "es": "Elemental de Agua",
-                "en": "Water Elemental"
+                "en": "Water Elemental",
+                "de": "Wasserwesen"
             },
             "tormenta": {
                 "es": "Tormenta",
-                "en": "Rainstorm"
+                "en": "Rainstorm",
+                "de": "Regensturm"
             },
             "elemental_aire": {
                 "es": "Elemental de Aire",
-                "en": "Air Elemental"
+                "en": "Air Elemental",
+                "de": "Luftwesen"
             },
             "forja": {
                 "es": "Forja",
-                "en": "Forge"
+                "en": "Forge",
+                "de": "Schmiede"
             },
             "elemental_fuego": {
                 "es": "Elemental de Fuego",
-                "en": "Fire Elemental"
+                "en": "Fire Elemental",
+                "de": "Feuerwesen"
             },
             "caballeria": {
                 "es": "Caballería",
-                "en": "Light Cavalry"
+                "en": "Light Cavalry",
+                "de": "Kavallerie"
             },
             "exploradores": {
                 "es": "Exploradores",
-                "en": "Rangers"
+                "en": "Rangers",
+                "de": "Waldläufer"
             },
             "senor_bestias": {
                 "es": "Señor de las Bestias",
-                "en": "Beastmaster"
+                "en": "Beastmaster",
+                "de": "Herr der Bestien"
             },
             "encantadora": {
                 "es": "Encantadora",
-                "en": "Enchantress"
+                "en": "Enchantress",
+                "de": "Magierin"
             },
             "princesa": {
                 "es": "Princesa",
-                "en": "Princess"
+                "en": "Princess",
+                "de": "Prinzessin"
             },
             "inundacion": {
                 "es": "Inundación",
-                "en": "Great Flood"
+                "en": "Great Flood",
+                "de": "Große Flut"
             },
             "ventisca_helada": {
                 "es": "Ventisca Helada",
-                "en": "Blizzard"
+                "en": "Blizzard",
+                "de": "Blizzard"
             },
             "infanteria_enana": {
                 "es": "Infantería Enana",
-                "en": "Dwarvish Infantry"
+                "en": "Dwarvish Infantry",
+                "de": "Zwergeninfanterie"
             },
             "basilisco": {
                 "es": "Basilisco",
-                "en": "Basilisk"
+                "en": "Basilisk",
+                "de": "Basilisk"
             },
             "isla": {
                 "es": "Isla",
-                "en": "Island"
+                "en": "Island",
+                "de": "Insel"
             },
             "runa_protectora": {
                 "es": "Runa Protectora",
-                "en": "Protection Rune"
+                "en": "Protection Rune",
+                "de": "Rune des Schutzes"
             },
             "emperatriz": {
                 "es": "Emperatriz",
-                "en": "Empress"
+                "en": "Empress",
+                "de": "Kaiserin"
             },
             "brujo_maestro": {
                 "es": "Brujo Maestro",
-                "en": "Warlock Lord"
+                "en": "Warlock Lord",
+                "de": "Hexenmeister"
             },
             "nigromante": {
                 "es": "Nigromante",
-                "en": "Necromancer"
+                "en": "Necromancer",
+                "de": "Totenbeschwörer"
             },
             "incendio": {
                 "es": "Incendio",
-                "en": "Wildfire"
+                "en": "Wildfire",
+                "de": "Buschfeuer"
             },
             "reina": {
                 "es": "Reina",
-                "en": "Queen"
+                "en": "Queen",
+                "de": "Königin"
             },
             "rey": {
                 "es": "Rey",
-                "en": "King"
+                "en": "King",
+                "de": "König"
             },
             "arbol_del_mundo": {
                 "es": "Árbol del Mundo",
-                "en": "World Tree"
+                "en": "World Tree",
+                "de": "Weltenbaum"
             },
             "bufon": {
                 "es": "Bufón",
-                "en": "Jester"
+                "en": "Jester",
+                "de": "Hofnarr"
             },
             "recolector": {
                 "es": "Recolector",
-                "en": "Collector"
+                "en": "Collector",
+                "de": "Sammler"
             },
             "gema_orden": {
                 "es": "Gema del Orden",
-                "en": "Gem of Order"
+                "en": "Gem of Order",
+                "de": "Juwel der Ordnung"
             },
             "dragon": {
                 "es": "Dragón",
-                "en": "Dragon"
+                "en": "Dragon",
+                "de": "Drache"
             },
             "paladines": {
                 "es": "Paladines",
-                "en": "Knights"
+                "en": "Knights",
+                "de": "Ritter"
             },
             "humo": {
                 "es": "Humo",
-                "en": "Smoke"
+                "en": "Smoke",
+                "de": "Rauch"
             },
             "dirigible_guerra": {
                 "es": "Dirigible de Guerra",
-                "en": "War Dirigible"
+                "en": "War Dirigible",
+                "de": "Kampfzeppelin"
             },
             "buque_guerra": {
                 "es": "Buque de Guerra",
-                "en": "Warship"
+                "en": "Warship",
+                "de": "Kriegsschiff"
             },
             "relampago": {
                 "es": "Relámpago",
-                "en": "Lightning"
+                "en": "Lightning",
+                "de": "Blitz"
             },
             "espejismo": {
                 "es": "Espejismo",
-                "en": "Mirage"
+                "en": "Mirage",
+                "de": "Spiegelung"
             },
             "doppelganger": {
                 "es": "Doppelgänger",
-                "en": "Doppelgänger"
+                "en": "Doppelgänger",
+                "de": "Doppelgänger"
             },
             "cambiaformas": {
                 "es": "Cambiaformas",
-                "en": "Shapeshifter"
+                "en": "Shapeshifter",
+                "de": "Gestaltwandler"
             },
             "libro_cambios": {
                 "es": "Libro de Cambios",
-                "en": "Book of Changes"
+                "en": "Book of Changes",
+                "de": "Buch der Veränderung"
             },
             "fenix": {
                 "es": "Fénix",
-                "en": "Phoenix"
+                "en": "Phoenix",
+                "de": "Phönix"
             },
             "mazmorra": {
                 "es": "Mazmorra",
-                "en": "Dungeon"
+                "en": "Dungeon",
+                "de": "Verlies"
             },
             "castillo": {
                 "es": "Castillo",
-                "en": "Castle"
+                "en": "Castle",
+                "de": "Burg"
             },
             "cripta": {
                 "es": "Cripta",
-                "en": "Crypt"
+                "en": "Crypt",
+                "de": "Gruft"
             },
             "capilla": {
                 "es": "Capilla",
-                "en": "Chapel"
+                "en": "Chapel",
+                "de": "Kapelle"
             },
             "jardin": {
                 "es": "Jardín",
-                "en": "Garden"
+                "en": "Garden",
+                "de": "Garten"
             },
             "genio": {
                 "es": "Genio",
-                "en": "Genie"
+                "en": "Genie",
+                "de": "Dschinn"
             },
             "juez": {
                 "es": "Juez",
-                "en": "Judge"
+                "en": "Judge",
+                "de": "Richter"
             },
             "angel": {
                 "es": "Ángel",
-                "en": "Angel"
+                "en": "Angel",
+                "de": "Engel"
             },
             "leprechaun": {
                 "es": "Leprechaun",
-                "en": "Leprechaun"
+                "en": "Leprechaun",
+                "de": "Kobold"
             },
             "reina_oscura": {
                 "es": "Reina Oscura",
-                "en": "Dark Queen"
+                "en": "Dark Queen",
+                "de": "Dunkle Königin"
             },
             "ghoul": {
                 "es": "Ghoul",
-                "en": "Ghoul"
+                "en": "Ghoul",
+                "de": "Ghul"
             },
             "espectro": {
                 "es": "Espectro",
-                "en": "Specter"
+                "en": "Specter",
+                "de": "Gespenst"
             },
             "liche": {
                 "es": "Liche",
-                "en": "Lich"
+                "en": "Lich",
+                "de": "Lich"
             },
             "caballero_oscuro": {
                 "es": "Caballero Oscuro",
-                "en": "Dark Knight"
+                "en": "Dark Knight",
+                "de": "Todesritter"
             },
             "demonio": {
                 "es": "Demonio",
-                "en": "Demon"
+                "en": "Demon",
+                "de": "Dämon"
             }
         }
     },
