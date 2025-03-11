@@ -285,57 +285,57 @@
             "fuente_vida_expa_msg": {
                 "es": "Añade la fuerza base de cualquier Edificio, Arma, Agua, Fuego, Tierra o Aire de tu mano",
                 "en": "Add the base strength of any one Building, Weapon, Flood, Flame, Land or Weather in your hand",
-                "de": ""
+                "de": "Addiere die Basisstärke einer beliebigen Waffe, Gebäude, Flut, Flamme, Land oder Wetter in deiner Hand"
             },
             "mazmorra_msg": {
                 "es": "+10 por el primer No-Muerto, Bestia y Artefacto, +5 por las siguientes y Nigromante, Brujo Mestro y Demonio",
                 "en": "+10 for the first Undead, Beast and Artifact, +5 for the following and Necromancer, Warlock Lord and Demon",
-                "de": ""
+                "de": "+10 für den ersten Untoten, Bestie und Artefakt, +5 für jede weitere sowie Totenbeschwörer, Hexenmeister und Dämon"
             },
             "castillo_msg": {
                 "es": "+10 por el primer Líder, Ejército, Tierra y otro Edificio, +5 por cada otro Edificio",
                 "en": "+10 for the first Leader, Army, Land and other Building, +5 for each other Building",
-                "de": ""
+                "de": "+10 für den ersten Anführer, Armee, Land und andere Gebäude, +5 für jedes weitere Gebäude"
             },
             "capilla_msg": {
                 "es": "+40 si tienes exactamente 2 cartas de Leader, Mago, Visitante y No-Muerto",
                 "en": "+40 if you have exactly 2 cards from among of these suits: Leader, Wizard, Outsider and Undead",
-                "de": ""
+                "de": "+40 wenn Du insgesamt genau 2 Karten dieser Farben hast: Anführer, Zauberer, Outsider und Untote"
             },
             "genio_msg": {
                 "es": "+10 por cada otro jugador. ¿Cuántos jugadores hay en la partida sin contar tú?",
                 "en": "+10 for each other player. How many players are in the game, not counting you?",
-                "de": ""
+                "de": "+10 pro Mitspieler. Wie viele Spieler sind im Spiel, dich ausgenommen?"
             },
             "juez_msg": {
                 "es": "+10 por cada carta que tenga una Penalización que no haya sido IGNORADA",
                 "en": "+10 for each card that contains a Penalty that is not CLEARED",
-                "de": ""
+                "de": "+10 für jede Karte, die eine Strafe enthölt, die nicht AUFGEHOBEN ist"
             },
-            "reina_oscura": {
+            "reina_oscura_msg": {
                 "es": "Numero de cartas de Tierra, Agua, Fuego, Aire y Unicornio en el área de descarte",
                 "en": "Number of Land, Flood, Flame, Weather and Unicorn cards in the discard area",
-                "de": ""
+                "de": "Anzahl der Land, Flut, Flamme, Wetter und Einhorn Karten im Ablagebereich"
             },
             "ghoul_msg": {
                 "es": "Número de cartas de Mago, Líder, Ejército, Bestia y No-Muerto en el área de descarte",
                 "en": "Number of Wizard, Leader, Army, Beast, and Undead cards in the discard area",
-                "de": ""
+                "de": "Anzahl der Zauberer, Anführer, Armeem Bestie und Untoten Karten im Ablagebereich"
             },
             "espectro_msg": {
                 "es": "Número de cartas de Mago, Artefacto y Visitante en el área de descarte",
                 "en": "Number of Wizard, Artifact, and Outsider cards in the discard area",
-                "de": ""
+                "de": "Anzahl der Zauberer, Artefakt und Outsider Karten im Ablagebereich"
             },
             "caballero_oscuro_msg": {
                 "es": "Número de cartas de Arma y Ejército en el área de descarte",
                 "en": "Number of Weapon and Army cards in the discard area",
-                "de": ""
+                "de": "Anzahl der Waffen und Armee Karten im Ablagebereich"
             },
             "demonio_msg": {
                 "es": "Cada carta que no sea Visitante es anulada si es la única de su tipo",
                 "en": "Each card that is not an Outsider is blanked if it is the only one of its type",
-                "de": ""
+                "de": "Jede Nicht-Outsider Karte ist BLOCKIERT wenn sie die einzige ihrer Farbe ist"
             },
             "artifact": {
                 "es": "Artefacto",
@@ -394,17 +394,18 @@
             },
             "undead": {
                 "es": "No-Muerto",
-                "en": "Undead"
+                "en": "Undead",
+                "de": "Untoter"
             },
             "outsider": {
                 "es": "Visitante",
                 "en": "Outsider",
-                "de": ""
+                "de": "Outsider"
             },
             "building": {
                 "es": "Edificio",
                 "en": "Building",
-                "de": ""
+                "de": "Gebäude"
             },
             "number": {
                 "es": "Número",
@@ -414,12 +415,12 @@
             "base": {
                 "es": "Fantasy Realms (Base)",
                 "en": "Fantasy Realms (Base)",
-                "de": ""
+                "de": "Fantastische Reiche (Grundspiel)"
             },
             "tesoro_maldito": {
                 "es": "Fantasy Realms: Tesoro Maldito",
                 "en": "Fantasy Realms: The Cursed Hoard",
-                "de": ""
+                "de": "Fantastische Reiche: Der Verfluchte Schatz"
             }
         },
         "cards": {
@@ -696,82 +697,82 @@
             "fenix": {
                 "es": "Fénix",
                 "en": "Phoenix",
-                "de": ""
+                "de": "Phönix"
             },
             "mazmorra": {
                 "es": "Mazmorra",
                 "en": "Dungeon",
-                "de": ""
+                "de": "Verlies"
             },
             "castillo": {
                 "es": "Castillo",
                 "en": "Castle",
-                "de": ""
+                "de": "Burg"
             },
             "cripta": {
                 "es": "Cripta",
                 "en": "Crypt",
-                "de": ""
+                "de": "Gruft"
             },
             "capilla": {
                 "es": "Capilla",
                 "en": "Chapel",
-                "de": ""
+                "de": "Kapelle"
             },
             "jardin": {
                 "es": "Jardín",
                 "en": "Garden",
-                "de": ""
+                "de": "Garten"
             },
             "genio": {
                 "es": "Genio",
                 "en": "Genie",
-                "de": ""
+                "de": "Dschinn"
             },
             "juez": {
                 "es": "Juez",
                 "en": "Judge",
-                "de": ""
+                "de": "Richter"
             },
             "angel": {
                 "es": "Ángel",
                 "en": "Angel",
-                "de": ""
+                "de": "Engel"
             },
             "leprechaun": {
                 "es": "Leprechaun",
                 "en": "Leprechaun",
-                "de": ""
+                "de": "Kobold"
             },
             "reina_oscura": {
                 "es": "Reina Oscura",
                 "en": "Dark Queen",
-                "de": ""
+                "de": "Dunkle Königin"
             },
             "ghoul": {
                 "es": "Ghoul",
                 "en": "Ghoul",
-                "de": ""
+                "de": "Ghul"
             },
             "espectro": {
                 "es": "Espectro",
                 "en": "Specter",
-                "de": ""
+                "de": "Gespenst"
             },
             "liche": {
                 "es": "Liche",
                 "en": "Lich",
-                "de": ""
+                "de": "Lich"
             },
             "caballero_oscuro": {
                 "es": "Caballero Oscuro",
                 "en": "Dark Knight",
-                "de": ""
+                "de": "Todesritter"
             },
             "demonio": {
                 "es": "Demonio",
                 "en": "Demon",
-                "de": ""
+                "de": "Dämon"
             }
         }
     },
